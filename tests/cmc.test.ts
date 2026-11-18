@@ -116,6 +116,16 @@ describe("endpoints", () => {
     expect(calls[0].url.pathname).toBe("/v2/cryptocurrency/market-pairs/latest");
   });
 
+  it("spaces calls by minIntervalMs to respect the per-minute rate limit", async () => {
+    const { impl } = stubFetch([ok({}), ok({})]);
+    const sleep = vi.fn(async () => {});
+    const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep, minIntervalMs: 2000 });
+    await api.keyInfo();
+    await api.keyInfo();
+    expect(sleep).toHaveBeenCalledTimes(1);
+    expect((sleep.mock.calls[0] as unknown as [number])[0]).toBeGreaterThan(1900);
+  });
+
   it("reads RWA info whether data is keyed by id, an array or a single object", async () => {
     const { impl } = stubFetch([
       ok({ "2": { rwa_id: 2, industry: "Semis" } }),

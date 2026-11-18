@@ -34,9 +34,21 @@ export interface CmcEndpoints {
   creditsUsed(): number;
 }
 
-export function createEndpoints(opts: CmcGetOptions): CmcEndpoints {
+export interface EndpointsOptions extends CmcGetOptions {
+  /** Minimum delay between two calls (scripts use this to stay under the per-minute limit). */
+  minIntervalMs?: number;
+}
+
+export function createEndpoints(opts: EndpointsOptions): CmcEndpoints {
   let credits = 0;
+  let lastCallAt = 0;
+  const sleep = opts.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
   const get = async <T>(path: string, params: Record<string, string | number> = {}) => {
+    if (opts.minIntervalMs && lastCallAt > 0) {
+      const wait = lastCallAt + opts.minIntervalMs - Date.now();
+      if (wait > 0) await sleep(wait);
+    }
+    lastCallAt = Date.now();
     const res = await cmcGet<T>(path, params, opts);
     credits += res.creditCount;
     return res.data;

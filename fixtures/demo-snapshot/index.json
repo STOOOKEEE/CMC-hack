@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-11-18T10:00:00.000Z",
+  "searchIndex": [
+    {
+      "rwaId": 2,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "assetType": "stock",
+      "rank": 1
+    },
+    {
+      "rwaId": 10,
+      "symbol": "XAU",
+      "name": "Gold",
+      "assetType": "commodity",
+      "rank": 2
+    },
+    {
+      "rwaId": 44,
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "assetType": "stock",
+      "rank": 44
+    },
+    {
+      "rwaId": 120,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "assetType": "etf",
+      "rank": 5
+    },
+    {
+      "rwaId": 3,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "assetType": "stock",
+      "rank": 3
+    }
+  ],
+  "popular": [
+    {
+      "rwaId": 10,
+      "symbol": "XAU",
+      "name": "Gold",
+      "assetType": "commodity",
+      "rank": 2,
+      "tokenizedMarketCap": 3900000000
+    },
+    {
+      "rwaId": 2,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "assetType": "stock",
+      "rank": 1,
+      "tokenizedMarketCap": 412000000
+    },
+    {
+      "rwaId": 3,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "assetType": "stock",
+      "rank": 3,
+      "tokenizedMarketCap": 156000000
+    },
+    {
+      "rwaId": 120,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "assetType": "etf",
+      "rank": 5,
+      "tokenizedMarketCap": 98000000
+    }
+  ]
+}

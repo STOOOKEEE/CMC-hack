@@ -11,7 +11,8 @@
     "test": "vitest run",
     "e2e": "playwright test",
     "explore": "tsx scripts/explore.ts",
-    "snapshot": "tsx scripts/snapshot.ts"
+    "snapshot": "tsx scripts/snapshot.ts",
+    "demo-snapshot": "tsx scripts/demo-snapshot.ts"
   },
   "dependencies": {
     "next": "16.4.6",
