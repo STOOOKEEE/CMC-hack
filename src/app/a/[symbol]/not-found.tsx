@@ -7,9 +7,17 @@ import { SearchBox } from "@/components/SearchBox";
 import type { SearchEntry } from "@/lib/model";
 import { searchAssets } from "@/lib/search";
 
+function safeDecode(segment: string): string {
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return segment;
+  }
+}
+
 export default function AssetNotFound() {
   const pathname = usePathname();
-  const query = decodeURIComponent(pathname.split("/").pop() ?? "");
+  const query = safeDecode(pathname.split("/").pop() ?? "");
   const [suggestions, setSuggestions] = useState<SearchEntry[]>([]);
 
   useEffect(() => {

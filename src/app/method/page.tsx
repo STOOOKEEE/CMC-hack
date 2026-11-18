@@ -39,8 +39,9 @@ export default function MethodPage() {
           </li>
           <li className="flex flex-wrap items-center gap-2">
             <LabelBadge label="different_unit" /> Its price is more than {pct(C.unitTolerance)} away from the
-            consensus tokenized price — it almost certainly quotes another unit (e.g. one gram instead of one ounce),
-            so comparing it would be meaningless.
+            reference price — it almost certainly quotes another unit (e.g. one gram instead of one ounce), so
+            comparing it would be meaningless. The reference is CoinMarketCap&apos;s consensus tokenized price when
+            it agrees with the market, otherwise the volume-weighted median price of the versions.
           </li>
           <li className="flex flex-wrap items-center gap-2">
             <LabelBadge label="too_thin" /> Less than {formatCompactUsd(C.volumeFloorUsd)} traded in 24 hours. A price

@@ -4,7 +4,7 @@ import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { CmcError } from "@/lib/cmc/client";
 import { createFixtureEndpoints } from "@/lib/cmc/fixtureEndpoints";
-import { getAssetView, getSources, type Sources } from "@/lib/data";
+import { defaultConfig, getAssetView, getSources, type Sources } from "@/lib/data";
 import { LiveSource, SnapshotSource, type DataSource } from "@/lib/data/source";
 import { writeSnapshot } from "@/lib/data/snapshotWriter";
 import { issuerNote } from "@/lib/issuers";
@@ -14,23 +14,29 @@ let snapDir: string;
 
 beforeAll(async () => {
   snapDir = fs.mkdtempSync(path.join(os.tmpdir(), "wrapscout-snap-"));
-  const live = new LiveSource(createFixtureEndpoints(fixturesDir));
-  await writeSnapshot(live, snapDir, { generatedAt: "2026-11-17T08:00:00.000Z", marketPairsTop: 2 });
+  await writeSnapshot(createFixtureEndpoints(fixturesDir), snapDir, {
+    generatedAt: "2026-11-17T08:00:00.000Z",
+    marketPairsTop: 2,
+  });
 });
 afterAll(() => fs.rmSync(snapDir, { recursive: true, force: true }));
 
 /** A live-mode source whose every call fails or hangs, to exercise the fallback path. */
-function brokenLive(behaviour: "throw" | "hang"): DataSource {
-  const fail = () =>
-    behaviour === "throw"
+function brokenLive(behaviour: "throw" | "hang"): DataSource & { calls: string[] } {
+  const calls: string[] = [];
+  const fail = (name: string) => () => {
+    calls.push(name);
+    return behaviour === "throw"
       ? Promise.reject(new CmcError("rate_limit", 429, "slow down"))
       : new Promise<never>(() => {});
+  };
   return {
     mode: "live",
+    calls,
     asOf: async () => null,
-    searchIndex: fail,
-    popular: fail,
-    assetBundle: fail,
+    searchIndex: fail("searchIndex"),
+    popular: fail("popular"),
+    assetBundle: fail("assetBundle"),
   };
 }
 
@@ -101,6 +107,35 @@ describe("getAssetView", () => {
     expect(view?.dataMode).toBe("snapshot");
   });
 
+  it("stops calling a failing live source for a while once it has failed", async () => {
+    const live = brokenLive("throw");
+    const sources = { primary: live, fallback: new SnapshotSource(snapDir, "snapshot") };
+    expect((await getAssetView("NVDA", { sources }))?.dataMode).toBe("snapshot");
+    expect((await getAssetView("TSLA", { sources }))?.dataMode).toBe("snapshot");
+    expect(live.calls).toEqual(["searchIndex"]);
+  });
+
+  it("pays at most one timeout per view when live hangs", async () => {
+    const live = brokenLive("hang");
+    const started = Date.now();
+    const view = await getAssetView("NVDA", {
+      sources: { primary: live, fallback: new SnapshotSource(snapDir, "snapshot") },
+      timeoutMs: 50,
+    });
+    expect(view?.dataMode).toBe("snapshot");
+    expect(live.calls).toEqual(["searchIndex"]);
+    expect(Date.now() - started).toBeLessThan(500);
+  });
+
+  it("tries live again once the cool-down is over", async () => {
+    const live = brokenLive("throw");
+    const sources = { primary: live, fallback: new SnapshotSource(snapDir, "snapshot") };
+    await getAssetView("NVDA", { sources, coolDownMs: 10 });
+    await new Promise((r) => setTimeout(r, 20));
+    await getAssetView("NVDA", { sources, coolDownMs: 10 });
+    expect(live.calls).toEqual(["searchIndex", "searchIndex"]);
+  });
+
   it("rethrows when live fails and there is no snapshot", async () => {
     await expect(
       getAssetView("NVDA", { sources: { primary: brokenLive("throw"), fallback: null } }),
@@ -119,6 +154,22 @@ describe("getSources", () => {
     const s = getSources({ apiKey: undefined, snapshotDir: snapDir, demoDir: "/nonexistent" });
     expect(s.primary.mode).toBe("snapshot");
     expect(s.fallback).toBeNull();
+  });
+
+  it("forces demo data when asked, even with a key and a snapshot (used by the e2e suite)", () => {
+    const s = getSources({ apiKey: "k", snapshotDir: snapDir, demoDir: snapDir, forceDemo: true });
+    expect(s.primary.mode).toBe("demo");
+    expect(s.fallback).toBeNull();
+  });
+
+  it("reads WRAPSCOUT_DATA=demo from the environment", () => {
+    process.env.WRAPSCOUT_DATA = "demo";
+    try {
+      expect(defaultConfig().forceDemo).toBe(true);
+    } finally {
+      delete process.env.WRAPSCOUT_DATA;
+    }
+    expect(defaultConfig().forceDemo).toBe(false);
   });
 
   it("uses demo data without a key and without a snapshot", () => {

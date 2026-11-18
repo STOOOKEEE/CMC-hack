@@ -57,3 +57,10 @@ test("the share image renders", async ({ request }) => {
   expect(res.status()).toBe(200);
   expect(res.headers()["content-type"]).toContain("image/png");
 });
+
+test("a percent sign in the ticker shows the not-found page, not an error", async ({ page, request }) => {
+  await page.goto("/a/%25");
+  await expect(page.getByRole("heading", { name: /No tokenized asset found for “%”/ })).toBeVisible();
+  expect((await request.get("/api/asset/%25")).status()).toBe(404);
+  expect((await request.get("/a/%25/opengraph-image")).status()).toBe(200);
+});

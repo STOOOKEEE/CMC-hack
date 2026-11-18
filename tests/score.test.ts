@@ -90,6 +90,44 @@ describe("rankAsset — gold (mixed units)", () => {
   });
 });
 
+describe("rankAsset — robust unit reference", () => {
+  it("keeps per-gram tokens out even if the consensus is a plain average across units", () => {
+    const r = ranked("XAU", (_w, h) => {
+      h.consensusPrice = 3125; // (5 × 4320 + 2 × 139) / 7 — what a naive average would give
+    });
+    expect(r.best?.cryptoId).toBe(4705);
+    expect(r.wrappers.filter((w) => w.label === "different_unit").map((w) => w.cryptoId).sort()).toEqual([
+      90106, 90107,
+    ]);
+    expect(Math.abs(r.best!.deviationFromConsensus!)).toBeLessThan(0.01);
+    expect(r.referencePrice).toBeGreaterThan(4300);
+  });
+
+  it("follows the volume, not the count, when gram tokens outnumber ounce tokens", () => {
+    const header: AssetHeader = {
+      rwaId: 9, symbol: "XAG", name: "Metal", assetType: "commodity", consensusPrice: null,
+      lastUpdated: null, industry: null, secCik: null,
+    };
+    const w = (cryptoId: number, price: number, volume24h: number): Wrapper => ({
+      cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price, volume24h, marketCap: null,
+      numMarketPairs: 3, chain: null, contract: null, explorerUrl: null, exchanges: [],
+    });
+    const r = rankAsset(header, [
+      w(1, 4320, 50_000_000),
+      w(2, 4318, 40_000_000),
+      w(3, 139, 20_000),
+      w(4, 139.5, 20_000),
+      w(5, 138.8, 20_000),
+    ]);
+    expect(r.best?.cryptoId).toBe(1);
+    expect(r.wrappers.filter((x) => x.label === "different_unit")).toHaveLength(3);
+  });
+
+  it("uses the consensus as the reference when it agrees with the market", () => {
+    expect(ranked("NVDA").referencePrice).toBe(229.07);
+  });
+});
+
 describe("rankAsset — edge cases", () => {
   it("has no best pick when nothing trades", () => {
     const r = ranked("MS");

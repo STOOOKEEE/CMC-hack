@@ -67,6 +67,32 @@ describe("cmcGet", () => {
     expect(err.kind).toBe("rate_limit");
   });
 
+  it("does not retry a 429 caused by an exhausted daily or monthly quota", async () => {
+    const quota: Reply = {
+      status: 429,
+      body: { status: { error_code: 1009, error_message: "daily credit limit reached", credit_count: 0 } },
+    };
+    const { impl, calls } = stubFetch([quota, ok("never")]);
+    const err = await cmcGet("/x", {}, { apiKey: "k", fetchImpl: impl, sleep: noSleep }).catch((e) => e);
+    expect(err.kind).toBe("rate_limit");
+    expect(err.code).toBe(1009);
+    expect(calls).toHaveLength(1);
+  });
+
+  it("aborts a request that hangs past requestTimeoutMs", async () => {
+    const hanging = vi.fn(
+      (_url: string | URL | Request, init?: RequestInit) =>
+        new Promise<Response>((_, reject) => init?.signal?.addEventListener("abort", () => reject(init.signal!.reason))),
+    ) as unknown as typeof fetch;
+    const started = Date.now();
+    const err = await cmcGet("/x", {}, { apiKey: "k", fetchImpl: hanging, sleep: noSleep, retries: 0, requestTimeoutMs: 30 }).catch(
+      (e) => e,
+    );
+    expect(err).toBeInstanceOf(CmcError);
+    expect(err.kind).toBe("network");
+    expect(Date.now() - started).toBeLessThan(1000);
+  });
+
   it("retries 5xx and classifies a thrown fetch as network", async () => {
     const { impl } = stubFetch([fail(502, "bad gateway"), ok("fine")]);
     expect((await cmcGet("/x", {}, { apiKey: "k", fetchImpl: impl, sleep: noSleep })).data).toBe("fine");

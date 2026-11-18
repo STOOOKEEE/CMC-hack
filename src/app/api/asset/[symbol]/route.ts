@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function GET(_req: Request, ctx: RouteContext<"/api/asset/[symbol]">) {
   const { symbol } = await ctx.params;
   try {
-    const view = await getAssetView(decodeURIComponent(symbol));
+    const view = await getAssetView(symbol);
     if (!view) return Response.json({ error: `No tokenized asset found for "${symbol}"` }, { status: 404 });
     return Response.json(view, { headers: { "Cache-Control": "public, max-age=60" } });
   } catch (e) {

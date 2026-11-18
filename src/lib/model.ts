@@ -116,6 +116,8 @@ export interface AssetBundle {
   tokenQuotes: Record<string, RawCryptoQuote>;
   /** keyed by crypto_id as a string; null when the plan does not allow market pairs */
   marketPairs: Record<string, RawMarketPair[]> | null;
+  /** Parts that failed to load and were left empty (e.g. "info", "token metadata"). Absent when complete. */
+  degraded?: string[];
 }
 
 // ---------- Domain ----------
@@ -158,7 +160,7 @@ export type Label =
 export interface ScoredWrapper extends Wrapper {
   label: Label;
   score: number | null;
-  /** price / consensus − 1, null when either is unknown */
+  /** price / reference price − 1 (the reference is the consensus when it is consistent), null if unknown */
   deviationFromConsensus: number | null;
   reasons: string[];
   warnings: string[];
@@ -167,6 +169,8 @@ export interface ScoredWrapper extends Wrapper {
 export interface RankedAsset {
   wrappers: ScoredWrapper[];
   best: ScoredWrapper | null;
+  /** Price defining the asset's unit: CMC's consensus when consistent, else the volume-weighted median. */
+  referencePrice: number | null;
   eligibleCount: number;
   summaryWarnings: string[];
 }

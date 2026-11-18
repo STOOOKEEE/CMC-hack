@@ -8,7 +8,6 @@
  */
 import path from "node:path";
 import { createEndpoints } from "../src/lib/cmc/endpoints";
-import { LiveSource } from "../src/lib/data/source";
 import { writeSnapshot } from "../src/lib/data/snapshotWriter";
 import { requireApiKey } from "./env";
 
@@ -17,7 +16,7 @@ async function main() {
   const api = createEndpoints({ apiKey, minIntervalMs: Number(process.env.SNAPSHOT_MIN_INTERVAL_MS ?? 2100) });
   const dir = path.join("data", "snapshot");
   const started = Date.now();
-  const result = await writeSnapshot(new LiveSource(api), dir, {
+  const result = await writeSnapshot(api, dir, {
     marketPairsTop: Number(process.env.SNAPSHOT_MARKET_PAIRS_TOP ?? 25),
     onProgress: (done, total) => {
       if (done % 25 === 0 || done === total) console.log(`  ${done}/${total} assets`);
@@ -25,8 +24,15 @@ async function main() {
   });
   console.log(
     `Snapshot written to ${dir}/: ${result.assets} assets, ${result.skipped.length} skipped, ` +
-      `${api.creditsUsed()} credits, ${Math.round((Date.now() - started) / 1000)} s.`,
+      `${result.degraded.length} degraded, ${api.creditsUsed()} credits, ${Math.round((Date.now() - started) / 1000)} s.`,
   );
+  if (result.degraded.length > 0) {
+    console.warn(
+      `Degraded assets (some parts missing, e.g. chain or registrant info): ${result.degraded.join(", ")}.
+` +
+        `Re-run later or check fixtures with \`npm run explore\` before committing.`,
+    );
+  }
 }
 
 main().catch((e) => {

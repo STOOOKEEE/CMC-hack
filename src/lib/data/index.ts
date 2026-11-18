@@ -16,16 +16,21 @@ export interface SourceConfig {
   apiKey: string | undefined;
   snapshotDir: string;
   demoDir: string;
+  /** WRAPSCOUT_DATA=demo: always serve the synthetic demo snapshot (the e2e suite relies on it). */
+  forceDemo?: boolean;
 }
 
-/** Spec §7.4: live calls that take longer than this fall back to the snapshot. */
+/** Spec §7.4: a view whose live calls take longer than this (in total) falls back to the snapshot. */
 export const LIVE_TIMEOUT_MS = 8_000;
+/** After a live failure, go straight to the snapshot for this long instead of paying the timeout again. */
+export const LIVE_COOL_DOWN_MS = 2 * 60_000;
 
 export function defaultConfig(): SourceConfig {
   return {
     apiKey: process.env.CMC_API_KEY,
     snapshotDir: path.join(process.cwd(), "data", "snapshot"),
     demoDir: path.join(process.cwd(), "fixtures", "demo-snapshot"),
+    forceDemo: process.env.WRAPSCOUT_DATA === "demo",
   };
 }
 
@@ -47,10 +52,13 @@ function snapshotSource(dir: string, mode: "snapshot" | "demo"): SnapshotSource 
  * No key → the real snapshot if present, otherwise the synthetic demo snapshot.
  */
 export function getSources(cfg: SourceConfig = defaultConfig()): Sources {
+  if (cfg.forceDemo) return { primary: snapshotSource(cfg.demoDir, "demo"), fallback: null };
   const snapshot = SnapshotSource.exists(cfg.snapshotDir) ? snapshotSource(cfg.snapshotDir, "snapshot") : null;
   if (cfg.apiKey) {
     if (liveSingleton?.key !== cfg.apiKey) {
-      liveSingleton = { key: cfg.apiKey, source: new LiveSource(createEndpoints({ apiKey: cfg.apiKey })) };
+      // In the request path: one quick retry at most, and no single HTTP call longer than 5 s.
+      const api = createEndpoints({ apiKey: cfg.apiKey, retries: 1, requestTimeoutMs: 5_000 });
+      liveSingleton = { key: cfg.apiKey, source: new LiveSource(api) };
     }
     return { primary: liveSingleton.source, fallback: snapshot };
   }
@@ -65,33 +73,55 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
 }
 
-async function withFallback<T>(
-  sources: Sources,
-  fn: (s: DataSource) => Promise<T>,
-  timeoutMs: number,
-): Promise<{ value: T; source: DataSource }> {
+/** Circuit breaker: primary source → time until which it is skipped. */
+const downUntil = new WeakMap<DataSource, number>();
+
+interface CallContext {
+  sources: Sources;
+  /** Absolute deadline (ms since epoch) shared by every live call of one view. */
+  deadline: number;
+  coolDownMs: number;
+}
+
+async function withFallback<T>(ctx: CallContext, fn: (s: DataSource) => Promise<T>): Promise<{ value: T; source: DataSource }> {
+  const { primary, fallback } = ctx.sources;
+  if (fallback && (downUntil.get(primary) ?? 0) > Date.now()) {
+    return { value: await fn(fallback), source: fallback };
+  }
   try {
-    return { value: await withTimeout(fn(sources.primary), timeoutMs), source: sources.primary };
+    const remaining = Math.max(0, ctx.deadline - Date.now());
+    return { value: await withTimeout(fn(primary), remaining), source: primary };
   } catch (e) {
-    if (!sources.fallback) throw e;
-    console.warn(`[wrapscout] ${sources.primary.mode} source failed, using ${sources.fallback.mode}:`, (e as Error).message);
-    return { value: await fn(sources.fallback), source: sources.fallback };
+    if (!fallback) throw e;
+    downUntil.set(primary, Date.now() + ctx.coolDownMs);
+    console.warn(`[wrapscout] ${primary.mode} source failed, using ${fallback.mode} for a while:`, (e as Error).message);
+    return { value: await fn(fallback), source: fallback };
   }
 }
 
 export interface ViewOptions {
   sources?: Sources;
+  /** Total live-data budget for the call (default LIVE_TIMEOUT_MS). */
   timeoutMs?: number;
+  /** How long to skip live after a failure when a snapshot exists (default LIVE_COOL_DOWN_MS). */
+  coolDownMs?: number;
+}
+
+function context(opts: ViewOptions): CallContext {
+  return {
+    sources: opts.sources ?? getSources(),
+    deadline: Date.now() + (opts.timeoutMs ?? LIVE_TIMEOUT_MS),
+    coolDownMs: opts.coolDownMs ?? LIVE_COOL_DOWN_MS,
+  };
 }
 
 export async function getAssetView(symbol: string, opts: ViewOptions = {}): Promise<AssetView | null> {
-  const sources = opts.sources ?? getSources();
-  const timeoutMs = opts.timeoutMs ?? LIVE_TIMEOUT_MS;
-  const { value: index } = await withFallback(sources, (s) => s.searchIndex(), timeoutMs);
+  const ctx = context(opts);
+  const { value: index } = await withFallback(ctx, (s) => s.searchIndex());
   const entry = resolveSymbol(index, symbol);
   if (!entry) return null;
 
-  const { value: bundle, source } = await withFallback(sources, (s) => s.assetBundle(entry.rwaId), timeoutMs);
+  const { value: bundle, source } = await withFallback(ctx, (s) => s.assetBundle(entry.rwaId));
   if (!bundle) return null;
 
   const { header, wrappers } = normalizeAsset(bundle);
@@ -106,13 +136,11 @@ export interface Listing<T> {
 }
 
 export async function getSearchIndex(opts: ViewOptions = {}): Promise<Listing<SearchEntry>> {
-  const sources = opts.sources ?? getSources();
-  const { value, source } = await withFallback(sources, (s) => s.searchIndex(), opts.timeoutMs ?? LIVE_TIMEOUT_MS);
+  const { value, source } = await withFallback(context(opts), (s) => s.searchIndex());
   return { entries: value, dataMode: source.mode, asOf: await source.asOf() };
 }
 
 export async function getPopular(limit: number, opts: ViewOptions = {}): Promise<Listing<PopularEntry>> {
-  const sources = opts.sources ?? getSources();
-  const { value, source } = await withFallback(sources, (s) => s.popular(limit), opts.timeoutMs ?? LIVE_TIMEOUT_MS);
+  const { value, source } = await withFallback(context(opts), (s) => s.popular(limit));
   return { entries: value, dataMode: source.mode, asOf: await source.asOf() };
 }

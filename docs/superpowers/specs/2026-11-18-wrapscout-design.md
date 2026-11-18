@@ -204,8 +204,10 @@ Une page actif non cachée ≈ 1 (RWA quotes) + 1 (crypto quotes) + 0–N (où a
 Avec TTL 2 min et la coalescence, le coût dépend du temps, pas du nombre de visiteurs.
 
 **Snapshot de secours = tout l'univers cherchable (~800 actifs `has_tokens`)**, pas seulement les
-populaires (notre choix) : `quotes/latest` RWA accepte 50 ids par appel (~16 appels), crypto quotes
-100 ids par appel, crypto info cachée 7 jours → quelques dizaines de crédits par snapshot complet.
+populaires (notre choix) : `quotes/latest` RWA accepte 50 ids par appel (~16 appels), crypto info et crypto
+quotes 100 ids par appel (~30 appels chacun), mais `/v5/real-world-assets/info` se fait **actif par actif
+(~800 appels)**, plus ≤ 100 appels market pairs → **≈ 1 000 appels / crédits, ≈ 35 min** à ~28 appels/min.
+(Si Phase 0 montre que `info` accepte plusieurs ids, on tombe à ~150 appels.)
 Régénéré au moins une fois avant la soumission et pendant le jugement si possible. Ainsi, même si la
 clé expire ou le quota est épuisé, **chaque recherche fonctionne** (données datées, bandeau visible).
 

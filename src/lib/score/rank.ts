@@ -30,11 +30,28 @@ function classify(w: Wrapper, ref: number | null): Label | "eligible" {
   return "eligible";
 }
 
+/**
+ * Price that defines "the" unit of the asset. A volume-weighted median of priced wrappers (plain median
+ * if no volume is reported); CMC's consensus is preferred only when it agrees with it within the unit
+ * tolerance — its exact definition is unverified and a plain average across units would be meaningless.
+ */
+function referencePrice(consensus: number | null, wrappers: Wrapper[]): number | null {
+  const priced = wrappers.filter((w) => w.price !== null);
+  const totalVolume = priced.reduce((s, w) => s + (w.volume24h ?? 0), 0);
+  const market =
+    priced.length === 0
+      ? null
+      : totalVolume > 0
+        ? weightedMedian(priced.map((w) => ({ value: w.price as number, weight: w.volume24h ?? 0 })))
+        : median(priced.map((w) => w.price as number));
+  if (market === null) return consensus;
+  if (consensus !== null && Math.abs(consensus / market - 1) <= C.unitTolerance) return consensus;
+  return market;
+}
+
 export function rankAsset(header: AssetHeader, wrappers: Wrapper[]): RankedAsset {
-  const ref =
-    header.consensusPrice ?? median(wrappers.flatMap((w) => (w.price === null ? [] : [w.price])));
-  const deviationOf = (w: Wrapper) =>
-    w.price !== null && header.consensusPrice ? w.price / header.consensusPrice - 1 : null;
+  const ref = referencePrice(header.consensusPrice, wrappers);
+  const deviationOf = (w: Wrapper) => (w.price !== null && ref ? w.price / ref - 1 : null);
 
   const classified = wrappers.map((w) => ({ w, cls: classify(w, ref) }));
   const eligible = classified.filter((c) => c.cls === "eligible").map((c) => c.w);
@@ -101,6 +118,7 @@ export function rankAsset(header: AssetHeader, wrappers: Wrapper[]): RankedAsset
   return {
     wrappers: [...scored, ...ineligible],
     best: scored[0] ?? null,
+    referencePrice: ref,
     eligibleCount: eligible.length,
     summaryWarnings: summaryWarnings(counts, eligible.length),
   };

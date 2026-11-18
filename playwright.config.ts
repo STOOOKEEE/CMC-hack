@@ -10,12 +10,12 @@ export default defineConfig({
     trace: "off",
     launchOptions: process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : {},
   },
-  // Runs the production build in demo mode (no API key, no snapshot → synthetic demo data).
+  // Runs the production build on the synthetic demo snapshot, even if data/snapshot/ is committed.
   webServer: {
     command: `npx next start -p ${PORT}`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: false,
     timeout: 60_000,
-    env: { CMC_API_KEY: "" },
+    env: { CMC_API_KEY: "", WRAPSCOUT_DATA: "demo" },
   },
 });

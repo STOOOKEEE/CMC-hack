@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(props: PageProps<"/a/[symbol]">): Promise<Metadata> {
   const { symbol } = await props.params;
-  const ticker = decodeURIComponent(symbol).toUpperCase();
+  const ticker = symbol.toUpperCase();
   return {
     title: `${ticker}: which tokenized version should I buy? — WrapScout`,
     description: `Every tokenized version of ${ticker}, ranked by liquidity, price fidelity and market reach.`,
@@ -20,7 +20,7 @@ export async function generateMetadata(props: PageProps<"/a/[symbol]">): Promise
 
 export default async function AssetPage(props: PageProps<"/a/[symbol]">) {
   const { symbol } = await props.params;
-  const view = await getAssetView(decodeURIComponent(symbol));
+  const view = await getAssetView(symbol);
   if (!view) notFound();
 
   const { header, ranked } = view;
@@ -52,9 +52,12 @@ export default async function AssetPage(props: PageProps<"/a/[symbol]">) {
           ) : null}
         </p>
         <p className="mt-2 text-sm">
-          {header.consensusPrice !== null ? (
+          {ranked.referencePrice !== null ? (
             <>
-              Consensus tokenized price <strong>{formatPrice(header.consensusPrice)}</strong> ·{" "}
+              {ranked.referencePrice === header.consensusPrice
+                ? "Consensus tokenized price"
+                : "Reference price (volume-weighted)"}{" "}
+              <strong>{formatPrice(ranked.referencePrice)}</strong> ·{" "}
             </>
           ) : null}
           <strong>

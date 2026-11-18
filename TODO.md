@@ -44,7 +44,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 ## Phase 3 — Où acheter + robustesse + finitions (mar 1 – ven 4 déc)
 - [x] Section « Where to buy » : exchanges (si le plan le permet) + chaîne + contrat + explorer + note émetteur
 - [x] `npm run snapshot` écrit tout l'univers cherchable ; servi si CMC échoue, avec bandeau daté
-- [ ] **Générer le vrai snapshot** (`npm run snapshot`, ~30 min) et le commiter avant le déploiement, puis avant la soumission
+- [ ] **Générer le vrai snapshot** (`npm run snapshot`, ≈ 35 min, ≈ 1 000 crédits) et le commiter avant le déploiement, puis avant la soumission ; vérifier la ligne « degraded » en fin de script
+- [ ] Phase 0 : vérifier si `/v5/real-world-assets/info` accepte plusieurs ids (diviserait le coût du snapshot par ~6) et ce que vaut le consensus de l'or (XAU)
 - [x] `data/issuers.json` : note d'accès par émetteur (US, KYC) + lien, affichée sur la carte (spec §6.6)
 - [ ] Relire `data/issuers.json` contre les conditions actuelles de chaque émetteur
 - [x] Timeout serveur 8 s → snapshot ; squelettes de chargement ; ticker inconnu → suggestions

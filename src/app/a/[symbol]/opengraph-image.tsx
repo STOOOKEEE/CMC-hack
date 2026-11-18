@@ -8,8 +8,8 @@ export const contentType = "image/png";
 
 export default async function Image({ params }: { params: Promise<{ symbol: string }> }) {
   const { symbol } = await params;
-  const view = await getAssetView(decodeURIComponent(symbol)).catch(() => null);
-  const name = view?.header.name ?? decodeURIComponent(symbol).toUpperCase();
+  const view = await getAssetView(symbol).catch(() => null);
+  const name = view?.header.name ?? symbol.toUpperCase();
   const best = view?.ranked.best;
   const answer = best
     ? `${best.symbol} · ${best.issuerName ?? "unknown issuer"} · ${best.chain ?? "unknown chain"}`
