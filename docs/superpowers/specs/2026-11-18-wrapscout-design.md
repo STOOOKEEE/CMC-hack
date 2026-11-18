@@ -115,8 +115,8 @@ fraîcheur de A et la robustesse de B.
 
 ## 5. Stack et architecture (nos choix)
 
-- **Next.js 15 (App Router) + TypeScript + Tailwind CSS**.
-- **Hébergement : Railway** (outil déjà connecté à la session). Alternative équivalente : Vercel.
+- **Next.js 16 (App Router) + TypeScript + Tailwind CSS 4** (version stable au 18 nov. 2026).
+- **Hébergement : à choisir par l'équipe** — Vercel (gratuit) ou Railway ; le code est un Next.js standard, rien n'est spécifique à l'un ou l'autre.
 - **Tests** : Vitest (logique pure, sur fixtures enregistrées) + 1–2 tests Playwright de fumée.
 - **CI** : GitHub Actions (lint + typecheck + tests) sur chaque push.
 - **Pas de base de données.** Cache mémoire (LRU avec TTL) + fichiers JSON (snapshot, caches longs).
@@ -195,6 +195,9 @@ Au round 1, `/v5/real-world-assets/market-pairs/list` a renvoyé **403 même sur
    clairement étiquetée « issuer link, not CMC data ».
 
 Le MVP est livrable même avec le repli seul. Décision à acter à la fin de la Phase 0.
+
+**Implémenté (18 nov.)** : l'app essaie (2) pour les 4 wrappers les plus liquides et, si le plan refuse, affiche (4)
+— chaîne, contrat, lien explorer et note émetteur. `npm run explore` sonde aussi (1) et (3) pour décider.
 
 ### 6.5 Budget de crédits (estimation, à recaler avec `/v1/key/info`)
 Une page actif non cachée ≈ 1 (RWA quotes) + 1 (crypto quotes) + 0–N (où acheter) crédits.
