@@ -54,7 +54,7 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 - [x] Images OpenGraph par actif
 - [x] Tests Playwright de fumée (8 scénarios)
 - [x] Endpoint JSON public `/api/asset/[symbol]`
-- [ ] (Bonus) serveur MCP `best_wrapper` — seulement si tout le reste est propre
+- [x] (Bonus) serveur MCP : `search_tokenized_assets`, `best_tokenized_version`, `compare_tokenized_versions`
 - [ ] **Feature freeze ven 4 déc au soir**
 
 ## Phase 4 — Soumission (sam 5 – lun 7 déc)

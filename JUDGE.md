@@ -12,6 +12,8 @@ Open the live site (_link coming soon_) and click through:
    *No tradable version right now* and shows why.
 4. **`/method`** — the full, deterministic formula and every CoinMarketCap endpoint used.
 5. **`/api/asset/nvda`** — the same answer as JSON.
+6. **MCP server** — `claude mcp add wrapscout -- npx tsx <repo>/mcp/server.ts`, then ask your assistant
+   "which tokenized version of Tesla should I buy?".
 
 What to look at:
 

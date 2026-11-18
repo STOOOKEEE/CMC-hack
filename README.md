@@ -25,11 +25,30 @@ Built for the [Build with CMC: API Hackathon](https://coinmarketcap.com/api/hack
 - **Every other version**, with what is wrong with it: *No market*, *Too thin*, *Different unit*, or simply a
   weaker score. A "How do you buy?" filter shows the best version on your chain.
 - **Method page** that explains the score, and a **JSON API** (`GET /api/asset/nvda`) returning the same view.
+- **MCP server** so an AI assistant can answer "which tokenized Nvidia should I buy?" with the same deterministic
+  ranking instead of guessing (see below).
+
+## Use it from Claude, Cursor or any MCP client
+
+```bash
+claude mcp add wrapscout -- npx tsx /absolute/path/to/CMC-hack/mcp/server.ts
+```
+
+| Tool | What it returns |
+|---|---|
+| `search_tokenized_assets(query)` | Assets with tokenized versions matching a ticker or name |
+| `best_tokenized_version(symbol)` | Best pick, reasons, where to buy, issuer note, what to watch out for |
+| `compare_tokenized_versions(symbol)` | Every version with issuer, chain, label, score, price, volume and warnings |
+
+It reads the same data as the site: live CMC with `CMC_API_KEY`, else `data/snapshot/`, else demo data
+(clearly labelled in every answer).
 
 ## How the score works
 
 1. **Filter out what you should not buy.** No tracked market (`price: null`), a price more than 25% away from
-   the consensus (a different unit, such as grams versus ounces), or less than $10k traded in 24h.
+   the reference price (a different unit, such as grams versus ounces), or less than $10k traded in 24h. The
+   reference is CMC's consensus tokenized price when it agrees with the market, otherwise the volume-weighted
+   median of the versions.
 2. **Score the rest from 0 to 100:** liquidity 50% (log of 24h volume), price fidelity 30% (distance from the
    volume-weighted median, zero at 2%), market reach 20% (number of markets, full marks at 5).
 3. **Label:** Best pick / Only option, Good alternative (≥ 60), Weak.

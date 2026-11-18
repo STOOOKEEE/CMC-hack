@@ -12,12 +12,15 @@
     "e2e": "playwright test",
     "explore": "tsx scripts/explore.ts",
     "snapshot": "tsx scripts/snapshot.ts",
-    "demo-snapshot": "tsx scripts/demo-snapshot.ts"
+    "demo-snapshot": "tsx scripts/demo-snapshot.ts",
+    "mcp": "tsx mcp/server.ts"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "next": "16.4.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
