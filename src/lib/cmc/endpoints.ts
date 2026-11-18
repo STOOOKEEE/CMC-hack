@@ -17,7 +17,8 @@ function chunk<T>(items: T[], size: number): T[][] {
 
 /** Extracts the offending id from messages like `Invalid value for "id": "39839"`. */
 function invalidIdFrom(message: string): number | null {
-  const m = /"id"\D*?(\d+)/.exec(message);
+  // Real messages use single quotes (Invalid value for 'id': '39318'); older write-ups showed double quotes.
+  const m = /["']id["']\D*?(\d+)/.exec(message);
   return m ? Number(m[1]) : null;
 }
 

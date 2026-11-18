@@ -165,6 +165,17 @@ describe("endpoints", () => {
     expect(res.unresolved).toEqual([39839]);
   });
 
+  it("parses the real single-quoted message: Invalid value for 'id': '39318'", async () => {
+    const { impl, calls } = stubFetch([
+      fail(400, "Invalid value for 'id': '39318'"),
+      ok({ "1": { id: 1, name: "A", symbol: "A" } }),
+    ]);
+    const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
+    const res = await api.cryptoInfo([1, 39318]);
+    expect(calls[1].url.searchParams.get("id")).toBe("1");
+    expect(res.unresolved).toEqual([39318]);
+  });
+
   it("returns null market pairs when the plan does not allow them", async () => {
     const { impl } = stubFetch([fail(403, "Your plan does not include this endpoint")]);
     const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });

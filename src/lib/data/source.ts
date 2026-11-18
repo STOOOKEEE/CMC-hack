@@ -99,11 +99,14 @@ export class LiveSource implements DataSource {
     const quotes = await this.api.rwaQuotes(rwaIds);
     for (const q of quotes) await this.cache.getOrLoad(`rwaq:${q.rwa_id}`, this.ttl(TTL.rwaQuotes), async () => q);
     const tokenIds = quotes.flatMap((q) => (q.tokens ?? []).map((t) => t.crypto_id));
-    await this.tokenMeta(tokenIds);
-    const tokenQuotes = await this.api.cryptoQuotes(tokenIds);
-    for (const q of quotes) {
+    // A failing batch must not abort a whole snapshot: assetBundle retries per asset and flags it degraded.
+    await this.tokenMeta(tokenIds).catch(() => undefined);
+    const tokenQuotes = await this.api.cryptoQuotes(tokenIds).catch(() => null);
+    for (const q of tokenQuotes ? quotes : []) {
       const ids = (q.tokens ?? []).map((t) => t.crypto_id);
-      const subset = Object.fromEntries(ids.filter((id) => tokenQuotes[id]).map((id) => [String(id), tokenQuotes[id]]));
+      const subset = Object.fromEntries(
+        ids.filter((id) => tokenQuotes?.[id]).map((id) => [String(id), tokenQuotes![id]]),
+      );
       await this.cache.getOrLoad(`cq:${ids.join(",")}`, this.ttl(TTL.cryptoQuotes), async () => subset);
     }
     // Registrant info, 50 assets per call. If the batch fails, assetBundle falls back to one call per asset.

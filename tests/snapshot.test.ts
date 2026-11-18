@@ -83,6 +83,15 @@ describe("writeSnapshot", () => {
     expect(result.assets).toBe(5);
   });
 
+  it("survives a token metadata batch that keeps failing", async () => {
+    const api = counted(createFixtureEndpoints(fixturesDir), (name) => {
+      if (name === "cryptoInfo") throw new Error("batch rejected");
+    });
+    const result = await writeSnapshot(api, tmpDir(), {});
+    expect(result.assets).toBe(5);
+    expect(result.degraded.length).toBeGreaterThan(0);
+  });
+
   it("leaves no temporary directory behind when it fails", async () => {
     const api = counted(createFixtureEndpoints(fixturesDir), (name) => {
       if (name === "rwaQuotes") throw new Error("hard failure");
