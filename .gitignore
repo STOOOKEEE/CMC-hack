@@ -48,3 +48,6 @@ next-env.d.ts
 
 # interrupted snapshot runs
 *.tmp-*/
+
+# demo video output
+/demo/
