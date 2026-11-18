@@ -33,6 +33,45 @@ describe("normalizeAsset", () => {
     expect(nvdax.issuerName).toBe("Backed Assets");
   });
 
+  it("lists every chain a wrapper is deployed on, primary first (real CMC info shape)", () => {
+    const { wrappers } = normalizeAsset(fixtureBundle("NVDA"));
+    const nvdax = wrappers.find((w) => w.cryptoId === 36992)!;
+    expect(nvdax.deployments.map((d) => d.chain)).toEqual([
+      "Solana",
+      "BNB Smart Chain (BEP20)",
+      "Ethereum",
+      "Ink",
+      "TON",
+      "X Layer",
+    ]);
+    const eth = nvdax.deployments.find((d) => d.chain === "Ethereum")!;
+    expect(eth.explorerUrl).toBe("https://etherscan.io/token/0xc845b2894dbddd03858fd2d643b4ef725fe0849d");
+    expect(nvdax.deployments.find((d) => d.chain === "TON")!.explorerUrl).toBeNull();
+    // Same EVM address on several chains: no bscscan link is listed, so BNB Chain must not borrow arbiscan's.
+    expect(nvdax.deployments.find((d) => d.chain === "BNB Smart Chain (BEP20)")!.explorerUrl).toBeNull();
+    expect(nvdax.deployments.find((d) => d.chain === "Ink")!.explorerUrl).toBe(
+      "https://explorer.inkonchain.com/token/0xc845b2894dbddd03858fd2d643b4ef725fe0849d",
+    );
+  });
+
+  it("takes the primary chain from the deployment matching platform.token_address", () => {
+    const nvdaon = normalizeAsset(fixtureBundle("NVDA")).wrappers.find((w) => w.cryptoId === 38093)!;
+    expect(nvdaon.chain).toBe("Robinhood Chain");
+    expect(nvdaon.contract).toBe("0xf1b95AE4E7700b962714702EA53784Dc8492a856");
+    // urls.explorer[0] is an Etherscan link for another address: never attach it to the Robinhood contract.
+    expect(nvdaon.explorerUrl).toBeNull();
+    expect(nvdaon.deployments.find((d) => d.chain === "Ethereum")!.explorerUrl).toBe(
+      "https://etherscan.io/token/0x2D1F7226Bd1F780AF6B9A49DCC0aE00E8Df4bDEE",
+    );
+  });
+
+  it("falls back to the platform when contract_address is missing", () => {
+    const rh = normalizeAsset(fixtureBundle("NVDA")).wrappers.find((w) => w.cryptoId === 90003)!;
+    expect(rh.deployments).toHaveLength(1);
+    expect(rh.deployments[0].chain).toBe("Arbitrum");
+    expect(rh.explorerUrl).toContain("arbiscan.io");
+  });
+
   it("leaves chain null when crypto info is missing for a wrapper", () => {
     const bundle = fixtureBundle("NVDA");
     delete bundle.tokenMeta["36992"];

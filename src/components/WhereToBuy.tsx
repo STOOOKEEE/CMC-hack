@@ -47,6 +47,29 @@ export function WhereToBuy({ wrapper }: { wrapper: Wrapper }) {
           </>
         ) : null}
       </p>
+      {wrapper.deployments.length > 1 ? (
+        <p>
+          <span className="text-muted">Also on: </span>
+          {wrapper.deployments.slice(1).map((d, i) => (
+            <span key={`${d.chain}-${d.address}`}>
+              {i > 0 ? " · " : null}
+              {d.explorerUrl ? (
+                <a
+                  href={d.explorerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                  title={d.address ?? undefined}
+                >
+                  {d.chain} ↗
+                </a>
+              ) : (
+                <span title={d.address ?? undefined}>{d.chain}</span>
+              )}
+            </span>
+          ))}
+        </p>
+      ) : null}
       {issuer ? (
         <div className="rounded-md bg-surface-2 px-3 py-2 text-xs leading-relaxed">
           <p>

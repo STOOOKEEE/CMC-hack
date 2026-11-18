@@ -40,7 +40,9 @@ function whereLine(w: ScoredWrapper): string {
   const venues = w.exchanges.length > 0 ? `Exchanges: ${w.exchanges.join(", ")}. ` : "";
   const chain = `Chain: ${w.chain ?? "unknown"}${w.contract ? `, contract ${w.contract}` : ""}`;
   const explorer = w.explorerUrl ? ` (${w.explorerUrl})` : "";
-  return `${venues}${chain}${explorer}.`;
+  const others = w.deployments.slice(1).map((d) => d.chain);
+  const also = others.length > 0 ? ` Also deployed on: ${others.join(", ")}.` : "";
+  return `${venues}${chain}${explorer}.${also}`;
 }
 
 export async function searchTool(query: string, opts: ViewOptions = {}): Promise<ToolResult<SearchEntry[]>> {

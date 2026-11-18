@@ -110,7 +110,7 @@ describe("rankAsset — robust unit reference", () => {
     };
     const w = (cryptoId: number, price: number, volume24h: number): Wrapper => ({
       cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price, volume24h, marketCap: null,
-      numMarketPairs: 3, chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none",
+      numMarketPairs: 3, chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none", deployments: [],
     });
     const r = rankAsset(header, [
       w(1, 4320, 50_000_000),
@@ -148,7 +148,7 @@ describe("rankAsset — wording", () => {
     const w = (cryptoId: number): Wrapper => ({
       cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price: 100, volume24h: 50_000,
       marketCap: null, numMarketPairs: 5, chain: null, contract: null, explorerUrl: null, exchanges: [],
-      exchangesStatus: "none",
+      exchangesStatus: "none", deployments: [],
     });
     const r = rankAsset(header, [w(1), w(2)]);
     const mostLiquid = r.wrappers.filter((x) => x.reasons.some((reason) => reason.startsWith("Most liquid")));
@@ -181,7 +181,7 @@ describe("rankAsset — edge cases", () => {
     };
     const base: Omit<Wrapper, "cryptoId" | "symbol" | "volume24h"> = {
       name: "x", issuerName: null, price: 100, marketCap: null, numMarketPairs: 5,
-      chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none",
+      chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none", deployments: [],
     };
     // Same volume ⇒ same score; ordering must then follow input-independent volume tiebreak.
     const r = rankAsset(header, [

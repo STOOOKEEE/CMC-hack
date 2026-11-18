@@ -14,10 +14,23 @@ test("search for nvda and land on the best pick", async ({ page }) => {
   await expect(page.getByTestId("summary-warnings")).toContainText("2 versions have no market");
 });
 
-test("the chain filter shows the best version on that chain", async ({ page }) => {
+test("the chain filter counts every chain a token is deployed on", async ({ page }) => {
   await page.goto("/a/nvda");
-  await page.getByRole("button", { name: "Ethereum" }).click();
-  await expect(page.getByTestId("best-in-filter")).toContainText("Best on Ethereum: NVDAon");
+  // NVDAx's primary chain is Solana, but it is also deployed on Ethereum.
+  await page.getByRole("button", { name: "Ethereum", exact: true }).click();
+  await expect(page.getByTestId("best-in-filter")).toContainText("Best on Ethereum: NVDAx");
+  await page.getByRole("button", { name: "Robinhood Chain", exact: true }).click();
+  await expect(page.getByTestId("best-in-filter")).toContainText("Best on Robinhood Chain: NVDAon");
+});
+
+test("where to buy lists the other chains with their own explorer links", async ({ page }) => {
+  await page.goto("/a/nvda");
+  const where = page.getByTestId("where-to-buy");
+  await expect(where).toContainText("Also on");
+  await expect(where.getByRole("link", { name: /Ethereum/ })).toHaveAttribute(
+    "href",
+    "https://etherscan.io/token/0xc845b2894dbddd03858fd2d643b4ef725fe0849d",
+  );
 });
 
 test("gold flags per-gram tokens as a different unit", async ({ page }) => {

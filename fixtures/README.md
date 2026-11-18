@@ -6,6 +6,11 @@ These files mimic CoinMarketCap API response shapes (`{ status, data }`) for the
 uses. **They are synthetic**: shapes are modelled on public write-ups from round-1 hackathon projects,
 and every value (prices, volumes, ids, contract addresses, exchanges) is illustrative.
 
+**Exception:** in `crypto-info.json`, the entries for ids `4705` (PAXG), `5176` (XAUt), `36992` (NVDAX) and `38093`
+(NVDAon) are **real** `/v2/cryptocurrency/info` responses captured on 2026-11-18 from the keyless public API
+(trimmed to the fields we read; marked with `_source`). They revealed multi-chain deployments and explorer-link
+mismatches that the synthetic data did not have (see FEEDBACK.md §B).
+
 They power the unit tests and the demo snapshot. Once a CMC API key is available, run:
 
 ```bash

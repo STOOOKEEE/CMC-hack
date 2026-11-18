@@ -47,8 +47,8 @@ function kindForStatus(status: number): CmcErrorKind {
 }
 
 const RETRYABLE: CmcErrorKind[] = ["rate_limit", "server", "network"];
-/** Daily / monthly credit quota exhausted: retrying cannot help until the period resets. */
-const QUOTA_CODES = new Set([1009, 1010]);
+/** Daily / monthly credit quota or anonymous limit exhausted: retrying cannot help until the period resets. */
+const QUOTA_CODES = new Set([1009, 1010, 1022]);
 
 function isRetryable(e: unknown): boolean {
   if (!(e instanceof CmcError) || !RETRYABLE.includes(e.kind)) return false;
@@ -56,7 +56,7 @@ function isRetryable(e: unknown): boolean {
 }
 
 interface Envelope<T> {
-  status?: { error_code?: number; error_message?: string | null; credit_count?: number };
+  status?: { error_code?: number | string; error_message?: string | null; credit_count?: number };
   data?: T;
 }
 
@@ -84,7 +84,9 @@ async function once<T>(
     // Non-JSON body (proxy error page, etc.) — fall through with an empty envelope.
   }
   if (!res.ok) {
-    const code = typeof body.status?.error_code === "number" ? body.status.error_code : undefined;
+    // CMC sends error_code as a number or as a numeric string ("1005") depending on the endpoint.
+    const rawCode = Number(body.status?.error_code);
+    const code = Number.isFinite(rawCode) && rawCode !== 0 ? rawCode : undefined;
     throw new CmcError(kindForStatus(res.status), res.status, body.status?.error_message ?? `HTTP ${res.status}`, code);
   }
   return { data: body.data as T, creditCount: body.status?.credit_count ?? 0 };

@@ -162,3 +162,25 @@ describe("endpoints", () => {
     for (let i = 0; i < 3; i++) expect((await api.rwaInfo(2))?.industry).toBe("Semis");
   });
 });
+
+describe("cmcGet with real CMC error envelopes", () => {
+  it("reads error_code sent as a string and does not retry exhausted quotas", async () => {
+    for (const code of ["1009", "1010", "1022"]) {
+      const reply: Reply = {
+        status: 429,
+        body: { status: { error_code: code, error_message: "limit reached", credit_count: 0 } },
+      };
+      const { impl, calls } = stubFetch([reply, ok("never")]);
+      const err = await cmcGet("/x", {}, { apiKey: "k", fetchImpl: impl, sleep: noSleep }).catch((e) => e);
+      expect(err.code).toBe(Number(code));
+      expect(calls).toHaveLength(1);
+    }
+  });
+
+  it("still retries a per-minute rate limit (1008)", async () => {
+    const reply: Reply = { status: 429, body: { status: { error_code: "1008", error_message: "minute limit" } } };
+    const { impl, calls } = stubFetch([reply, ok("fine")]);
+    expect((await cmcGet("/x", {}, { apiKey: "k", fetchImpl: impl, sleep: noSleep })).data).toBe("fine");
+    expect(calls).toHaveLength(2);
+  });
+});

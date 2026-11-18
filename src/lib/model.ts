@@ -70,12 +70,19 @@ export interface RawCryptoInfo {
   name: string;
   symbol: string;
   slug?: string;
+  /** Primary deployment. Its `name` can differ from the matching contract_address entry ("Robinhood" vs "Robinhood Chain"). */
   platform?: {
-    id?: number;
+    id?: number | string;
     name: string;
     slug?: string;
     token_address?: string;
   } | null;
+  /** Every chain the token is deployed on (real responses list several: Solana, Ethereum, BNB Chain…). */
+  contract_address?: {
+    contract_address: string;
+    platform?: { name?: string; coin?: { id?: string | number; name?: string; symbol?: string; slug?: string } };
+  }[];
+  /** Explorer links for the deployments, in no guaranteed order. */
   urls?: { explorer?: string[]; website?: string[] };
 }
 
@@ -122,6 +129,13 @@ export interface AssetBundle {
 
 // ---------- Domain ----------
 
+export interface Deployment {
+  chain: string;
+  address: string | null;
+  /** An explorer link that actually contains `address`, or null. */
+  explorerUrl: string | null;
+}
+
 export interface Wrapper {
   cryptoId: number;
   symbol: string;
@@ -131,9 +145,12 @@ export interface Wrapper {
   volume24h: number | null;
   marketCap: number | null;
   numMarketPairs: number | null;
+  /** Primary deployment (same as deployments[0]). */
   chain: string | null;
   contract: string | null;
   explorerUrl: string | null;
+  /** Every chain the wrapper lives on, primary first. */
+  deployments: Deployment[];
   exchanges: string[];
   /** Why `exchanges` looks the way it does: listed, none tracked, not fetched for this wrapper, or refused by the plan. */
   exchangesStatus: "listed" | "none" | "not_fetched" | "plan";

@@ -7,16 +7,20 @@ import { LabelBadge } from "./LabelBadge";
 
 const ELIGIBLE = new Set(["best", "only_option", "good", "weak"]);
 
+const chainsOf = (w: ScoredWrapper): string[] =>
+  w.deployments.length > 0 ? [...new Set(w.deployments.map((d) => d.chain))] : w.chain ? [w.chain] : [];
+
 /** All versions, with the "How do you buy?" chain filter (spec §2 secondary goal). */
 export function WrapperTable({ wrappers }: { wrappers: ScoredWrapper[] }) {
+  // A token is buyable on every chain it is deployed on, not only its primary one.
   const chains = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const w of wrappers) if (w.chain) counts.set(w.chain, (counts.get(w.chain) ?? 0) + 1);
+    for (const w of wrappers) for (const c of chainsOf(w)) counts.set(c, (counts.get(c) ?? 0) + 1);
     return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([c]) => c);
   }, [wrappers]);
   const [chain, setChain] = useState<string | null>(null);
 
-  const rows = chain ? wrappers.filter((w) => w.chain === chain) : wrappers;
+  const rows = chain ? wrappers.filter((w) => chainsOf(w).includes(chain)) : wrappers;
   const bestInFilter = chain ? rows.find((w) => ELIGIBLE.has(w.label)) : undefined;
 
   return (
@@ -77,7 +81,14 @@ export function WrapperTable({ wrappers }: { wrappers: ScoredWrapper[] }) {
                   ))}
                 </td>
                 <td className="px-3 py-2">{w.issuerName ?? "—"}</td>
-                <td className="px-3 py-2">{w.chain ?? "Unknown"}</td>
+                <td className="px-3 py-2">
+                  {w.chain ?? "Unknown"}
+                  {chainsOf(w).length > 1 ? (
+                    <div className="text-xs text-muted" title={chainsOf(w).slice(1).join(", ")}>
+                      +{chainsOf(w).length - 1} more
+                    </div>
+                  ) : null}
+                </td>
                 <td className="px-3 py-2 text-right tabular-nums">{w.price !== null ? formatPrice(w.price) : "—"}</td>
                 <td className="px-3 py-2 text-right tabular-nums">
                   {w.deviationFromConsensus !== null ? formatPct(w.deviationFromConsensus) : "—"}
