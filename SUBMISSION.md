@@ -3,6 +3,19 @@
 Tout ce qu'il faut coller dans DoraHacks et sur X. Les textes à copier sont en anglais (juges internationaux).
 Remplacer `<LIVE_URL>`, `<VIDEO_URL>`, `<DORAHACKS_URL>`, `<REPO_URL>` avant de publier.
 
+## Déployer (Vercel, gratuit — ~5 min)
+
+Railway n'est pas utilisable : l'essai du compte a expiré et il faudrait un plan payant. Vercel gratuit suffit :
+
+1. vercel.com → *Add New… → Project* → importer `STOOOKEEE/CMC-hack` (autoriser l'app GitHub de Vercel si demandé).
+2. *Framework* : Next.js (détecté). Branche de production : celle qui contient le code
+   (`claude/dazzling-faraday-berku0`, ou `main` après fusion).
+3. *Environment Variables* : `CMC_API_KEY` = la clé CMC ; `SITE_URL` = l'URL Vercel du projet (ex. `https://wrapscout.vercel.app`).
+4. *Deploy*. Ouvrir `/a/nvda` : il ne doit **pas** y avoir de bandeau « Demo data ».
+5. Après chaque `npm run snapshot` commité, Vercel redéploie tout seul.
+
+Sans clé, le site se déploie quand même, en mode démo (bandeau visible).
+
 ## Checklist avant de soumettre
 
 - [ ] Site en ligne avec une vraie clé CMC (`CMC_API_KEY`) et `SITE_URL` configurés
