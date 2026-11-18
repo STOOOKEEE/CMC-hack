@@ -46,6 +46,8 @@ export function warningsFor(
   assetType = "unknown",
 ): string[] {
   switch (label) {
+    case "derivative":
+      return ["Derivatives price feed (futures markets), not a token you can hold"];
     case "no_market":
       return ["No tracked market — listed, but not trading on any venue CMC tracks"];
     case "different_unit": {
@@ -79,6 +81,11 @@ export function summaryWarnings(counts: Record<Label, number>, eligibleCount: nu
   if (thin > 0)
     out.push(
       `${thin} ${plural(thin, "version trades", "versions trade")} under ${formatCompactUsd(SCORE_CONFIG.volumeFloorUsd)}/day`,
+    );
+  const derivatives = counts.derivative;
+  if (derivatives > 0)
+    out.push(
+      `${derivatives} ${plural(derivatives, "version is a derivatives price feed", "versions are derivatives price feeds")}, not a token`,
     );
   const unit = counts.different_unit;
   if (unit > 0)

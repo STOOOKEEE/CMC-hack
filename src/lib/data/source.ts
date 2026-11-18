@@ -107,7 +107,20 @@ export class LiveSource implements DataSource {
       const subset = Object.fromEntries(ids.filter((id) => tokenQuotes[id]).map((id) => [String(id), tokenQuotes[id]]));
       await this.cache.getOrLoad(`cq:${ids.join(",")}`, this.ttl(TTL.cryptoQuotes), async () => subset);
     }
+    // Registrant info, 50 assets per call. If the batch fails, assetBundle falls back to one call per asset.
+    try {
+      const infos = await this.api.rwaInfoMany(quotes.map((q) => q.rwa_id));
+      for (const q of quotes) {
+        const info = infos[String(q.rwa_id)] ?? null;
+        await this.cache.getOrLoad(`rwai:${q.rwa_id}`, this.ttl(TTL.rwaInfo), async () => info);
+      }
+    } catch {
+      // leave uncached
+    }
   }
+
+  /** Set once CMC answers that the plan does not include market pairs: no point asking for every asset. */
+  private marketPairsRefused = false;
 
   async assetBundle(rwaId: number, opts: { marketPairs?: boolean } = {}): Promise<AssetBundle | null> {
     const quote = await this.cache.getOrLoad(`rwaq:${rwaId}`, this.ttl(TTL.rwaQuotes), async () => {
@@ -135,8 +148,8 @@ export class LiveSource implements DataSource {
         .catch(orEmpty("token quotes", {})),
     ]);
 
-    let marketPairs: Record<string, RawMarketPair[]> | null = {};
-    if (opts.marketPairs !== false) {
+    let marketPairs: Record<string, RawMarketPair[]> | null = this.marketPairsRefused ? null : {};
+    if (opts.marketPairs !== false && marketPairs !== null) {
       const candidates = tokens
         .filter((t) => t.price !== null)
         .sort((a, b) => (b.volume_24h ?? 0) - (a.volume_24h ?? 0))
@@ -146,7 +159,8 @@ export class LiveSource implements DataSource {
           .getOrLoad(`mp:${t.crypto_id}`, this.ttl(TTL.marketPairs), () => this.api.cryptoMarketPairs(t.crypto_id))
           .catch(orEmpty("market pairs", [] as RawMarketPair[]));
         if (pairs === null) {
-          marketPairs = null; // the plan does not include market pairs — stop asking
+          marketPairs = null; // the plan does not include market pairs — stop asking, for every asset
+          this.marketPairsRefused = true;
           break;
         }
         marketPairs[String(t.crypto_id)] = pairs;

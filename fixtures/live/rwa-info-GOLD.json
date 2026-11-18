@@ -1,0 +1,15 @@
+{
+  "request": "/v5/real-world-assets/info?id=1",
+  "httpStatus": 400,
+  "body": {
+    "status": {
+      "timestamp": "2026-11-18T23:43:43.293Z",
+      "error_code": "4002",
+      "error_message": "Missing required parameter.",
+      "elapsed": 0,
+      "credit_count": 0,
+      "category": "VALIDATION",
+      "error_detail": "At least one of 'rwa_id', 'rwa_slug', or 'symbol' is required. "
+    }
+  }
+}

@@ -7,6 +7,7 @@ const STYLES: Record<Label, { text: string; className: string }> = {
   weak: { text: "Weak", className: "bg-surface-2 text-muted" },
   too_thin: { text: "Too thin", className: "bg-warn-soft text-warn" },
   different_unit: { text: "Different unit", className: "bg-warn-soft text-warn" },
+  derivative: { text: "Derivative", className: "bg-surface-2 text-muted" },
   no_market: { text: "No market", className: "bg-bad-soft text-bad" },
 };
 

@@ -34,6 +34,8 @@ export interface RawRwaQuote {
   asset_type?: string;
   quotes?: RawV5Quote[];
   tokens?: RawRwaToken[];
+  /** Stock-market venues for the underlying itself, e.g. Binance Stocks. */
+  tradfi_markets?: { exchange?: { name?: string; slug?: string }; ticker?: string; market_url?: string }[];
 }
 
 /** `/v5/real-world-assets/info` — registrant metadata. `about` is an object, not a string. */
@@ -165,6 +167,8 @@ export interface AssetHeader {
   lastUpdated: string | null;
   industry: string | null;
   secCik: string | null;
+  /** Where the underlying itself trades as a stock product (from `tradfi_markets`). */
+  tradfiMarkets: { exchange: string; url: string | null }[];
 }
 
 export type Label =
@@ -174,6 +178,7 @@ export type Label =
   | "weak"
   | "too_thin"
   | "different_unit"
+  | "derivative"
   | "no_market";
 
 export interface ScoredWrapper extends Wrapper {

@@ -10,7 +10,7 @@
     },
     {
       "rwaId": 10,
-      "symbol": "XAU",
+      "symbol": "GOLD",
       "name": "Gold",
       "assetType": "commodity",
       "rank": 2
@@ -40,7 +40,7 @@
   "popular": [
     {
       "rwaId": 10,
-      "symbol": "XAU",
+      "symbol": "GOLD",
       "name": "Gold",
       "assetType": "commodity",
       "rank": 2,

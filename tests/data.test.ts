@@ -60,7 +60,7 @@ describe("LiveSource on fixture endpoints", () => {
 
   it("sorts popular assets by tokenized market cap", async () => {
     const live = new LiveSource(createFixtureEndpoints(fixturesDir));
-    expect((await live.popular(3)).map((x) => x.symbol)).toEqual(["XAU", "NVDA", "TSLA"]);
+    expect((await live.popular(3)).map((x) => x.symbol)).toEqual(["GOLD", "NVDA", "TSLA"]);
   });
 });
 

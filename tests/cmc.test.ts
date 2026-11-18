@@ -105,16 +105,52 @@ describe("cmcGet", () => {
 });
 
 describe("endpoints", () => {
-  it("chunks RWA quotes by 50 ids", async () => {
-    const { impl, calls } = stubFetch([ok([{ rwa_id: 1 }]), ok([{ rwa_id: 2 }]), ok([{ rwa_id: 3 }])]);
+  it("chunks RWA quotes by 50 ids, sent as rwa_id, unwrapping rwa_assets (real v5 shape)", async () => {
+    const { impl, calls } = stubFetch([
+      ok({ rwa_assets: [{ rwa_id: 1 }] }),
+      ok({ rwa_assets: [{ rwa_id: 2 }] }),
+      ok({ rwa_assets: [{ rwa_id: 3 }] }),
+    ]);
     const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
     const ids = Array.from({ length: 120 }, (_, i) => i + 1);
     const res = await api.rwaQuotes(ids);
     expect(calls).toHaveLength(3);
     expect(calls[0].url.pathname).toBe("/v5/real-world-assets/quotes/latest");
-    expect(calls[0].url.searchParams.get("id")!.split(",")).toHaveLength(50);
-    expect(calls[2].url.searchParams.get("id")!.split(",")).toHaveLength(20);
+    expect(calls[0].url.searchParams.get("rwa_id")!.split(",")).toHaveLength(50);
+    expect(calls[2].url.searchParams.get("rwa_id")!.split(",")).toHaveLength(20);
+    expect(calls[0].url.searchParams.has("id")).toBe(false);
     expect(res.map((q) => q.rwa_id)).toEqual([1, 2, 3]);
+  });
+
+  it("walks every page of the RWA map (200 per page) until has_more is false", async () => {
+    const { impl, calls } = stubFetch([
+      ok({ rwa_assets: [{ rwa_id: 1, symbol: "A", name: "A" }], total_size: 3, has_more: true }),
+      ok({ rwa_assets: [{ rwa_id: 2, symbol: "B", name: "B" }], total_size: 3, has_more: true }),
+      ok({ rwa_assets: [{ rwa_id: 3, symbol: "C", name: "C" }], total_size: 3, has_more: false }),
+    ]);
+    const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
+    const map = await api.rwaMap();
+    expect(map.map((e) => e.rwa_id)).toEqual([1, 2, 3]);
+    expect(calls.map((c) => c.url.searchParams.get("start"))).toEqual(["1", "201", "401"]);
+    expect(calls[0].url.searchParams.get("limit")).toBe("200");
+  });
+
+  it("unwraps rwa_assets from the assets list", async () => {
+    const { impl } = stubFetch([ok({ rwa_assets: [{ rwa_id: 1, symbol: "GOLD", name: "Gold" }], has_more: true })]);
+    const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
+    expect((await api.rwaAssetsList(20)).map((e) => e.symbol)).toEqual(["GOLD"]);
+  });
+
+  it("fetches RWA info for many assets in one call, keyed by rwa_id", async () => {
+    const { impl, calls } = stubFetch([
+      ok({ rwa_assets: [{ rwa_id: 2, industry: "Semis" }, { rwa_id: 1, industry: null }] }),
+    ]);
+    const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
+    const byId = await api.rwaInfoMany([2, 1]);
+    expect(calls[0].url.pathname).toBe("/v5/real-world-assets/info");
+    expect(calls[0].url.searchParams.get("rwa_id")).toBe("2,1");
+    expect(byId["2"]?.industry).toBe("Semis");
+    expect(Object.keys(byId).sort()).toEqual(["1", "2"]);
   });
 
   it("drops an unknown id rejected by /v2/cryptocurrency/info and retries the batch", async () => {
@@ -152,14 +188,12 @@ describe("endpoints", () => {
     expect((sleep.mock.calls[0] as unknown as [number])[0]).toBeGreaterThan(1900);
   });
 
-  it("reads RWA info whether data is keyed by id, an array or a single object", async () => {
-    const { impl } = stubFetch([
-      ok({ "2": { rwa_id: 2, industry: "Semis" } }),
-      ok([{ rwa_id: 2, industry: "Semis" }]),
-      ok({ rwa_id: 2, industry: "Semis" }),
-    ]);
+  it("reads RWA info for one asset with rwa_id (real v5 shape)", async () => {
+    const { impl, calls } = stubFetch([ok({ rwa_assets: [{ rwa_id: 2, industry: "Semis" }] }), ok({ rwa_assets: [] })]);
     const api = createEndpoints({ apiKey: "k", fetchImpl: impl, sleep: noSleep });
-    for (let i = 0; i < 3; i++) expect((await api.rwaInfo(2))?.industry).toBe("Semis");
+    expect((await api.rwaInfo(2))?.industry).toBe("Semis");
+    expect(calls[0].url.searchParams.get("rwa_id")).toBe("2");
+    expect(await api.rwaInfo(3)).toBeNull();
   });
 });
 

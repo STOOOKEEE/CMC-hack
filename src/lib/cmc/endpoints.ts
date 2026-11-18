@@ -21,11 +21,20 @@ function invalidIdFrom(message: string): number | null {
   return m ? Number(m[1]) : null;
 }
 
+/** v5 list-like responses: `{ rwa_assets: [...], total_size, has_more }` (older write-ups show a bare array). */
+type RwaPage<T> = { rwa_assets?: T[]; total_size?: number; has_more?: boolean } | T[];
+const rwaAssetsOf = <T,>(data: RwaPage<T> | undefined): T[] =>
+  Array.isArray(data) ? data : (data?.rwa_assets ?? []);
+const MAP_PAGE = 200;
+
 export interface CmcEndpoints {
+  /** Every RWA underlying (all pages). */
   rwaMap(): Promise<RawRwaMapEntry[]>;
   rwaAssetsList(limit: number): Promise<RawRwaAssetListEntry[]>;
   rwaQuotes(ids: number[]): Promise<RawRwaQuote[]>;
   rwaInfo(id: number): Promise<RawRwaInfo | null>;
+  /** Registrant info for many assets, keyed by rwa_id (50 per call). */
+  rwaInfoMany(ids: number[]): Promise<Record<string, RawRwaInfo>>;
   cryptoInfo(ids: number[]): Promise<{ byId: Record<string, RawCryptoInfo>; unresolved: number[] }>;
   cryptoQuotes(ids: number[]): Promise<Record<string, RawCryptoQuote>>;
   cryptoMarketPairs(id: number): Promise<RawMarketPair[] | null>;
@@ -69,33 +78,47 @@ export function createEndpoints(opts: EndpointsOptions): CmcEndpoints {
     return {};
   }
 
-  return {
-    rwaMap: () => get<RawRwaMapEntry[]>("/v5/real-world-assets/map"),
+  async function rwaInfoMany(ids: number[]): Promise<Record<string, RawRwaInfo>> {
+    const out: Record<string, RawRwaInfo> = {};
+    for (const part of chunk(ids, 50)) {
+      const data = await get<RwaPage<RawRwaInfo>>("/v5/real-world-assets/info", { rwa_id: part.join(",") });
+      for (const info of rwaAssetsOf(data)) if (info.rwa_id !== undefined) out[String(info.rwa_id)] = info;
+    }
+    return out;
+  }
 
-    rwaAssetsList: (limit) => get<RawRwaAssetListEntry[]>("/v5/real-world-assets/assets/list", { limit }),
+  return {
+    async rwaMap() {
+      // Paginated: at most 200 per page (larger limits answer 4001), 0 credits per page.
+      const out: RawRwaMapEntry[] = [];
+      for (let start = 1; ; start += MAP_PAGE) {
+        const page = await get<RwaPage<RawRwaMapEntry>>("/v5/real-world-assets/map", { start, limit: MAP_PAGE });
+        const items = rwaAssetsOf(page);
+        out.push(...items);
+        if (!(page as { has_more?: boolean } | undefined)?.has_more || items.length === 0) return out;
+      }
+    },
+
+    rwaAssetsList: async (limit) =>
+      rwaAssetsOf(await get<RwaPage<RawRwaAssetListEntry>>("/v5/real-world-assets/assets/list", { limit })),
 
     async rwaQuotes(ids) {
       const out: RawRwaQuote[] = [];
       for (const part of chunk(ids, 50)) {
-        const data = await get<RawRwaQuote[] | Record<string, RawRwaQuote>>("/v5/real-world-assets/quotes/latest", {
-          id: part.join(","),
+        const data = await get<RwaPage<RawRwaQuote>>("/v5/real-world-assets/quotes/latest", {
+          rwa_id: part.join(","),
           convert: "USD",
-          skip_invalid: "true",
         });
-        out.push(...(Array.isArray(data) ? data : Object.values(data ?? {})));
+        out.push(...rwaAssetsOf(data));
       }
       return out;
     },
 
     async rwaInfo(id) {
-      const data = await get<unknown>("/v5/real-world-assets/info", { id });
-      if (Array.isArray(data)) return (data[0] as RawRwaInfo) ?? null;
-      if (data && typeof data === "object") {
-        const keyed = (data as Record<string, RawRwaInfo>)[String(id)];
-        return keyed ?? (data as RawRwaInfo);
-      }
-      return null;
+      return (await rwaInfoMany([id]))[String(id)] ?? null;
     },
+
+    rwaInfoMany,
 
     async cryptoInfo(ids) {
       const unresolved: number[] = [];

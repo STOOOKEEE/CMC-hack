@@ -17,7 +17,7 @@
     },
     {
       "rwa_id": 10,
-      "symbol": "XAU",
+      "symbol": "GOLD",
       "name": "Gold",
       "asset_type": "commodity",
       "has_tokens": true,

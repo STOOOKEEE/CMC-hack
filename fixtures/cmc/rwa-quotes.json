@@ -101,11 +101,22 @@
           "market_cap": null,
           "volume_24h": null
         }
+      ],
+      "tradfi_markets": [
+        {
+          "exchange": {
+            "slug": "binance",
+            "name": "Binance",
+            "exchange_id": 270
+          },
+          "ticker": "NVDA",
+          "market_url": "https://www.binance.com/en/stocks/EQ_NVDA"
+        }
       ]
     },
     {
       "rwa_id": 10,
-      "symbol": "XAU",
+      "symbol": "GOLD",
       "name": "Gold",
       "asset_type": "commodity",
       "quotes": [
@@ -186,8 +197,19 @@
           "price": 139.2,
           "market_cap": 1200000,
           "volume_24h": 40000
+        },
+        {
+          "crypto_id": 90108,
+          "symbol": "XAU",
+          "name": "Gold (Derivatives)",
+          "issuer_id": "na-derivatives",
+          "issuer_name": "NA (Derivatives)",
+          "price": 4335.2,
+          "market_cap": null,
+          "volume_24h": 0
         }
-      ]
+      ],
+      "tradfi_markets": []
     },
     {
       "rwa_id": 44,
@@ -213,7 +235,8 @@
           "market_cap": null,
           "volume_24h": null
         }
-      ]
+      ],
+      "tradfi_markets": []
     },
     {
       "rwa_id": 120,
@@ -249,7 +272,8 @@
           "market_cap": 38000000,
           "volume_24h": 900000
         }
-      ]
+      ],
+      "tradfi_markets": []
     },
     {
       "rwa_id": 3,
@@ -295,7 +319,8 @@
           "market_cap": 9000000,
           "volume_24h": 150000
         }
-      ]
+      ],
+      "tradfi_markets": []
     }
   ]
 }

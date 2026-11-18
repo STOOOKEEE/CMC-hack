@@ -1,0 +1,13 @@
+{
+  "request": "/v5/real-world-assets/market-pairs/list?id=86",
+  "httpStatus": 403,
+  "body": {
+    "status": {
+      "timestamp": "2026-11-18T23:43:48.679Z",
+      "error_code": "1006",
+      "error_message": "Your API Key subscription plan doesn't support this endpoint.",
+      "elapsed": 1,
+      "credit_count": 0
+    }
+  }
+}

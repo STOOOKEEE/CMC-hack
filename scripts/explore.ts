@@ -11,7 +11,7 @@ import { CMC_BASE_URL } from "../src/lib/cmc/client";
 import { requireApiKey } from "./env";
 
 const key = requireApiKey("explore");
-const symbols = process.argv.slice(2).length ? process.argv.slice(2) : ["NVDA", "TSLA", "XAU", "SPY", "MS"];
+const symbols = process.argv.slice(2).length ? process.argv.slice(2) : ["NVDA", "TSLA", "GOLD", "SPY", "MS"];
 const outDir = path.join("fixtures", "live");
 fs.mkdirSync(outDir, { recursive: true });
 
@@ -28,7 +28,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 async function call(name: string, p: string, params: Record<string, string | number> = {}) {
   const url = new URL(p, CMC_BASE_URL);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
-  await sleep(2100); // stay under ~30 calls/minute
+  await sleep(1300); // stay under the per-minute rate limit (50/min on our key)
   try {
     const res = await fetch(url, { headers: { "X-CMC_PRO_API_KEY": key, Accept: "application/json" } });
     const text = await res.text();
@@ -52,11 +52,24 @@ async function call(name: string, p: string, params: Record<string, string | num
 type MapEntry = { rwa_id?: number; id?: number; symbol: string; has_tokens?: boolean };
 type Token = { crypto_id: number; price: number | null; volume_24h?: number | null };
 
+/** v5 list endpoints answer `{ rwa_assets: [...], total_size, has_more }` (some older write-ups show a bare array). */
+const assetsOf = (data: unknown): MapEntry[] =>
+  Array.isArray(data) ? data : ((data as { rwa_assets?: MapEntry[] } | undefined)?.rwa_assets ?? []);
+
 async function main() {
   await call("key-info", "/v1/key/info");
-  const map = ((await call("rwa-map", "/v5/real-world-assets/map")) ?? []) as MapEntry[];
+  // The map is paginated (max 200 per page, 0 credits): walk it until has_more is false.
+  const map: MapEntry[] = [];
+  for (let start = 1; ; start += 200) {
+    const page = await call(start === 1 ? "rwa-map" : `rwa-map-${start}`, "/v5/real-world-assets/map", { start, limit: 200 });
+    map.push(...assetsOf(page));
+    if (!(page as { has_more?: boolean } | undefined)?.has_more) break;
+  }
+  console.log(`RWA map: ${map.length} assets, ${map.filter((e) => e.has_tokens).length} with tokens.`);
   await call("rwa-assets-list", "/v5/real-world-assets/assets/list", { limit: 20 });
   await call("rwa-issuers-list", "/v5/real-world-assets/issuers/list");
+  const twoInfo = map.slice(0, 2).map((e) => e.rwa_id ?? e.id).join(",");
+  await call("rwa-info-multi", "/v5/real-world-assets/info", { id: twoInfo });
 
   for (const symbol of symbols) {
     const entry = map.find((e) => e.symbol.toUpperCase() === symbol.toUpperCase());

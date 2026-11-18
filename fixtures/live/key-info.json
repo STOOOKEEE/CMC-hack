@@ -1,0 +1,35 @@
+{
+  "request": "/v1/key/info?",
+  "httpStatus": 200,
+  "body": {
+    "data": {
+      "plan": {
+        "credit_limit_monthly": 15000,
+        "credit_limit_monthly_reset": "In 12 days, 0 hours, 17 minutes",
+        "credit_limit_monthly_reset_timestamp": "2026-12-01T00:00:00.000Z",
+        "rate_limit_minute": 50
+      },
+      "usage": {
+        "current_minute": {
+          "requests_made": 6,
+          "requests_left": 44
+        },
+        "current_day": {
+          "credits_used": 2
+        },
+        "current_month": {
+          "credits_used": 2,
+          "credits_left": 14998
+        }
+      }
+    },
+    "status": {
+      "timestamp": "2026-11-18T23:42:34.202Z",
+      "error_code": 0,
+      "error_message": null,
+      "elapsed": 6,
+      "credit_count": 0,
+      "notice": null
+    }
+  }
+}

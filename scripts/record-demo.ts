@@ -85,7 +85,7 @@ async function main() {
     await caption(page, "Only have an Ethereum wallet? See the best version on your chain.", 4000);
   }
 
-  await page.goto(`${BASE_URL}/a/xau`);
+  await page.goto(`${BASE_URL}/a/gold`);
   await caption(page, "Gold: some tokens are priced per gram, others per ounce.", 4000);
   await scrollTo(page, "table");
   await caption(page, "WrapScout flags them as a different unit instead of calling it a 3,000% spread.", 5000);

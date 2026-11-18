@@ -21,9 +21,13 @@ function median(values: number[]): number | null {
   return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
 }
 
-const INELIGIBLE_ORDER: Label[] = ["different_unit", "too_thin", "no_market"];
+const INELIGIBLE_ORDER: Label[] = ["different_unit", "too_thin", "derivative", "no_market"];
+
+/** CMC lists perpetual-futures price feeds next to real tokens (issuer "NA (Derivatives)"). */
+const isDerivativeFeed = (w: Wrapper) => /\bderivatives?\b/i.test(`${w.issuerName ?? ""} ${w.name}`);
 
 function classify(w: Wrapper, ref: number | null): Label | "eligible" {
+  if (isDerivativeFeed(w)) return "derivative";
   if (w.price === null) return "no_market";
   if (ref !== null && Math.abs(w.price / ref - 1) > C.unitTolerance) return "different_unit";
   if ((w.volume24h ?? 0) < C.volumeFloorUsd) return "too_thin";

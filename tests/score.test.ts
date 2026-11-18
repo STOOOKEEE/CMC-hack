@@ -74,7 +74,7 @@ describe("rankAsset — NVDA (mixed liquidity, two dead wrappers)", () => {
 
 describe("rankAsset — gold (mixed units)", () => {
   it("never ranks per-gram wrappers against per-ounce ones", () => {
-    const r = ranked("XAU");
+    const r = ranked("GOLD");
     const units = r.wrappers.filter((w) => w.label === "different_unit").map((w) => w.cryptoId);
     expect(units.sort()).toEqual([90106, 90107]);
     expect(r.best?.cryptoId).toBe(4705);
@@ -82,7 +82,7 @@ describe("rankAsset — gold (mixed units)", () => {
   });
 
   it("falls back to the median price when the consensus is missing", () => {
-    const r = ranked("XAU", (_w, h) => {
+    const r = ranked("GOLD", (_w, h) => {
       h.consensusPrice = null;
     });
     expect(r.wrappers.filter((w) => w.label === "different_unit")).toHaveLength(2);
@@ -92,7 +92,7 @@ describe("rankAsset — gold (mixed units)", () => {
 
 describe("rankAsset — robust unit reference", () => {
   it("keeps per-gram tokens out even if the consensus is a plain average across units", () => {
-    const r = ranked("XAU", (_w, h) => {
+    const r = ranked("GOLD", (_w, h) => {
       h.consensusPrice = 3125; // (5 × 4320 + 2 × 139) / 7 — what a naive average would give
     });
     expect(r.best?.cryptoId).toBe(4705);
@@ -106,7 +106,7 @@ describe("rankAsset — robust unit reference", () => {
   it("follows the volume, not the count, when gram tokens outnumber ounce tokens", () => {
     const header: AssetHeader = {
       rwaId: 9, symbol: "XAG", name: "Metal", assetType: "commodity", consensusPrice: null,
-      lastUpdated: null, industry: null, secCik: null,
+      lastUpdated: null, industry: null, secCik: null, tradfiMarkets: [],
     };
     const w = (cryptoId: number, price: number, volume24h: number): Wrapper => ({
       cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price, volume24h, marketCap: null,
@@ -130,7 +130,7 @@ describe("rankAsset — robust unit reference", () => {
 
 describe("rankAsset — wording", () => {
   it("talks about grams and ounces only for commodities", () => {
-    const gold = ranked("XAU").wrappers.find((w) => w.cryptoId === 90106)!;
+    const gold = ranked("GOLD").wrappers.find((w) => w.cryptoId === 90106)!;
     expect(gold.warnings.join(" ")).toContain("per gram");
     const stock = ranked("NVDA", (w) => {
       w.find((x) => x.cryptoId === 90004)!.price = 400; // 75% above the others
@@ -143,7 +143,7 @@ describe("rankAsset — wording", () => {
   it("calls only one version the most liquid when two tie on volume", () => {
     const header: AssetHeader = {
       rwaId: 1, symbol: "T", name: "Tie", assetType: "stock", consensusPrice: 100,
-      lastUpdated: null, industry: null, secCik: null,
+      lastUpdated: null, industry: null, secCik: null, tradfiMarkets: [],
     };
     const w = (cryptoId: number): Wrapper => ({
       cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price: 100, volume24h: 50_000,
@@ -177,7 +177,7 @@ describe("rankAsset — edge cases", () => {
   it("breaks score ties by volume", () => {
     const header: AssetHeader = {
       rwaId: 1, symbol: "T", name: "Tie", assetType: "stock", consensusPrice: 100,
-      lastUpdated: null, industry: null, secCik: null,
+      lastUpdated: null, industry: null, secCik: null, tradfiMarkets: [],
     };
     const base: Omit<Wrapper, "cryptoId" | "symbol" | "volume24h"> = {
       name: "x", issuerName: null, price: 100, marketCap: null, numMarketPairs: 5,
@@ -190,5 +190,24 @@ describe("rankAsset — edge cases", () => {
     ]);
     expect(r.wrappers[0].score).toBe(r.wrappers[1].score);
     expect(r.wrappers[0].cryptoId).toBe(2);
+  });
+});
+
+describe("rankAsset — derivatives price feeds (real CMC rows: issuer 'NA (Derivatives)')", () => {
+  it("labels them as derivatives, never as a version to buy", () => {
+    const r = ranked("GOLD");
+    const feed = r.wrappers.find((w) => w.cryptoId === 90108)!;
+    expect(feed.label).toBe("derivative");
+    expect(feed.score).toBeNull();
+    expect(feed.warnings.join(" ")).toContain("not a token you can hold");
+    expect(r.summaryWarnings).toContain("1 version is a derivatives price feed, not a token");
+  });
+
+  it("excludes them even when they report volume", () => {
+    const r = ranked("GOLD", (w) => {
+      w.find((x) => x.cryptoId === 90108)!.volume24h = 999_000_000;
+    });
+    expect(r.best?.cryptoId).toBe(4705);
+    expect(r.wrappers.find((w) => w.cryptoId === 90108)!.label).toBe("derivative");
   });
 });

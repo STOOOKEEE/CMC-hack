@@ -30,6 +30,8 @@ export function createFixtureEndpoints(dir: string): CmcEndpoints {
     rwaAssetsList: async (limit) => list.slice(0, limit),
     rwaQuotes: async (ids) => quotes.filter((q) => ids.includes(q.rwa_id)),
     rwaInfo: async (id) => info[String(id)] ?? null,
+    rwaInfoMany: async (ids) =>
+      Object.fromEntries(ids.filter((id) => info[String(id)]).map((id) => [String(id), info[String(id)]])),
     cryptoInfo: async (ids) => ({
       byId: Object.fromEntries(ids.filter((id) => cryptoInfo[id]).map((id) => [String(id), cryptoInfo[id]])),
       unresolved: ids.filter((id) => !cryptoInfo[id]),

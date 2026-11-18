@@ -34,7 +34,7 @@ test("where to buy lists the other chains with their own explorer links", async 
 });
 
 test("gold flags per-gram tokens as a different unit", async ({ page }) => {
-  await page.goto("/a/xau");
+  await page.goto("/a/gold");
   await expect(page.getByTestId("best-pick")).toContainText("PAXG");
   await expect(page.getByText("Different unit").first()).toBeVisible();
 });
@@ -99,4 +99,14 @@ test("the search recovers after the index failed to load once", async ({ page })
   await page.goto("/");
   await page.getByRole("combobox").fill("nv");
   await expect(page.getByRole("option").first()).toContainText("NVDA");
+});
+
+test("derivatives price feeds are labelled and the stock venue is linked", async ({ page }) => {
+  await page.goto("/a/gold");
+  await expect(page.getByText("Derivative", { exact: true }).first()).toBeVisible();
+  await page.goto("/a/nvda");
+  await expect(page.getByTestId("tradfi-markets").getByRole("link", { name: /Binance/ })).toHaveAttribute(
+    "href",
+    "https://www.binance.com/en/stocks/EQ_NVDA",
+  );
 });

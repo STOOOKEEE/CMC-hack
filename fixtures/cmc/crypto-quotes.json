@@ -217,6 +217,20 @@
         }
       }
     },
+    "90108": {
+      "id": 90108,
+      "symbol": "XAU",
+      "num_market_pairs": 112,
+      "quote": {
+        "USD": {
+          "price": 4335.2,
+          "volume_24h": 0,
+          "market_cap": null,
+          "percent_change_24h": 0.1,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
     "90201": {
       "id": 90201,
       "symbol": "wMSx",

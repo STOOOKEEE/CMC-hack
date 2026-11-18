@@ -65,6 +65,24 @@ export default async function AssetPage(props: PageProps<"/a/[symbol]">) {
           </strong>{" "}
           versions have a price
         </p>
+        {header.tradfiMarkets.length > 0 ? (
+          <p className="mt-1 text-sm text-muted" data-testid="tradfi-markets">
+            Prefer the stock itself? Also tradable as a stock product on{" "}
+            {header.tradfiMarkets.map((m, i) => (
+              <span key={m.exchange}>
+                {i > 0 ? ", " : null}
+                {m.url ? (
+                  <a href={m.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                    {m.exchange} ↗
+                  </a>
+                ) : (
+                  m.exchange
+                )}
+              </span>
+            ))}
+            .
+          </p>
+        ) : null}
       </header>
 
       <BestPickCard ranked={ranked} />

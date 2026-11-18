@@ -117,7 +117,7 @@ capture de la page `/method`, section « CoinMarketCap endpoints used ».)
 4. Where to buy — exchanges, chaîne, contrat, note émetteur.
 5. Tableau — les pièges : sans marché, 43 $/jour.
 6. Filtre Ethereum — « Best on Ethereum ».
-7. Or (`/a/xau`) — unités différentes (gramme vs once).
+7. Or (`/a/gold`) — unités différentes (gramme vs once).
 8. `/method` — score déterministe, 7 endpoints, API JSON, serveur MCP.
 9. Carte de fin — « #BuildwithCMC ».
 

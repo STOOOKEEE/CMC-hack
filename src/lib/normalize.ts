@@ -122,6 +122,10 @@ export function normalizeAsset(bundle: AssetBundle): { header: AssetHeader; wrap
     lastUpdated: str(usd?.last_updated),
     industry: str(info?.industry),
     secCik: str(info?.sec_cik ?? info?.cik),
+    tradfiMarkets: (quote.tradfi_markets ?? []).flatMap((m) => {
+      const exchange = str(m.exchange?.name);
+      return exchange ? [{ exchange, url: str(m.market_url) }] : [];
+    }),
   };
 
   const wrappers: Wrapper[] = (quote.tokens ?? []).map((token) => {

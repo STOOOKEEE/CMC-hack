@@ -45,13 +45,23 @@ describe("writeSnapshot", () => {
     expect(api.counts.rwaQuotes).toBe(1);
     expect(api.counts.cryptoInfo).toBe(1);
     expect(api.counts.cryptoQuotes).toBe(1);
-    expect(api.counts.rwaInfo).toBe(5);
+    expect(api.counts.rwaInfoMany).toBe(1); // one batched call instead of one per asset
+    expect(api.counts.rwaInfo ?? 0).toBe(0);
     expect(api.counts.cryptoMarketPairs ?? 0).toBe(0);
+  });
+
+  it("stops asking for market pairs once the plan has refused them", async () => {
+    const fixtures = createFixtureEndpoints(fixturesDir);
+    fixtures.cryptoMarketPairs = async () => null; // 403 "plan doesn't support this endpoint"
+    const api = counted(fixtures);
+    await writeSnapshot(api, tmpDir(), { marketPairsTop: 50 });
+    expect(api.counts.cryptoMarketPairs).toBe(1);
   });
 
   it("retries an asset whose bundle came back degraded", async () => {
     let failed = false;
     const api = counted(createFixtureEndpoints(fixturesDir), (name, args) => {
+      if (name === "rwaInfoMany") throw new Error("batch down"); // force the per-asset path
       if (name === "rwaInfo" && args[0] === 2 && !failed) {
         failed = true;
         throw new Error("transient");
@@ -65,6 +75,7 @@ describe("writeSnapshot", () => {
 
   it("reports assets that stay degraded after the retry", async () => {
     const api = counted(createFixtureEndpoints(fixturesDir), (name, args) => {
+      if (name === "rwaInfoMany") throw new Error("batch down");
       if (name === "rwaInfo" && args[0] === 2) throw new Error("still down");
     });
     const result = await writeSnapshot(api, tmpDir(), {});

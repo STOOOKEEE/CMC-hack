@@ -25,8 +25,8 @@ afterAll(() => fs.rmSync(snapDir, { recursive: true, force: true }));
 describe("MCP tool handlers", () => {
   it("searches tokenized assets", async () => {
     const res = await searchTool("gold", opts);
-    expect(res.data.map((e) => e.symbol)).toEqual(["XAU"]);
-    expect(res.text).toContain("XAU — Gold");
+    expect(res.data.map((e) => e.symbol)).toEqual(["GOLD"]);
+    expect(res.text).toContain("GOLD — Gold");
   });
 
   it("answers which version to buy, with reasons, where and warnings", async () => {
@@ -53,10 +53,10 @@ describe("MCP tool handlers", () => {
   });
 
   it("compares every version with its label and score", async () => {
-    const res = await compareTool("XAU", opts);
+    const res = await compareTool("GOLD", opts);
     expect(res.text).toContain("PAXG");
     expect(res.text).toContain("Different unit");
-    expect(res.data?.wrappers).toHaveLength(7);
+    expect(res.data?.wrappers).toHaveLength(8);
   });
 });
 

@@ -16,6 +16,7 @@ const LABELS: Record<Label, string> = {
   weak: "Weak",
   too_thin: "Too thin",
   different_unit: "Different unit",
+  derivative: "Derivative",
   no_market: "No market",
 };
 
@@ -75,6 +76,11 @@ export async function bestVersionTool(symbol: string, opts: ViewOptions = {}): P
     lines.push(`Where to buy: ${whereLine(best)}`);
     const issuer = issuerNote(best.issuerName);
     if (issuer?.note) lines.push(`Issuer note (hand-curated, may be outdated): ${issuer.note}`);
+  }
+  if (header.tradfiMarkets.length > 0) {
+    lines.push(
+      `The stock itself also trades as a stock product on: ${header.tradfiMarkets.map((m) => (m.url ? `${m.exchange} (${m.url})` : m.exchange)).join(", ")}.`,
+    );
   }
   if (ranked.summaryWarnings.length > 0) lines.push("Watch out:", ...ranked.summaryWarnings.map((w) => `- ${w}`));
   lines.push(sourceLine(view.dataMode, view.asOf), "Not financial advice.");

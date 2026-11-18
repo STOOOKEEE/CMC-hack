@@ -47,6 +47,10 @@ export default function MethodPage() {
             <LabelBadge label="too_thin" /> Less than {formatCompactUsd(C.volumeFloorUsd)} traded in 24 hours. A price
             nobody trades drifts and stays drifted.
           </li>
+          <li className="flex flex-wrap items-center gap-2">
+            <LabelBadge label="derivative" /> A derivatives price feed (futures markets) that CoinMarketCap lists next
+            to the tokens. It tracks the asset, but it is not a token you can hold in a wallet.
+          </li>
         </ul>
       </section>
 

@@ -131,6 +131,7 @@ describe("normalizeAsset", () => {
       lastUpdated: "2026-11-18T09:59:00.000Z",
       industry: "Semiconductors",
       secCik: "0001045810",
+      tradfiMarkets: [{ exchange: "Binance", url: "https://www.binance.com/en/stocks/EQ_NVDA" }],
     });
   });
 
@@ -142,6 +143,13 @@ describe("normalizeAsset", () => {
     const { header } = normalizeAsset(bundle);
     expect(header.secCik).toBeNull();
     expect(header.industry).toBeNull();
+  });
+
+  it("reads the stock-market venues CMC lists for the underlying (tradfi_markets)", () => {
+    expect(normalizeAsset(fixtureBundle("NVDA")).header.tradfiMarkets).toEqual([
+      { exchange: "Binance", url: "https://www.binance.com/en/stocks/EQ_NVDA" },
+    ]);
+    expect(normalizeAsset(fixtureBundle("GOLD")).header.tradfiMarkets).toEqual([]);
   });
 
   it("returns a null consensus price for an asset without any market", () => {
