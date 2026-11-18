@@ -68,9 +68,19 @@ describe("LiveSource popular list", () => {
   it("drops popular entries that are not in the search index", async () => {
     const api = createFixtureEndpoints(fixturesDir);
     const list = await api.rwaAssetsList(50);
-    api.rwaAssetsList = async () => [...list, { rwa_id: 999, symbol: "BRKA", name: "Berkshire", tokenized_market_cap: 9e12 }];
+    api.rwaAssetsList = async () => [
+      ...list,
+      { rwa_id: 999, symbol: "BRKA", name: "Berkshire", has_tokens: false, tokenized_market_cap: 9e12 },
+    ];
+    let mapCalls = 0;
+    const rwaMap = api.rwaMap;
+    api.rwaMap = async () => {
+      mapCalls += 1;
+      return rwaMap();
+    };
     const popular = await new LiveSource(api).popular(10);
     expect(popular.map((p) => p.symbol)).not.toContain("BRKA");
+    expect(mapCalls).toBe(0); // the real map is ~40 pages: never walk it just to render tiles
   });
 });
 
@@ -129,12 +139,33 @@ describe("getAssetView", () => {
     expect(view?.dataMode).toBe("snapshot");
   });
 
+  it("reads the search index from the snapshot in live mode (the real map is ~40 pages)", async () => {
+    const snap = new SnapshotSource(snapDir, "snapshot");
+    const calls: string[] = [];
+    const live: DataSource = {
+      mode: "live",
+      asOf: async () => null,
+      searchIndex: async () => {
+        calls.push("searchIndex");
+        return snap.searchIndex();
+      },
+      popular: (n) => snap.popular(n),
+      assetBundle: async (id) => {
+        calls.push("assetBundle");
+        return snap.assetBundle(id);
+      },
+    };
+    const view = await getAssetView("NVDA", { sources: { primary: live, fallback: snap } });
+    expect(view?.dataMode).toBe("live");
+    expect(calls).toEqual(["assetBundle"]);
+  });
+
   it("stops calling a failing live source for a while once it has failed", async () => {
     const live = brokenLive("throw");
     const sources = { primary: live, fallback: new SnapshotSource(snapDir, "snapshot") };
     expect((await getAssetView("NVDA", { sources }))?.dataMode).toBe("snapshot");
     expect((await getAssetView("TSLA", { sources }))?.dataMode).toBe("snapshot");
-    expect(live.calls).toEqual(["searchIndex"]);
+    expect(live.calls).toEqual(["assetBundle"]);
   });
 
   it("pays at most one timeout per view when live hangs", async () => {
@@ -145,7 +176,7 @@ describe("getAssetView", () => {
       timeoutMs: 50,
     });
     expect(view?.dataMode).toBe("snapshot");
-    expect(live.calls).toEqual(["searchIndex"]);
+    expect(live.calls).toEqual(["assetBundle"]);
     expect(Date.now() - started).toBeLessThan(500);
   });
 
@@ -155,7 +186,7 @@ describe("getAssetView", () => {
     await getAssetView("NVDA", { sources, coolDownMs: 10 });
     await new Promise((r) => setTimeout(r, 20));
     await getAssetView("NVDA", { sources, coolDownMs: 10 });
-    expect(live.calls).toEqual(["searchIndex", "searchIndex"]);
+    expect(live.calls).toEqual(["assetBundle", "assetBundle"]);
   });
 
   it("rethrows when live fails and there is no snapshot", async () => {

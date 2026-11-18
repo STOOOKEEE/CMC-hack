@@ -82,10 +82,9 @@ export class LiveSource implements DataSource {
 
   async popular(limit: number): Promise<PopularEntry[]> {
     return this.cache.getOrLoad(`assets:${limit}`, this.ttl(TTL.assetsList), async () => {
-      // Only offer tiles that lead somewhere: the asset must be in the searchable (has_tokens) index.
-      const searchable = new Set((await this.searchIndex()).map((e) => e.rwaId));
+      // Only offer tiles that lead somewhere: assets with tokens (the list carries has_tokens itself).
       return (await this.api.rwaAssetsList(limit))
-        .filter((e) => searchable.has(rwaIdOf(e)))
+        .filter((e) => e.has_tokens !== false && rwaIdOf(e) >= 0)
         .map((e) => ({
           ...toSearchEntry(e),
           tokenizedMarketCap:

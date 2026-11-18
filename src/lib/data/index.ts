@@ -115,9 +115,19 @@ function context(opts: ViewOptions): CallContext {
   };
 }
 
+/**
+ * The search index changes slowly and the live map is ~40 pages: when a snapshot exists, its index is used
+ * even in live mode (prices and wrappers still come live). Regenerate the snapshot to pick up new assets.
+ */
+async function searchIndexFor(ctx: CallContext): Promise<{ value: SearchEntry[]; source: DataSource }> {
+  const { fallback } = ctx.sources;
+  if (fallback?.mode === "snapshot") return { value: await fallback.searchIndex(), source: fallback };
+  return withFallback(ctx, (s) => s.searchIndex());
+}
+
 export async function getAssetView(symbol: string, opts: ViewOptions = {}): Promise<AssetView | null> {
   const ctx = context(opts);
-  const { value: index } = await withFallback(ctx, (s) => s.searchIndex());
+  const { value: index } = await searchIndexFor(ctx);
   const entry = resolveSymbol(index, symbol);
   if (!entry) return null;
 
@@ -136,7 +146,7 @@ export interface Listing<T> {
 }
 
 export async function getSearchIndex(opts: ViewOptions = {}): Promise<Listing<SearchEntry>> {
-  const { value, source } = await withFallback(context(opts), (s) => s.searchIndex());
+  const { value, source } = await searchIndexFor(context(opts));
   return { entries: value, dataMode: source.mode, asOf: await source.asOf() };
 }
 
