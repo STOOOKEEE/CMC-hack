@@ -38,7 +38,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 
 ## Phase 3 — Où acheter + robustesse + finitions (mar 1 – ven 4 déc)
 - [ ] Section « Where to buy » selon la décision de Phase 0 (ou repli : chaîne + contrat + explorer + liens émetteurs étiquetés)
-- [ ] `npm run snapshot` : JSON des ~50 actifs populaires, commité ; servi si CMC échoue, avec bandeau daté
+- [ ] `npm run snapshot` : JSON de tout l'univers cherchable (~800 actifs), commité ; servi si CMC échoue, avec bandeau daté
+- [ ] `data/issuers.json` : note d'accès par émetteur (US, KYC) + lien source, affichée sur la carte et le tableau (spec §6.6)
 - [ ] Timeout serveur 8 s → snapshot ; squelettes de chargement ; ticker inconnu → suggestions
 - [ ] Responsive mobile (inputs 16 px, cibles tactiles 44 px)
 - [ ] Filtre « How do you buy? » (Any / Exchange / par chaîne)

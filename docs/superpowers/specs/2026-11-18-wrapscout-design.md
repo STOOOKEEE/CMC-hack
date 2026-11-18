@@ -199,7 +199,21 @@ Le MVP est livrable même avec le repli seul. Décision à acter à la fin de la
 ### 6.5 Budget de crédits (estimation, à recaler avec `/v1/key/info`)
 Une page actif non cachée ≈ 1 (RWA quotes) + 1 (crypto quotes) + 0–N (où acheter) crédits.
 Avec TTL 2 min et la coalescence, le coût dépend du temps, pas du nombre de visiteurs.
-Le snapshot de secours couvre les ~50 actifs les plus populaires.
+
+**Snapshot de secours = tout l'univers cherchable (~800 actifs `has_tokens`)**, pas seulement les
+populaires (notre choix) : `quotes/latest` RWA accepte 50 ids par appel (~16 appels), crypto quotes
+100 ids par appel, crypto info cachée 7 jours → quelques dizaines de crédits par snapshot complet.
+Régénéré au moins une fois avant la soumission et pendant le jugement si possible. Ainsi, même si la
+clé expire ou le quota est épuisé, **chaque recherche fonctionne** (données datées, bandeau visible).
+
+### 6.6 Restrictions d'achat par émetteur (notre choix)
+Beaucoup de wrappers sont interdits aux résidents US ou exigent un KYC, selon l'émetteur. CMC ne
+fournit pas cette donnée. Décision : une **petite table curée à la main** (`data/issuers.json`, les
+~6 émetteurs principaux : Backed/xStocks, Ondo, Robinhood, bStocks, Dinari, Paxos/Tether pour l'or)
+avec une note d'accès courte (« Not available to US persons », « KYC via issuer app »…) et un lien
+source. Affichée sur la carte Best pick et dans le tableau, **elle n'entre pas dans le score** et ne
+filtre rien. Étiquetée « issuer info, not CMC data, may be outdated ». Fusionnée avec la table de
+repli « où acheter » (§6.4).
 
 ---
 
