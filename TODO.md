@@ -4,11 +4,12 @@ Spec : [`docs/superpowers/specs/2026-11-18-wrapscout-design.md`](docs/superpower
 Plan d'implémentation : [`docs/superpowers/plans/2026-11-18-wrapscout.md`](docs/superpowers/plans/2026-11-18-wrapscout.md)
 Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** · Feature freeze : **ven 4 déc**
 
-> État au 18 nov : le code du MVP est écrit et testé (73 tests unitaires, 8 tests e2e) sur des **données
-> synthétiques**. Ce qui reste demande une vraie clé CMC, un compte d'hébergement ou une action humaine.
+> État au 18 nov : MVP + bonus MCP écrits et testés (104 tests unitaires, 11 tests e2e, CI GitHub verte) sur des
+> **données synthétiques**. Kit de soumission prêt (`SUBMISSION.md`, `npm run record-demo`). Ce qui reste demande
+> une vraie clé CMC, un hébergement ou une action humaine — les lignes **[VOUS]** ci-dessous.
 
 ## Phase 0 — Setup & vérité terrain API (mer 18 – jeu 19 nov)
-- [ ] S'inscrire sur DoraHacks **avec l'email du compte CoinMarketCap** (pour le plan Startup gratuit)
+- [ ] **[VOUS]** S'inscrire sur DoraHacks **avec l'email du compte CoinMarketCap** (pour le plan Startup gratuit)
 - [ ] Récupérer la clé API, vérifier le plan, le quota et la limite/minute (`GET /v1/key/info`)
 - [ ] Vérifier la durée du plan gratuit (doit couvrir le jugement jusqu'au 25 déc.)
 - [ ] Lire les règles officielles DoraHacks : top 30 global ou par track ? exigences exactes (feedback API, vidéo, durée)
@@ -38,7 +39,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 - [x] Page actif `/a/[symbol]` : en-tête, carte Best pick + raisons, tableau comparatif, avertissements
 - [x] Page `/method` : formule, seuils, labels, endpoints
 - [x] Footer : « Not financial advice », source CMC ; fraîcheur des données sur la page actif
-- [ ] **Choisir l'hébergeur** (Vercel gratuit ou Railway) et **déployer au plus tard ven 27 nov** avec `CMC_API_KEY` et `SITE_URL`
+- [ ] **[VOUS] Déployer sur Vercel (gratuit) au plus tard ven 27 nov** avec `CMC_API_KEY` et `SITE_URL` — étapes dans `SUBMISSION.md`.
+  Railway testé le 18/11 : essai du compte expiré, il faudrait un plan payant.
 - [ ] Faire tester le parcours par quelqu'un qui n'a pas codé le projet
 
 ## Phase 3 — Où acheter + robustesse + finitions (mar 1 – ven 4 déc)
@@ -62,7 +64,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 - [x] JUDGE.md (lien live à compléter)
 - [ ] FEEDBACK.md finalisé (section B)
 - [ ] Remplacer les captures `docs/screenshots/` (données démo) par des captures en données réelles
-- [ ] Vidéo démo 2–3 min (NVDA → or/unités → actif sans marché → méthode)
+- [x] Script d'enregistrement de la vidéo sous-titrée (`npm run record-demo`, WebM + MP4)
+- [ ] Enregistrer la vidéo **sur le site en ligne** : `BASE_URL=<url> npm run record-demo`, puis l'uploader
 - [x] Licence MIT
 - [ ] Repo public
 - [ ] Formulaire DoraHacks, track **Real World Assets**
