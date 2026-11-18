@@ -1,0 +1,43 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": [
+    {
+      "rwa_id": 10,
+      "symbol": "XAU",
+      "name": "Gold",
+      "asset_type": "commodity",
+      "rwa_rank": 2,
+      "tokenized_market_cap": 3900000000
+    },
+    {
+      "rwa_id": 2,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "asset_type": "stock",
+      "rwa_rank": 1,
+      "tokenized_market_cap": 412000000
+    },
+    {
+      "rwa_id": 3,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "asset_type": "stock",
+      "rwa_rank": 3,
+      "tokenized_market_cap": 156000000
+    },
+    {
+      "rwa_id": 120,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "asset_type": "etf",
+      "rwa_rank": 5,
+      "tokenized_market_cap": 98000000
+    }
+  ]
+}

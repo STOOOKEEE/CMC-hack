@@ -1,0 +1,301 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": [
+    {
+      "rwa_id": 2,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "asset_type": "stock",
+      "quotes": [
+        {
+          "symbol": "USD",
+          "average_tokenized_price": 229.07,
+          "tokenized_market_cap": 412000000,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      ],
+      "tokens": [
+        {
+          "crypto_id": 36992,
+          "symbol": "NVDAx",
+          "name": "NVIDIA xStock",
+          "issuer_id": "backed-assets",
+          "issuer_name": "Backed Assets",
+          "price": 229.28,
+          "market_cap": 45000000,
+          "volume_24h": 4200000
+        },
+        {
+          "crypto_id": 38093,
+          "symbol": "NVDAon",
+          "name": "NVIDIA (Ondo Tokenized)",
+          "issuer_id": "ondo",
+          "issuer_name": "Ondo",
+          "price": 229,
+          "market_cap": 31000000,
+          "volume_24h": null
+        },
+        {
+          "crypto_id": 90003,
+          "symbol": "NVDA",
+          "name": "NVIDIA Stock Token",
+          "issuer_id": "robinhood",
+          "issuer_name": "Robinhood",
+          "price": 228.95,
+          "market_cap": 9000000,
+          "volume_24h": 180000
+        },
+        {
+          "crypto_id": 90004,
+          "symbol": "bNVDA",
+          "name": "bStocks NVIDIA",
+          "issuer_id": "bstocks",
+          "issuer_name": "bStocks",
+          "price": 229.4,
+          "market_cap": 2100000,
+          "volume_24h": 64000
+        },
+        {
+          "crypto_id": 90005,
+          "symbol": "wNVDAx",
+          "name": "Wrapped NVIDIA xStock",
+          "issuer_id": "backed-assets",
+          "issuer_name": "Backed Assets",
+          "price": 231.1,
+          "market_cap": 800000,
+          "volume_24h": 12500
+        },
+        {
+          "crypto_id": 90006,
+          "symbol": "bNVDA.old",
+          "name": "bStocks NVIDIA (legacy)",
+          "issuer_id": "bstocks",
+          "issuer_name": "bStocks",
+          "price": 236.5,
+          "market_cap": 15000,
+          "volume_24h": 43
+        },
+        {
+          "crypto_id": 28616,
+          "symbol": "NVDA.D",
+          "name": "Dinari NVDA",
+          "issuer_id": "dinari",
+          "issuer_name": "Dinari",
+          "price": null,
+          "market_cap": null,
+          "volume_24h": null
+        },
+        {
+          "crypto_id": 90008,
+          "symbol": "NVDA.d",
+          "name": "Dinari NVDA (Base)",
+          "issuer_id": "dinari",
+          "issuer_name": "Dinari",
+          "price": null,
+          "market_cap": null,
+          "volume_24h": null
+        }
+      ]
+    },
+    {
+      "rwa_id": 10,
+      "symbol": "XAU",
+      "name": "Gold",
+      "asset_type": "commodity",
+      "quotes": [
+        {
+          "symbol": "USD",
+          "average_tokenized_price": 4320.5,
+          "tokenized_market_cap": 3900000000,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      ],
+      "tokens": [
+        {
+          "crypto_id": 5176,
+          "symbol": "XAUt",
+          "name": "Tether Gold",
+          "issuer_id": "tether-holdings",
+          "issuer_name": "Tether Holdings",
+          "price": 4318.9,
+          "market_cap": 1500000000,
+          "volume_24h": 95000000
+        },
+        {
+          "crypto_id": 4705,
+          "symbol": "PAXG",
+          "name": "PAX Gold",
+          "issuer_id": "paxos",
+          "issuer_name": "Paxos",
+          "price": 4321.7,
+          "market_cap": 1300000000,
+          "volume_24h": 120000000
+        },
+        {
+          "crypto_id": 90103,
+          "symbol": "XAUm",
+          "name": "Matrixdock Gold",
+          "issuer_id": "matrixdock",
+          "issuer_name": "Matrixdock",
+          "price": 4319,
+          "market_cap": 90000000,
+          "volume_24h": 2100000
+        },
+        {
+          "crypto_id": 90104,
+          "symbol": "XAUt0",
+          "name": "Tether Gold (Arbitrum)",
+          "issuer_id": "tether-holdings",
+          "issuer_name": "Tether Holdings",
+          "price": 4317.6,
+          "market_cap": 60000000,
+          "volume_24h": 3000000
+        },
+        {
+          "crypto_id": 90105,
+          "symbol": "AUOZ",
+          "name": "Demo Gold Ounce",
+          "issuer_id": "demo-gold-ltd",
+          "issuer_name": "Demo Gold Ltd",
+          "price": 4325,
+          "market_cap": 500000,
+          "volume_24h": 8000
+        },
+        {
+          "crypto_id": 90106,
+          "symbol": "KAU",
+          "name": "Kinesis Gold (per gram)",
+          "issuer_id": "kinesis",
+          "issuer_name": "Kinesis",
+          "price": 138.9,
+          "market_cap": 25000000,
+          "volume_24h": 600000
+        },
+        {
+          "crypto_id": 90107,
+          "symbol": "DGLD",
+          "name": "Demo Gold Gram",
+          "issuer_id": "demo-gold-ltd",
+          "issuer_name": "Demo Gold Ltd",
+          "price": 139.2,
+          "market_cap": 1200000,
+          "volume_24h": 40000
+        }
+      ]
+    },
+    {
+      "rwa_id": 44,
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "asset_type": "stock",
+      "quotes": [
+        {
+          "symbol": "USD",
+          "average_tokenized_price": null,
+          "tokenized_market_cap": null,
+          "last_updated": null
+        }
+      ],
+      "tokens": [
+        {
+          "crypto_id": 90201,
+          "symbol": "wMSx",
+          "name": "Wrapped Morgan Stanley Tokenized Stock (xStock)",
+          "issuer_id": "backed-assets",
+          "issuer_name": "Backed Assets",
+          "price": null,
+          "market_cap": null,
+          "volume_24h": null
+        }
+      ]
+    },
+    {
+      "rwa_id": 120,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "asset_type": "etf",
+      "quotes": [
+        {
+          "symbol": "USD",
+          "average_tokenized_price": 672.3,
+          "tokenized_market_cap": 98000000,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      ],
+      "tokens": [
+        {
+          "crypto_id": 90301,
+          "symbol": "SPYx",
+          "name": "SP500 xStock",
+          "issuer_id": "backed-assets",
+          "issuer_name": "Backed Assets",
+          "price": 672.4,
+          "market_cap": 60000000,
+          "volume_24h": 2500000
+        },
+        {
+          "crypto_id": 90302,
+          "symbol": "SPYon",
+          "name": "SPY (Ondo Tokenized)",
+          "issuer_id": "ondo",
+          "issuer_name": "Ondo",
+          "price": 672.1,
+          "market_cap": 38000000,
+          "volume_24h": 900000
+        }
+      ]
+    },
+    {
+      "rwa_id": 3,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "asset_type": "stock",
+      "quotes": [
+        {
+          "symbol": "USD",
+          "average_tokenized_price": 431.1,
+          "tokenized_market_cap": 156000000,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      ],
+      "tokens": [
+        {
+          "crypto_id": 90401,
+          "symbol": "TSLAx",
+          "name": "Tesla xStock",
+          "issuer_id": "backed-assets",
+          "issuer_name": "Backed Assets",
+          "price": 431.2,
+          "market_cap": 70000000,
+          "volume_24h": 3100000
+        },
+        {
+          "crypto_id": 90402,
+          "symbol": "TSLAon",
+          "name": "Tesla (Ondo Tokenized)",
+          "issuer_id": "ondo",
+          "issuer_name": "Ondo",
+          "price": 431.05,
+          "market_cap": 52000000,
+          "volume_24h": 700000
+        },
+        {
+          "crypto_id": 90403,
+          "symbol": "TSLA",
+          "name": "Tesla Stock Token",
+          "issuer_id": "robinhood",
+          "issuer_name": "Robinhood",
+          "price": 430.9,
+          "market_cap": 9000000,
+          "volume_24h": 150000
+        }
+      ]
+    }
+  ]
+}

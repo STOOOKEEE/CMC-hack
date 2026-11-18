@@ -1,0 +1,59 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": [
+    {
+      "rwa_id": 2,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "asset_type": "stock",
+      "has_tokens": true,
+      "rwa_rank": 1
+    },
+    {
+      "rwa_id": 10,
+      "symbol": "XAU",
+      "name": "Gold",
+      "asset_type": "commodity",
+      "has_tokens": true,
+      "rwa_rank": 2
+    },
+    {
+      "rwa_id": 44,
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "asset_type": "stock",
+      "has_tokens": true,
+      "rwa_rank": 44
+    },
+    {
+      "rwa_id": 120,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "asset_type": "etf",
+      "has_tokens": true,
+      "rwa_rank": 5
+    },
+    {
+      "rwa_id": 3,
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "asset_type": "stock",
+      "has_tokens": true,
+      "rwa_rank": 3
+    },
+    {
+      "rwa_id": 999,
+      "symbol": "BRKA",
+      "name": "Berkshire Hathaway Class A",
+      "asset_type": "stock",
+      "has_tokens": false,
+      "rwa_rank": 900
+    }
+  ]
+}

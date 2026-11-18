@@ -1,0 +1,305 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": {
+    "4705": {
+      "id": 4705,
+      "symbol": "PAXG",
+      "num_market_pairs": 55,
+      "quote": {
+        "USD": {
+          "price": 4321.7,
+          "volume_24h": 120000000,
+          "market_cap": 1300000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "5176": {
+      "id": 5176,
+      "symbol": "XAUt",
+      "num_market_pairs": 40,
+      "quote": {
+        "USD": {
+          "price": 4318.9,
+          "volume_24h": 95000000,
+          "market_cap": 1500000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "28616": {
+      "id": 28616,
+      "symbol": "NVDA.D",
+      "num_market_pairs": 0,
+      "quote": {
+        "USD": {
+          "price": null,
+          "volume_24h": null,
+          "market_cap": null,
+          "percent_change_24h": null,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "36992": {
+      "id": 36992,
+      "symbol": "NVDAx",
+      "num_market_pairs": 12,
+      "quote": {
+        "USD": {
+          "price": 229.28,
+          "volume_24h": 4200000,
+          "market_cap": 45000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "38093": {
+      "id": 38093,
+      "symbol": "NVDAon",
+      "num_market_pairs": 6,
+      "quote": {
+        "USD": {
+          "price": 229,
+          "volume_24h": 510000,
+          "market_cap": 31000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90003": {
+      "id": 90003,
+      "symbol": "NVDA",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 228.95,
+          "volume_24h": 180000,
+          "market_cap": 9000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90004": {
+      "id": 90004,
+      "symbol": "bNVDA",
+      "num_market_pairs": 2,
+      "quote": {
+        "USD": {
+          "price": 229.4,
+          "volume_24h": 64000,
+          "market_cap": 2100000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90005": {
+      "id": 90005,
+      "symbol": "wNVDAx",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 231.1,
+          "volume_24h": 12500,
+          "market_cap": 800000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90006": {
+      "id": 90006,
+      "symbol": "bNVDA.old",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 236.5,
+          "volume_24h": 43,
+          "market_cap": 15000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90008": {
+      "id": 90008,
+      "symbol": "NVDA.d",
+      "num_market_pairs": 0,
+      "quote": {
+        "USD": {
+          "price": null,
+          "volume_24h": null,
+          "market_cap": null,
+          "percent_change_24h": null,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90103": {
+      "id": 90103,
+      "symbol": "XAUm",
+      "num_market_pairs": 5,
+      "quote": {
+        "USD": {
+          "price": 4319,
+          "volume_24h": 2100000,
+          "market_cap": 90000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90104": {
+      "id": 90104,
+      "symbol": "XAUt0",
+      "num_market_pairs": 4,
+      "quote": {
+        "USD": {
+          "price": 4317.6,
+          "volume_24h": 3000000,
+          "market_cap": 60000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90105": {
+      "id": 90105,
+      "symbol": "AUOZ",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 4325,
+          "volume_24h": 8000,
+          "market_cap": 500000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90106": {
+      "id": 90106,
+      "symbol": "KAU",
+      "num_market_pairs": 3,
+      "quote": {
+        "USD": {
+          "price": 138.9,
+          "volume_24h": 600000,
+          "market_cap": 25000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90107": {
+      "id": 90107,
+      "symbol": "DGLD",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 139.2,
+          "volume_24h": 40000,
+          "market_cap": 1200000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90201": {
+      "id": 90201,
+      "symbol": "wMSx",
+      "num_market_pairs": 0,
+      "quote": {
+        "USD": {
+          "price": null,
+          "volume_24h": null,
+          "market_cap": null,
+          "percent_change_24h": null,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90301": {
+      "id": 90301,
+      "symbol": "SPYx",
+      "num_market_pairs": 9,
+      "quote": {
+        "USD": {
+          "price": 672.4,
+          "volume_24h": 2500000,
+          "market_cap": 60000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90302": {
+      "id": 90302,
+      "symbol": "SPYon",
+      "num_market_pairs": 4,
+      "quote": {
+        "USD": {
+          "price": 672.1,
+          "volume_24h": 900000,
+          "market_cap": 38000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90401": {
+      "id": 90401,
+      "symbol": "TSLAx",
+      "num_market_pairs": 10,
+      "quote": {
+        "USD": {
+          "price": 431.2,
+          "volume_24h": 3100000,
+          "market_cap": 70000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90402": {
+      "id": 90402,
+      "symbol": "TSLAon",
+      "num_market_pairs": 5,
+      "quote": {
+        "USD": {
+          "price": 431.05,
+          "volume_24h": 700000,
+          "market_cap": 52000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    },
+    "90403": {
+      "id": 90403,
+      "symbol": "TSLA",
+      "num_market_pairs": 1,
+      "quote": {
+        "USD": {
+          "price": 430.9,
+          "volume_24h": 150000,
+          "market_cap": 9000000,
+          "percent_change_24h": 0.4,
+          "last_updated": "2026-11-18T09:59:00.000Z"
+        }
+      }
+    }
+  }
+}

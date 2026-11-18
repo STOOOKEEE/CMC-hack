@@ -1,0 +1,368 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": {
+    "4705": {
+      "id": 4705,
+      "name": "PAX Gold",
+      "symbol": "PAXG",
+      "slug": "paxg",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0x45804880de22913dafe09f4980848ece6ecbaf78"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0x45804880de22913dafe09f4980848ece6ecbaf78"
+        ],
+        "website": []
+      }
+    },
+    "5176": {
+      "id": 5176,
+      "name": "Tether Gold",
+      "symbol": "XAUt",
+      "slug": "xaut",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0x68749665ff8d2d112fa859aa293f07a622782f38"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0x68749665ff8d2d112fa859aa293f07a622782f38"
+        ],
+        "website": []
+      }
+    },
+    "28616": {
+      "id": 28616,
+      "name": "Dinari NVDA",
+      "symbol": "NVDA.D",
+      "slug": "nvda-d",
+      "platform": {
+        "name": "Arbitrum",
+        "slug": "arbitrum",
+        "token_address": "0x4444444444444444444444444444444444444444"
+      },
+      "urls": {
+        "explorer": [
+          "https://arbiscan.io/token/0x4444444444444444444444444444444444444444"
+        ],
+        "website": []
+      }
+    },
+    "36992": {
+      "id": 36992,
+      "name": "NVIDIA xStock",
+      "symbol": "NVDAx",
+      "slug": "nvdax",
+      "platform": {
+        "name": "Solana",
+        "slug": "solana",
+        "token_address": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh"
+      },
+      "urls": {
+        "explorer": [
+          "https://solscan.io/token/Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh"
+        ],
+        "website": []
+      }
+    },
+    "38093": {
+      "id": 38093,
+      "name": "NVIDIA (Ondo Tokenized)",
+      "symbol": "NVDAon",
+      "slug": "nvdaon",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0x2d1f7226bd1f780af6b9a49dcc0ae00e8df4bdee"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0x2d1f7226bd1f780af6b9a49dcc0ae00e8df4bdee"
+        ],
+        "website": []
+      }
+    },
+    "90003": {
+      "id": 90003,
+      "name": "NVIDIA Stock Token",
+      "symbol": "NVDA",
+      "slug": "nvda",
+      "platform": {
+        "name": "Arbitrum",
+        "slug": "arbitrum",
+        "token_address": "0x8f7c1c0a1e2b3d4f5a6b7c8d9e0f1a2b3c4d5e6f"
+      },
+      "urls": {
+        "explorer": [
+          "https://arbiscan.io/token/0x8f7c1c0a1e2b3d4f5a6b7c8d9e0f1a2b3c4d5e6f"
+        ],
+        "website": []
+      }
+    },
+    "90004": {
+      "id": 90004,
+      "name": "bStocks NVIDIA",
+      "symbol": "bNVDA",
+      "slug": "bnvda",
+      "platform": {
+        "name": "BNB Smart Chain (BEP20)",
+        "slug": "bnb-smart-chain-bep20-",
+        "token_address": "0x1111111111111111111111111111111111111111"
+      },
+      "urls": {
+        "explorer": [
+          "https://bscscan.com/token/0x1111111111111111111111111111111111111111"
+        ],
+        "website": []
+      }
+    },
+    "90005": {
+      "id": 90005,
+      "name": "Wrapped NVIDIA xStock",
+      "symbol": "wNVDAx",
+      "slug": "wnvdax",
+      "platform": {
+        "name": "X Layer",
+        "slug": "x-layer",
+        "token_address": "0x2222222222222222222222222222222222222222"
+      },
+      "urls": {
+        "explorer": [
+          "https://www.oklink.com/xlayer/token/0x2222222222222222222222222222222222222222"
+        ],
+        "website": []
+      }
+    },
+    "90006": {
+      "id": 90006,
+      "name": "bStocks NVIDIA (legacy)",
+      "symbol": "bNVDA.old",
+      "slug": "bnvda-old",
+      "platform": {
+        "name": "BNB Smart Chain (BEP20)",
+        "slug": "bnb-smart-chain-bep20-",
+        "token_address": "0x3333333333333333333333333333333333333333"
+      },
+      "urls": {
+        "explorer": [
+          "https://bscscan.com/token/0x3333333333333333333333333333333333333333"
+        ],
+        "website": []
+      }
+    },
+    "90008": {
+      "id": 90008,
+      "name": "Dinari NVDA (Base)",
+      "symbol": "NVDA.d",
+      "slug": "nvda-d",
+      "platform": {
+        "name": "Base",
+        "slug": "base",
+        "token_address": "0x5555555555555555555555555555555555555555"
+      },
+      "urls": {
+        "explorer": [
+          "https://basescan.org/token/0x5555555555555555555555555555555555555555"
+        ],
+        "website": []
+      }
+    },
+    "90103": {
+      "id": 90103,
+      "name": "Matrixdock Gold",
+      "symbol": "XAUm",
+      "slug": "xaum",
+      "platform": {
+        "name": "BNB Smart Chain (BEP20)",
+        "slug": "bnb-smart-chain-bep20-",
+        "token_address": "0x6666666666666666666666666666666666666666"
+      },
+      "urls": {
+        "explorer": [
+          "https://bscscan.com/token/0x6666666666666666666666666666666666666666"
+        ],
+        "website": []
+      }
+    },
+    "90104": {
+      "id": 90104,
+      "name": "Tether Gold (Arbitrum)",
+      "symbol": "XAUt0",
+      "slug": "xaut0",
+      "platform": {
+        "name": "Arbitrum",
+        "slug": "arbitrum",
+        "token_address": "0x7777777777777777777777777777777777777777"
+      },
+      "urls": {
+        "explorer": [
+          "https://arbiscan.io/token/0x7777777777777777777777777777777777777777"
+        ],
+        "website": []
+      }
+    },
+    "90105": {
+      "id": 90105,
+      "name": "Demo Gold Ounce",
+      "symbol": "AUOZ",
+      "slug": "auoz",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0x8888888888888888888888888888888888888888"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0x8888888888888888888888888888888888888888"
+        ],
+        "website": []
+      }
+    },
+    "90106": {
+      "id": 90106,
+      "name": "Kinesis Gold (per gram)",
+      "symbol": "KAU",
+      "slug": "kau",
+      "platform": {
+        "name": "Stellar",
+        "slug": "stellar",
+        "token_address": "GBDEMOKAUISSUER"
+      },
+      "urls": {
+        "explorer": [
+          "https://stellar.expert/explorer/public/asset/GBDEMOKAUISSUER"
+        ],
+        "website": []
+      }
+    },
+    "90107": {
+      "id": 90107,
+      "name": "Demo Gold Gram",
+      "symbol": "DGLD",
+      "slug": "dgld",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0x9999999999999999999999999999999999999999"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0x9999999999999999999999999999999999999999"
+        ],
+        "website": []
+      }
+    },
+    "90201": {
+      "id": 90201,
+      "name": "Wrapped Morgan Stanley Tokenized Stock (xStock)",
+      "symbol": "wMSx",
+      "slug": "wmsx",
+      "platform": {
+        "name": "X Layer",
+        "slug": "x-layer",
+        "token_address": "0x2874A11805783324C54562eDB1A641C5d1d077a5"
+      },
+      "urls": {
+        "explorer": [
+          "https://www.oklink.com/xlayer/token/0x2874A11805783324C54562eDB1A641C5d1d077a5"
+        ],
+        "website": []
+      }
+    },
+    "90301": {
+      "id": 90301,
+      "name": "SP500 xStock",
+      "symbol": "SPYx",
+      "slug": "spyx",
+      "platform": {
+        "name": "Solana",
+        "slug": "solana",
+        "token_address": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W"
+      },
+      "urls": {
+        "explorer": [
+          "https://solscan.io/token/XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W"
+        ],
+        "website": []
+      }
+    },
+    "90302": {
+      "id": 90302,
+      "name": "SPY (Ondo Tokenized)",
+      "symbol": "SPYon",
+      "slug": "spyon",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ],
+        "website": []
+      }
+    },
+    "90401": {
+      "id": 90401,
+      "name": "Tesla xStock",
+      "symbol": "TSLAx",
+      "slug": "tslax",
+      "platform": {
+        "name": "Solana",
+        "slug": "solana",
+        "token_address": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB"
+      },
+      "urls": {
+        "explorer": [
+          "https://solscan.io/token/XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB"
+        ],
+        "website": []
+      }
+    },
+    "90402": {
+      "id": 90402,
+      "name": "Tesla (Ondo Tokenized)",
+      "symbol": "TSLAon",
+      "slug": "tslaon",
+      "platform": {
+        "name": "Ethereum",
+        "slug": "ethereum",
+        "token_address": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "urls": {
+        "explorer": [
+          "https://etherscan.io/token/0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        ],
+        "website": []
+      }
+    },
+    "90403": {
+      "id": 90403,
+      "name": "Tesla Stock Token",
+      "symbol": "TSLA",
+      "slug": "tsla",
+      "platform": {
+        "name": "Arbitrum",
+        "slug": "arbitrum",
+        "token_address": "0xcccccccccccccccccccccccccccccccccccccccc"
+      },
+      "urls": {
+        "explorer": [
+          "https://arbiscan.io/token/0xcccccccccccccccccccccccccccccccccccccccc"
+        ],
+        "website": []
+      }
+    }
+  }
+}

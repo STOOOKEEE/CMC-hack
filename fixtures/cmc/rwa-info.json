@@ -1,0 +1,61 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": {
+    "2": {
+      "rwa_id": 2,
+      "name": "NVIDIA Corp",
+      "symbol": "NVDA",
+      "industry": "Semiconductors",
+      "sec_cik": "0001045810",
+      "about": {
+        "markdown": "NVIDIA Corp (synthetic description)."
+      }
+    },
+    "3": {
+      "rwa_id": 3,
+      "name": "Tesla Inc",
+      "symbol": "TSLA",
+      "industry": "Automobiles",
+      "sec_cik": "0001318605",
+      "about": {
+        "markdown": "Tesla Inc (synthetic description)."
+      }
+    },
+    "10": {
+      "rwa_id": 10,
+      "name": "Gold",
+      "symbol": "XAU",
+      "industry": null,
+      "sec_cik": null,
+      "about": {
+        "markdown": "Gold (synthetic description)."
+      }
+    },
+    "44": {
+      "rwa_id": 44,
+      "name": "Morgan Stanley",
+      "symbol": "MS",
+      "industry": "Capital Markets",
+      "sec_cik": "0000895421",
+      "about": {
+        "markdown": "Morgan Stanley (synthetic description)."
+      }
+    },
+    "120": {
+      "rwa_id": 120,
+      "name": "SPDR S&P 500 ETF Trust",
+      "symbol": "SPY",
+      "industry": "Exchange Traded Fund",
+      "sec_cik": "0000884394",
+      "about": {
+        "markdown": "SPDR S&P 500 ETF Trust (synthetic description)."
+      }
+    }
+  }
+}

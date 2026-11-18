@@ -1,0 +1,194 @@
+{
+  "status": {
+    "timestamp": "2026-11-18T10:00:00.000Z",
+    "error_code": 0,
+    "error_message": null,
+    "credit_count": 1,
+    "notice": "SYNTHETIC fixture — shape modelled on public round-1 write-ups, values illustrative. Replace with `npm run explore` output."
+  },
+  "data": {
+    "4705": {
+      "id": 4705,
+      "market_pairs": [
+        {
+          "exchange": {
+            "name": "Binance",
+            "slug": "binance"
+          },
+          "market_pair": "PAXG/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 60000000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Kraken",
+            "slug": "kraken"
+          },
+          "market_pair": "PAXG/USD",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 30000000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "OKX",
+            "slug": "okx"
+          },
+          "market_pair": "PAXG/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 20000000
+            }
+          }
+        }
+      ]
+    },
+    "36992": {
+      "id": 36992,
+      "market_pairs": [
+        {
+          "exchange": {
+            "name": "Kraken",
+            "slug": "kraken"
+          },
+          "market_pair": "NVDAx/USD",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 2100000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Bybit",
+            "slug": "bybit"
+          },
+          "market_pair": "NVDAX/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 1200000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Raydium",
+            "slug": "raydium"
+          },
+          "market_pair": "NVDAx/USDC",
+          "category": "dex",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 400000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Kraken",
+            "slug": "kraken"
+          },
+          "market_pair": "NVDAx/EUR",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 300000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Gate",
+            "slug": "gate"
+          },
+          "market_pair": "NVDAX/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 200000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "MEXC",
+            "slug": "mexc"
+          },
+          "market_pair": "NVDAX/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 100000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Bitget",
+            "slug": "bitget"
+          },
+          "market_pair": "NVDAX/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 50000
+            }
+          }
+        }
+      ]
+    },
+    "38093": {
+      "id": 38093,
+      "market_pairs": [
+        {
+          "exchange": {
+            "name": "Uniswap v3 (Ethereum)",
+            "slug": "uniswap v3 (ethereum)"
+          },
+          "market_pair": "NVDAon/USDC",
+          "category": "dex",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 300000
+            }
+          }
+        },
+        {
+          "exchange": {
+            "name": "Bitget",
+            "slug": "bitget"
+          },
+          "market_pair": "NVDAON/USDT",
+          "category": "spot",
+          "quote": {
+            "USD": {
+              "price": null,
+              "volume_24h": 210000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
