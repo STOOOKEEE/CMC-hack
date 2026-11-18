@@ -1,0 +1,47 @@
+{
+  "_comment": "Hand-curated issuer access notes. NOT CoinMarketCap data. Verify against each issuer's own terms before relying on it; update when terms change.",
+  "issuers": [
+    {
+      "match": ["backed"],
+      "label": "Backed (xStocks)",
+      "note": "Per issuer terms: not offered to US persons; check your country's eligibility.",
+      "url": "https://backed.fi"
+    },
+    {
+      "match": ["ondo"],
+      "label": "Ondo Global Markets",
+      "note": "Per issuer terms: not offered to US persons; check your country's eligibility.",
+      "url": "https://ondo.finance"
+    },
+    {
+      "match": ["robinhood"],
+      "label": "Robinhood",
+      "note": "Stock tokens are offered through the Robinhood app to eligible EU customers.",
+      "url": "https://robinhood.com/eu"
+    },
+    {
+      "match": ["dinari"],
+      "label": "Dinari",
+      "note": null,
+      "url": "https://dinari.com"
+    },
+    {
+      "match": ["bstocks"],
+      "label": "bStocks",
+      "note": null,
+      "url": null
+    },
+    {
+      "match": ["paxos"],
+      "label": "Paxos",
+      "note": "Minting and redeeming directly with Paxos requires a verified (KYC) account.",
+      "url": "https://paxos.com"
+    },
+    {
+      "match": ["tether"],
+      "label": "Tether",
+      "note": "Buying directly from Tether requires KYC; check your country's eligibility.",
+      "url": "https://gold.tether.to"
+    }
+  ]
+}

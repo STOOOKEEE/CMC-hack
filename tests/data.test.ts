@@ -1,0 +1,137 @@
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { CmcError } from "@/lib/cmc/client";
+import { createFixtureEndpoints } from "@/lib/cmc/fixtureEndpoints";
+import { getAssetView, getSources, type Sources } from "@/lib/data";
+import { LiveSource, SnapshotSource, type DataSource } from "@/lib/data/source";
+import { writeSnapshot } from "@/lib/data/snapshotWriter";
+import { issuerNote } from "@/lib/issuers";
+
+const fixturesDir = path.resolve(__dirname, "../fixtures/cmc");
+let snapDir: string;
+
+beforeAll(async () => {
+  snapDir = fs.mkdtempSync(path.join(os.tmpdir(), "wrapscout-snap-"));
+  const live = new LiveSource(createFixtureEndpoints(fixturesDir));
+  await writeSnapshot(live, snapDir, { generatedAt: "2026-11-17T08:00:00.000Z", marketPairsTop: 2 });
+});
+afterAll(() => fs.rmSync(snapDir, { recursive: true, force: true }));
+
+/** A live-mode source whose every call fails or hangs, to exercise the fallback path. */
+function brokenLive(behaviour: "throw" | "hang"): DataSource {
+  const fail = () =>
+    behaviour === "throw"
+      ? Promise.reject(new CmcError("rate_limit", 429, "slow down"))
+      : new Promise<never>(() => {});
+  return {
+    mode: "live",
+    asOf: async () => null,
+    searchIndex: fail,
+    popular: fail,
+    assetBundle: fail,
+  };
+}
+
+describe("LiveSource on fixture endpoints", () => {
+  it("only indexes assets that have tokens", async () => {
+    const live = new LiveSource(createFixtureEndpoints(fixturesDir));
+    const symbols = (await live.searchIndex()).map((x) => x.symbol);
+    expect(symbols).toContain("NVDA");
+    expect(symbols).not.toContain("BRKA");
+  });
+
+  it("builds a full bundle for an asset", async () => {
+    const live = new LiveSource(createFixtureEndpoints(fixturesDir));
+    const bundle = (await live.assetBundle(2))!;
+    expect(bundle.quote.tokens).toHaveLength(8);
+    expect(bundle.tokenMeta["36992"].platform?.name).toBe("Solana");
+    expect(bundle.tokenQuotes["38093"].num_market_pairs).toBe(6);
+    expect(bundle.marketPairs?.["36992"]?.length).toBeGreaterThan(0);
+    expect(await live.assetBundle(424242)).toBeNull();
+  });
+
+  it("sorts popular assets by tokenized market cap", async () => {
+    const live = new LiveSource(createFixtureEndpoints(fixturesDir));
+    expect((await live.popular(3)).map((x) => x.symbol)).toEqual(["XAU", "NVDA", "TSLA"]);
+  });
+});
+
+describe("snapshot round-trip", () => {
+  it("reads back what writeSnapshot wrote", async () => {
+    const snap = new SnapshotSource(snapDir, "snapshot");
+    expect(await snap.asOf()).toBe("2026-11-17T08:00:00.000Z");
+    expect((await snap.searchIndex()).length).toBe(5);
+    expect((await snap.assetBundle(2))?.quote.symbol).toBe("NVDA");
+    expect(await snap.assetBundle(424242)).toBeNull();
+    expect(SnapshotSource.exists(snapDir)).toBe(true);
+    expect(SnapshotSource.exists(path.join(snapDir, "nope"))).toBe(false);
+  });
+});
+
+describe("getAssetView", () => {
+  const snapshotSources = (): Sources => ({ primary: new SnapshotSource(snapDir, "snapshot"), fallback: null });
+
+  it("builds a ranked view for a lowercase symbol", async () => {
+    const view = (await getAssetView("nvda", { sources: snapshotSources() }))!;
+    expect(view.header.symbol).toBe("NVDA");
+    expect(view.ranked.best?.cryptoId).toBe(36992);
+    expect(view.dataMode).toBe("snapshot");
+    expect(view.asOf).toBe("2026-11-17T08:00:00.000Z");
+  });
+
+  it("returns null for an unknown symbol", async () => {
+    expect(await getAssetView("zzzz", { sources: snapshotSources() })).toBeNull();
+  });
+
+  it("falls back to the snapshot when live CMC errors", async () => {
+    const view = await getAssetView("NVDA", {
+      sources: { primary: brokenLive("throw"), fallback: new SnapshotSource(snapDir, "snapshot") },
+    });
+    expect(view?.dataMode).toBe("snapshot");
+    expect(view?.ranked.best?.cryptoId).toBe(36992);
+  });
+
+  it("falls back to the snapshot when live CMC hangs past the timeout", async () => {
+    const view = await getAssetView("NVDA", {
+      sources: { primary: brokenLive("hang"), fallback: new SnapshotSource(snapDir, "snapshot") },
+      timeoutMs: 20,
+    });
+    expect(view?.dataMode).toBe("snapshot");
+  });
+
+  it("rethrows when live fails and there is no snapshot", async () => {
+    await expect(
+      getAssetView("NVDA", { sources: { primary: brokenLive("throw"), fallback: null } }),
+    ).rejects.toThrow("slow down");
+  });
+});
+
+describe("getSources", () => {
+  it("uses live with snapshot fallback when a key is set", () => {
+    const s = getSources({ apiKey: "k", snapshotDir: snapDir, demoDir: "/nonexistent" });
+    expect(s.primary.mode).toBe("live");
+    expect(s.fallback?.mode).toBe("snapshot");
+  });
+
+  it("uses the snapshot without a key when one exists", () => {
+    const s = getSources({ apiKey: undefined, snapshotDir: snapDir, demoDir: "/nonexistent" });
+    expect(s.primary.mode).toBe("snapshot");
+    expect(s.fallback).toBeNull();
+  });
+
+  it("uses demo data without a key and without a snapshot", () => {
+    const s = getSources({ apiKey: "", snapshotDir: "/nonexistent", demoDir: snapDir });
+    expect(s.primary.mode).toBe("demo");
+  });
+});
+
+describe("issuerNote", () => {
+  it("matches issuer names case-insensitively", () => {
+    expect(issuerNote("Backed Assets")?.label).toBe("Backed (xStocks)");
+    expect(issuerNote("ONDO")?.url).toMatch(/^https:\/\//);
+    expect(issuerNote("Unknown Issuer Co")).toBeNull();
+    expect(issuerNote(null)).toBeNull();
+  });
+});
