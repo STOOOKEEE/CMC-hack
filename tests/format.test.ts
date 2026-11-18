@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatCompactUsd, formatPct, formatPrice, shortAddress } from "@/lib/format";
+import { assetTypeLabel, formatCompactUsd, formatPct, formatPrice, shortAddress } from "@/lib/format";
 
 describe("formatCompactUsd", () => {
   it("compacts volumes", () => {
@@ -33,5 +33,14 @@ describe("shortAddress", () => {
   it("shortens long addresses", () => {
     expect(shortAddress("0x2874A11805783324C54562eDB1A641C5d1d077a5")).toBe("0x2874…77a5");
     expect(shortAddress("short")).toBe("short");
+  });
+});
+
+describe("assetTypeLabel", () => {
+  it("renders CMC asset types for humans", () => {
+    expect(assetTypeLabel("etf")).toBe("ETF");
+    expect(assetTypeLabel("stock")).toBe("Stock");
+    expect(assetTypeLabel("commodity")).toBe("Commodity");
+    expect(assetTypeLabel("private_credit")).toBe("Private credit");
   });
 });

@@ -40,3 +40,13 @@ export function shortAddress(address: string): string {
   if (address.length <= 12) return address;
   return `${address.slice(0, 6)}…${address.slice(-4)}`;
 }
+
+const TYPE_LABELS: Record<string, string> = { etf: "ETF", reit: "REIT" };
+
+/** "etf" → "ETF", "private_credit" → "Private credit". */
+export function assetTypeLabel(type: string): string {
+  const key = type.toLowerCase();
+  if (TYPE_LABELS[key]) return TYPE_LABELS[key];
+  const words = key.replace(/[_-]+/g, " ").trim();
+  return words.charAt(0).toUpperCase() + words.slice(1);
+}
