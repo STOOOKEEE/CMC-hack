@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { SearchEntry } from "@/lib/model";
 import { assetTypeLabel } from "@/lib/format";
 import { searchAssets } from "@/lib/search";
@@ -9,15 +9,19 @@ import { searchAssets } from "@/lib/search";
 export const assetHref = (symbol: string) => `/a/${encodeURIComponent(symbol.toLowerCase())}`;
 
 let indexPromise: Promise<SearchEntry[]> | null = null;
-function loadIndex(): Promise<SearchEntry[]> {
+
+/** Shared across search boxes; a failed load is forgotten so the next attempt retries. Resolves null on failure. */
+function loadIndex(): Promise<SearchEntry[] | null> {
   indexPromise ??= fetch("/api/search-index")
-    .then((r) => (r.ok ? r.json() : { entries: [] }))
-    .then((d: { entries: SearchEntry[] }) => d.entries)
-    .catch(() => {
-      indexPromise = null;
-      return [];
-    });
-  return indexPromise;
+    .then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json() as Promise<{ entries: SearchEntry[] }>;
+    })
+    .then((d) => d.entries);
+  return indexPromise.catch(() => {
+    indexPromise = null;
+    return null;
+  });
 }
 
 export function SearchBox({ autoFocus = false, initialQuery = "" }: { autoFocus?: boolean; initialQuery?: string }) {
@@ -27,16 +31,31 @@ export function SearchBox({ autoFocus = false, initialQuery = "" }: { autoFocus?
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const ensureIndex = useCallback(async () => {
+    const loaded = await loadIndex();
+    if (loaded) setIndex(loaded);
+    return loaded;
+  }, []);
+
   useEffect(() => {
-    loadIndex().then(setIndex);
+    let alive = true;
+    loadIndex().then((loaded) => {
+      if (alive && loaded) setIndex(loaded);
+    });
+    return () => {
+      alive = false;
+    };
   }, []);
 
   const results = index ? searchAssets(index, query, 8) : [];
   const go = (symbol: string) => router.push(assetHref(symbol));
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const pick = results[active] ?? results[0];
+    // Enter may come before the index has loaded: wait for it rather than guessing a URL from the raw text.
+    const idx = index ?? (await ensureIndex());
+    const found = idx ? searchAssets(idx, query, 8) : [];
+    const pick = found[active] ?? found[0];
     if (pick) go(pick.symbol);
     else if (query.trim()) go(query.trim());
   }
@@ -65,6 +84,7 @@ export function SearchBox({ autoFocus = false, initialQuery = "" }: { autoFocus?
         onChange={(e) => {
           setQuery(e.target.value);
           setActive(0);
+          if (!index) void ensureIndex(); // retry after a failed load
         }}
         onKeyDown={onKeyDown}
         placeholder="Nvidia, TSLA, gold…"

@@ -77,22 +77,33 @@ export function rankAsset(header: AssetHeader, wrappers: Wrapper[]): RankedAsset
     return Math.round(100 * (liquidity * L + fidelity * F + breadth * B));
   };
 
-  const scored: ScoredWrapper[] = eligible
+  const ordered = eligible
     .map((w) => ({ w, score: scoreOf(w) }))
-    .sort((a, b) => b.score - a.score || (b.w.volume24h ?? 0) - (a.w.volume24h ?? 0))
-    .map(({ w, score }, i) => {
-      const label: Label =
-        i === 0 ? (eligible.length === 1 ? "only_option" : "best") : score >= C.goodThreshold ? "good" : "weak";
-      const deviation = deviationOf(w);
-      return {
-        ...w,
-        label,
-        score,
-        deviationFromConsensus: deviation,
-        reasons: reasonsFor(w, deviation, { eligibleVolumesDesc }),
-        warnings: warningsFor(w, label, deviation),
-      };
-    });
+    .sort((a, b) => b.score - a.score || (b.w.volume24h ?? 0) - (a.w.volume24h ?? 0));
+  // Exactly one "most liquid" version: the highest volume, ties going to the better-ranked one.
+  let topVolumeId: number | null = null;
+  let topVolume = -1;
+  for (const { w } of ordered) {
+    if ((w.volume24h ?? 0) > topVolume) {
+      topVolume = w.volume24h ?? 0;
+      topVolumeId = w.cryptoId;
+    }
+  }
+  const assetType = header.assetType;
+
+  const scored: ScoredWrapper[] = ordered.map(({ w, score }, i) => {
+    const label: Label =
+      i === 0 ? (eligible.length === 1 ? "only_option" : "best") : score >= C.goodThreshold ? "good" : "weak";
+    const deviation = deviationOf(w);
+    return {
+      ...w,
+      label,
+      score,
+      deviationFromConsensus: deviation,
+      reasons: reasonsFor(w, deviation, { eligibleVolumesDesc, topVolumeId }),
+      warnings: warningsFor(w, label, deviation, assetType),
+    };
+  });
 
   const ineligible: ScoredWrapper[] = INELIGIBLE_ORDER.flatMap((label) =>
     classified
@@ -105,7 +116,7 @@ export function rankAsset(header: AssetHeader, wrappers: Wrapper[]): RankedAsset
           score: null,
           deviationFromConsensus: deviation,
           reasons: [],
-          warnings: warningsFor(w, label, deviation),
+          warnings: warningsFor(w, label, deviation, assetType),
         };
       }),
   );

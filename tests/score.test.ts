@@ -110,7 +110,7 @@ describe("rankAsset — robust unit reference", () => {
     };
     const w = (cryptoId: number, price: number, volume24h: number): Wrapper => ({
       cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price, volume24h, marketCap: null,
-      numMarketPairs: 3, chain: null, contract: null, explorerUrl: null, exchanges: [],
+      numMarketPairs: 3, chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none",
     });
     const r = rankAsset(header, [
       w(1, 4320, 50_000_000),
@@ -125,6 +125,34 @@ describe("rankAsset — robust unit reference", () => {
 
   it("uses the consensus as the reference when it agrees with the market", () => {
     expect(ranked("NVDA").referencePrice).toBe(229.07);
+  });
+});
+
+describe("rankAsset — wording", () => {
+  it("talks about grams and ounces only for commodities", () => {
+    const gold = ranked("XAU").wrappers.find((w) => w.cryptoId === 90106)!;
+    expect(gold.warnings.join(" ")).toContain("per gram");
+    const stock = ranked("NVDA", (w) => {
+      w.find((x) => x.cryptoId === 90004)!.price = 400; // 75% above the others
+    }).wrappers.find((w) => w.cryptoId === 90004)!;
+    expect(stock.label).toBe("different_unit");
+    expect(stock.warnings.join(" ")).not.toContain("gram");
+    expect(stock.warnings.join(" ")).toContain("share ratio");
+  });
+
+  it("calls only one version the most liquid when two tie on volume", () => {
+    const header: AssetHeader = {
+      rwaId: 1, symbol: "T", name: "Tie", assetType: "stock", consensusPrice: 100,
+      lastUpdated: null, industry: null, secCik: null,
+    };
+    const w = (cryptoId: number): Wrapper => ({
+      cryptoId, symbol: `T${cryptoId}`, name: "t", issuerName: null, price: 100, volume24h: 50_000,
+      marketCap: null, numMarketPairs: 5, chain: null, contract: null, explorerUrl: null, exchanges: [],
+      exchangesStatus: "none",
+    });
+    const r = rankAsset(header, [w(1), w(2)]);
+    const mostLiquid = r.wrappers.filter((x) => x.reasons.some((reason) => reason.startsWith("Most liquid")));
+    expect(mostLiquid).toHaveLength(1);
   });
 });
 
@@ -153,7 +181,7 @@ describe("rankAsset — edge cases", () => {
     };
     const base: Omit<Wrapper, "cryptoId" | "symbol" | "volume24h"> = {
       name: "x", issuerName: null, price: 100, marketCap: null, numMarketPairs: 5,
-      chain: null, contract: null, explorerUrl: null, exchanges: [],
+      chain: null, contract: null, explorerUrl: null, exchanges: [], exchangesStatus: "none",
     };
     // Same volume ⇒ same score; ordering must then follow input-independent volume tiebreak.
     const r = rankAsset(header, [

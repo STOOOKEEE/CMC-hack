@@ -6,13 +6,19 @@ export function formatCompactUsd(value: number): string {
     [1e6, "M"],
     [1e3, "k"],
   ];
-  for (const [size, suffix] of units) {
+  for (const [i, [size, suffix]] of units.entries()) {
     if (abs >= size) {
       const scaled = value / size;
-      const digits = Math.abs(scaled) >= 100 ? 0 : 1;
-      return `$${trimZero(scaled.toFixed(digits))}${suffix}`;
+      const text = trimZero(scaled.toFixed(Math.abs(scaled) >= 100 ? 0 : 1));
+      // 999,950 would round to "1000k": promote to the next unit instead.
+      if (Math.abs(Number(text)) >= 1000 && i > 0) {
+        const [bigger, biggerSuffix] = units[i - 1];
+        return `$${trimZero((value / bigger).toFixed(1))}${biggerSuffix}`;
+      }
+      return `$${text}${suffix}`;
     }
   }
+  if (Math.round(abs) >= 1000) return value < 0 ? "-$1k" : "$1k";
   return `$${Math.round(value)}`;
 }
 

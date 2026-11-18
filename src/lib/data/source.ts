@@ -81,16 +81,18 @@ export class LiveSource implements DataSource {
   }
 
   async popular(limit: number): Promise<PopularEntry[]> {
-    return this.cache.getOrLoad(`assets:${limit}`, this.ttl(TTL.assetsList), async () =>
-      (await this.api.rwaAssetsList(limit))
-        .filter((e) => rwaIdOf(e) >= 0)
+    return this.cache.getOrLoad(`assets:${limit}`, this.ttl(TTL.assetsList), async () => {
+      // Only offer tiles that lead somewhere: the asset must be in the searchable (has_tokens) index.
+      const searchable = new Set((await this.searchIndex()).map((e) => e.rwaId));
+      return (await this.api.rwaAssetsList(limit))
+        .filter((e) => searchable.has(rwaIdOf(e)))
         .map((e) => ({
           ...toSearchEntry(e),
           tokenizedMarketCap:
             e.tokenized_market_cap ?? e.quotes?.find((q) => q.symbol === "USD")?.tokenized_market_cap ?? null,
         }))
-        .sort((a, b) => (b.tokenizedMarketCap ?? -1) - (a.tokenizedMarketCap ?? -1)),
-    );
+        .sort((a, b) => (b.tokenizedMarketCap ?? -1) - (a.tokenizedMarketCap ?? -1));
+    });
   }
 
   /** Batch-fetch RWA quotes and token metadata for many assets at once (used by the snapshot writer). */
@@ -203,7 +205,12 @@ export class SnapshotSource implements DataSource {
   private loadIndex(): Promise<SnapshotIndex> {
     this.index ??= fsp
       .readFile(path.join(this.dir, "index.json"), "utf8")
-      .then((raw) => JSON.parse(raw) as SnapshotIndex);
+      .then((raw) => JSON.parse(raw) as SnapshotIndex)
+      .catch((e: unknown) => {
+        // A read during a snapshot swap must not break this source until the next restart.
+        this.index = null;
+        throw e;
+      });
     return this.index;
   }
 

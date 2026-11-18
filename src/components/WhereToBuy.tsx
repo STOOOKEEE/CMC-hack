@@ -2,19 +2,25 @@ import { shortAddress } from "@/lib/format";
 import { issuerNote } from "@/lib/issuers";
 import type { Wrapper } from "@/lib/model";
 
+const NO_EXCHANGES: Record<Exclude<Wrapper["exchangesStatus"], "listed">, string> = {
+  none: "CoinMarketCap tracks no exchange market for it — it may only trade on-chain or through the issuer.",
+  not_fetched: "Exchange list not loaded for this version — use the chain and contract below.",
+  plan: "Exchange lists are not available on our CoinMarketCap plan — use the chain and contract below.",
+};
+
 /** Spec §6.4: exchanges when CMC gives them, always chain + contract + explorer, plus the issuer note (§6.6). */
 export function WhereToBuy({ wrapper }: { wrapper: Wrapper }) {
   const issuer = issuerNote(wrapper.issuerName);
   return (
     <div className="space-y-2 text-sm" data-testid="where-to-buy">
       <h3 className="font-medium">Where to buy</h3>
-      {wrapper.exchanges.length > 0 ? (
+      {wrapper.exchangesStatus === "listed" ? (
         <p>
           <span className="text-muted">Markets on CoinMarketCap: </span>
           {wrapper.exchanges.join(" · ")}
         </p>
       ) : (
-        <p className="text-muted">CoinMarketCap does not list its markets on our plan — use the chain and contract below.</p>
+        <p className="text-muted">{NO_EXCHANGES[wrapper.exchangesStatus]}</p>
       )}
       <p>
         <span className="text-muted">Chain: </span>

@@ -64,6 +64,17 @@ describe("normalizeAsset", () => {
     expect(wrappers.find((w) => w.cryptoId === 90004)!.exchanges).toEqual([]);
   });
 
+  it("says why a wrapper has no exchanges listed", () => {
+    const bundle = fixtureBundle("NVDA");
+    bundle.marketPairs!["90004"] = [];
+    const byId = new Map(normalizeAsset(bundle).wrappers.map((w) => [w.cryptoId, w]));
+    expect(byId.get(36992)!.exchangesStatus).toBe("listed");
+    expect(byId.get(90004)!.exchangesStatus).toBe("none");
+    expect(byId.get(90003)!.exchangesStatus).toBe("not_fetched");
+    bundle.marketPairs = null;
+    expect(normalizeAsset(bundle).wrappers[0].exchangesStatus).toBe("plan");
+  });
+
   it("returns no exchanges when market pairs are unavailable", () => {
     const bundle = fixtureBundle("NVDA");
     bundle.marketPairs = null;

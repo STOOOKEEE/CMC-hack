@@ -64,3 +64,26 @@ test("a percent sign in the ticker shows the not-found page, not an error", asyn
   expect((await request.get("/api/asset/%25")).status()).toBe(404);
   expect((await request.get("/a/%25/opengraph-image")).status()).toBe(200);
 });
+
+test("pressing Enter before the search index has loaded still finds the asset", async ({ page }) => {
+  await page.route("**/api/search-index", async (route) => {
+    await new Promise((r) => setTimeout(r, 1500));
+    await route.continue();
+  });
+  await page.goto("/");
+  await page.getByRole("combobox").fill("Nvidia");
+  await page.getByRole("combobox").press("Enter");
+  await expect(page).toHaveURL(/\/a\/nvda$/, { timeout: 10_000 });
+});
+
+test("the search recovers after the index failed to load once", async ({ page }) => {
+  let calls = 0;
+  await page.route("**/api/search-index", async (route) => {
+    calls += 1;
+    if (calls === 1) await route.fulfill({ status: 503, body: "{}" });
+    else await route.continue();
+  });
+  await page.goto("/");
+  await page.getByRole("combobox").fill("nv");
+  await expect(page.getByRole("option").first()).toContainText("NVDA");
+});

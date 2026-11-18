@@ -59,6 +59,7 @@ export function normalizeAsset(bundle: AssetBundle): { header: AssetHeader; wrap
     const meta = tokenMeta[id];
     const cq = tokenQuotes[id];
     const cqUsd = cq?.quote?.USD;
+    const exchanges = topExchanges(marketPairs?.[id]);
     return {
       cryptoId: token.crypto_id,
       symbol: token.symbol,
@@ -71,7 +72,15 @@ export function normalizeAsset(bundle: AssetBundle): { header: AssetHeader; wrap
       chain: str(meta?.platform?.name),
       contract: str(meta?.platform?.token_address),
       explorerUrl: str(meta?.urls?.explorer?.[0]),
-      exchanges: topExchanges(marketPairs?.[id]),
+      exchanges,
+      exchangesStatus:
+        marketPairs === null
+          ? "plan"
+          : marketPairs[id] === undefined
+            ? "not_fetched"
+            : exchanges.length > 0
+              ? "listed"
+              : "none",
     };
   });
 

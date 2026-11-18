@@ -64,7 +64,29 @@ describe("LiveSource on fixture endpoints", () => {
   });
 });
 
+describe("LiveSource popular list", () => {
+  it("drops popular entries that are not in the search index", async () => {
+    const api = createFixtureEndpoints(fixturesDir);
+    const list = await api.rwaAssetsList(50);
+    api.rwaAssetsList = async () => [...list, { rwa_id: 999, symbol: "BRKA", name: "Berkshire", tokenized_market_cap: 9e12 }];
+    const popular = await new LiveSource(api).popular(10);
+    expect(popular.map((p) => p.symbol)).not.toContain("BRKA");
+  });
+});
+
 describe("snapshot round-trip", () => {
+  it("recovers after a failed index read", async () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wrapscout-late-"));
+    try {
+      const snap = new SnapshotSource(dir, "snapshot");
+      await expect(snap.searchIndex()).rejects.toThrow();
+      fs.copyFileSync(path.join(snapDir, "index.json"), path.join(dir, "index.json"));
+      expect((await snap.searchIndex()).length).toBe(5);
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   it("reads back what writeSnapshot wrote", async () => {
     const snap = new SnapshotSource(snapDir, "snapshot");
     expect(await snap.asOf()).toBe("2026-11-17T08:00:00.000Z");

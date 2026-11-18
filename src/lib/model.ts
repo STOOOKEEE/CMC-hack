@@ -135,6 +135,8 @@ export interface Wrapper {
   contract: string | null;
   explorerUrl: string | null;
   exchanges: string[];
+  /** Why `exchanges` looks the way it does: listed, none tracked, not fetched for this wrapper, or refused by the plan. */
+  exchangesStatus: "listed" | "none" | "not_fetched" | "plan";
 }
 
 export interface AssetHeader {

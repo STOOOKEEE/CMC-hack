@@ -7,6 +7,8 @@ const plural = (n: number, one: string, many: string) => (n === 1 ? one : many);
 export interface ReasonContext {
   /** Volumes of all eligible wrappers, highest first. */
   eligibleVolumesDesc: number[];
+  /** The single wrapper called "most liquid" (first by volume after ranking). */
+  topVolumeId: number | null;
 }
 
 /** Positive reasons shown for an eligible wrapper (the Best pick card shows them all). */
@@ -18,7 +20,7 @@ export function reasonsFor(
   const reasons: string[] = [];
   const volume = wrapper.volume24h ?? 0;
   const [top, next] = ctx.eligibleVolumesDesc;
-  if (volume === top && ctx.eligibleVolumesDesc.length > 1) {
+  if (wrapper.cryptoId === ctx.topVolumeId && volume === top && ctx.eligibleVolumesDesc.length > 1) {
     const ratio = next > 0 ? volume / next : Infinity;
     reasons.push(
       ratio >= 1.5 && Number.isFinite(ratio)
@@ -37,14 +39,23 @@ export function reasonsFor(
 }
 
 /** Warnings for a single wrapper, by label. */
-export function warningsFor(wrapper: Wrapper, label: Label, deviation: number | null): string[] {
+export function warningsFor(
+  wrapper: Wrapper,
+  label: Label,
+  deviation: number | null,
+  assetType = "unknown",
+): string[] {
   switch (label) {
     case "no_market":
       return ["No tracked market — listed, but not trading on any venue CMC tracks"];
-    case "different_unit":
+    case "different_unit": {
+      const gap = deviation === null ? "far" : formatPct(deviation);
       return [
-        `Price is ${deviation === null ? "far" : formatPct(deviation)} away from the consensus — probably quoted in a different unit (e.g. per gram instead of per ounce)`,
+        assetType === "commodity"
+          ? `Price is ${gap} away from the reference — probably quoted in a different unit (e.g. per gram instead of per ounce)`
+          : `Price is ${gap} away from the reference — probably a different share ratio, or a stale price`,
       ];
+    }
     case "too_thin":
       return wrapper.volume24h
         ? [`Only ${formatCompactUsd(wrapper.volume24h)} traded in 24h — price may be stale`]

@@ -9,6 +9,12 @@ describe("formatCompactUsd", () => {
     expect(formatCompactUsd(12500)).toBe("$12.5k");
     expect(formatCompactUsd(43)).toBe("$43");
   });
+
+  it("rolls over to the next unit instead of printing $1000k", () => {
+    expect(formatCompactUsd(999_950)).toBe("$1M");
+    expect(formatCompactUsd(999_999_999)).toBe("$1B");
+    expect(formatCompactUsd(999.6)).toBe("$1k");
+  });
 });
 
 describe("formatPrice", () => {
