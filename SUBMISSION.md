@@ -9,7 +9,10 @@ Le projet Vercel `wrapscout` existe (compte stoookeee) et `CMC_API_KEY` y est co
 L'app GitHub de Vercel n'a pas accès au dépôt, donc pas de déploiement automatique au push : redéployer avec
 
 ```bash
-VERCEL_ORG_ID=team_syyUoceNOPZEDWq6gXE25vgv VERCEL_PROJECT_ID=prj_TxBvsTRtI17PWw9YF0ijoNsNQMdo npx vercel deploy --prod --yes
+# Déployer une copie du commit SANS le dossier .git : Vercel refuse sinon (« The commit author doesn't have
+# access to this team » — les commits sont signés par l'agent, pas par un membre de l'équipe Vercel).
+rm -rf /tmp/wrapscout-deploy && mkdir /tmp/wrapscout-deploy && git archive HEAD | tar -x -C /tmp/wrapscout-deploy
+cd /tmp/wrapscout-deploy && VERCEL_ORG_ID=team_syyUoceNOPZEDWq6gXE25vgv VERCEL_PROJECT_ID=prj_TxBvsTRtI17PWw9YF0ijoNsNQMdo npx vercel deploy --prod --yes
 ```
 
 (ou connecter le dépôt dans Vercel → Project → Settings → Git pour déployer à chaque push).
