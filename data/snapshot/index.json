@@ -1,0 +1,6702 @@
+{
+  "generatedAt": "2026-11-18T23:56:51.284Z",
+  "searchIndex": [
+    {
+      "rwaId": 1,
+      "symbol": "GOLD",
+      "name": "Gold",
+      "assetType": "commodity",
+      "rank": 1
+    },
+    {
+      "rwaId": 2,
+      "symbol": "NVDA",
+      "name": "Nvidia Corp",
+      "assetType": "stock",
+      "rank": 4
+    },
+    {
+      "rwaId": 3,
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "assetType": "stock",
+      "rank": 2
+    },
+    {
+      "rwaId": 4,
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc Class A",
+      "assetType": "stock",
+      "rank": 5
+    },
+    {
+      "rwaId": 5,
+      "symbol": "SILVER",
+      "name": "Silver",
+      "assetType": "commodity",
+      "rank": 7
+    },
+    {
+      "rwaId": 6,
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc",
+      "assetType": "stock",
+      "rank": 6
+    },
+    {
+      "rwaId": 7,
+      "symbol": "MSFT",
+      "name": "Microsoft Corp",
+      "assetType": "stock",
+      "rank": 3
+    },
+    {
+      "rwaId": 8,
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+      "assetType": "stock",
+      "rank": 9
+    },
+    {
+      "rwaId": 9,
+      "symbol": "SPCX",
+      "name": "SpaceX",
+      "assetType": "stock",
+      "rank": 8
+    },
+    {
+      "rwaId": 10,
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "assetType": "stock",
+      "rank": 11
+    },
+    {
+      "rwaId": 11,
+      "symbol": "LLY",
+      "name": "Eli Lilly And Co",
+      "assetType": "stock",
+      "rank": 13
+    },
+    {
+      "rwaId": 12,
+      "symbol": "MU",
+      "name": "Micron Technology Inc",
+      "assetType": "stock",
+      "rank": 19
+    },
+    {
+      "rwaId": 13,
+      "symbol": "AVGO",
+      "name": "Broadcom Inc",
+      "assetType": "stock",
+      "rank": 10
+    },
+    {
+      "rwaId": 14,
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "assetType": "stock",
+      "rank": 12
+    },
+    {
+      "rwaId": 15,
+      "symbol": "BRK.B",
+      "name": "Berkshire Hathaway Inc Class B",
+      "assetType": "stock",
+      "rank": 14
+    },
+    {
+      "rwaId": 16,
+      "symbol": "JPM",
+      "name": "JPmorgan Chase & Co",
+      "assetType": "stock",
+      "rank": 18
+    },
+    {
+      "rwaId": 17,
+      "symbol": "WMT",
+      "name": "Walmart Inc",
+      "assetType": "stock",
+      "rank": 15
+    },
+    {
+      "rwaId": 18,
+      "symbol": "V",
+      "name": "Visa Inc",
+      "assetType": "stock",
+      "rank": 20
+    },
+    {
+      "rwaId": 19,
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "assetType": "stock",
+      "rank": 21
+    },
+    {
+      "rwaId": 20,
+      "symbol": "INTC",
+      "name": "Intel Corp",
+      "assetType": "stock",
+      "rank": 40
+    },
+    {
+      "rwaId": 21,
+      "symbol": "ABBV",
+      "name": "AbbVie Inc",
+      "assetType": "stock",
+      "rank": 25
+    },
+    {
+      "rwaId": 22,
+      "symbol": "AMAT",
+      "name": "Applied Materials",
+      "assetType": "stock",
+      "rank": 44
+    },
+    {
+      "rwaId": 23,
+      "symbol": "BAC",
+      "name": "Bank of America Corp",
+      "assetType": "stock",
+      "rank": 35
+    },
+    {
+      "rwaId": 24,
+      "symbol": "ORCL",
+      "name": "Oracle Corp",
+      "assetType": "stock",
+      "rank": 32
+    },
+    {
+      "rwaId": 25,
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "assetType": "stock",
+      "rank": 16
+    },
+    {
+      "rwaId": 26,
+      "symbol": "ASML",
+      "name": "ASML Holding NV",
+      "assetType": "stock",
+      "rank": 24
+    },
+    {
+      "rwaId": 27,
+      "symbol": "XOM",
+      "name": "Exxon Mobil Corp",
+      "assetType": "stock",
+      "rank": 22
+    },
+    {
+      "rwaId": 28,
+      "symbol": "MA",
+      "name": "Mastercard Inc",
+      "assetType": "stock",
+      "rank": 23
+    },
+    {
+      "rwaId": 29,
+      "symbol": "CSCO",
+      "name": "Cisco Systems Inc",
+      "assetType": "stock",
+      "rank": 30
+    },
+    {
+      "rwaId": 30,
+      "symbol": "CAT",
+      "name": "Caterpillar",
+      "assetType": "stock",
+      "rank": 51
+    },
+    {
+      "rwaId": 31,
+      "symbol": "COST",
+      "name": "Costco Wholesale Corp",
+      "assetType": "stock",
+      "rank": 26
+    },
+    {
+      "rwaId": 32,
+      "symbol": "LRCX",
+      "name": "Lam Research Corp",
+      "assetType": "stock",
+      "rank": 47
+    },
+    {
+      "rwaId": 33,
+      "symbol": "UNH",
+      "name": "UnitedHealth Group Inc",
+      "assetType": "stock",
+      "rank": 37
+    },
+    {
+      "rwaId": 34,
+      "symbol": "KO",
+      "name": "Coca-Cola Co",
+      "assetType": "stock",
+      "rank": 27
+    },
+    {
+      "rwaId": 35,
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "assetType": "stock",
+      "rank": 43
+    },
+    {
+      "rwaId": 36,
+      "symbol": "HD",
+      "name": "Home Depot Inc",
+      "assetType": "stock",
+      "rank": 36
+    },
+    {
+      "rwaId": 37,
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "assetType": "stock",
+      "rank": 56
+    },
+    {
+      "rwaId": 38,
+      "symbol": "MRK",
+      "name": "Merck & Co Inc",
+      "assetType": "stock",
+      "rank": 34
+    },
+    {
+      "rwaId": 39,
+      "symbol": "GS",
+      "name": "Goldman Sachs Group Inc",
+      "assetType": "stock",
+      "rank": 54
+    },
+    {
+      "rwaId": 40,
+      "symbol": "AZN",
+      "name": "AstraZeneca PLC",
+      "assetType": "stock",
+      "rank": 45
+    },
+    {
+      "rwaId": 42,
+      "symbol": "IBM",
+      "name": "IBM",
+      "assetType": "stock",
+      "rank": 63
+    },
+    {
+      "rwaId": 43,
+      "symbol": "PANW",
+      "name": "Palo Alto Networks Inc",
+      "assetType": "stock",
+      "rank": 39
+    },
+    {
+      "rwaId": 44,
+      "symbol": "DELL",
+      "name": "Dell Technologies Inc.",
+      "assetType": "stock",
+      "rank": 69
+    },
+    {
+      "rwaId": 45,
+      "symbol": "TXN",
+      "name": "Texas Instruments Inc",
+      "assetType": "stock",
+      "rank": 46
+    },
+    {
+      "rwaId": 47,
+      "symbol": "AXP",
+      "name": "American Express Co",
+      "assetType": "stock",
+      "rank": 64
+    },
+    {
+      "rwaId": 48,
+      "symbol": "SNDK",
+      "name": "SanDisk Corp",
+      "assetType": "stock",
+      "rank": 140
+    },
+    {
+      "rwaId": 49,
+      "symbol": "GE",
+      "name": "General Electric Co",
+      "assetType": "stock",
+      "rank": 33
+    },
+    {
+      "rwaId": 50,
+      "symbol": "PG",
+      "name": "Procter & Gamble Co",
+      "assetType": "stock",
+      "rank": 29
+    },
+    {
+      "rwaId": 51,
+      "symbol": "CVX",
+      "name": "Chevron Corp",
+      "assetType": "stock",
+      "rank": 28
+    },
+    {
+      "rwaId": 53,
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc",
+      "assetType": "stock",
+      "rank": 31
+    },
+    {
+      "rwaId": 54,
+      "symbol": "ARM",
+      "name": "Arm Holdings PLC - ADR",
+      "assetType": "stock",
+      "rank": 70
+    },
+    {
+      "rwaId": 56,
+      "symbol": "PM",
+      "name": "Philip Morris International Inc",
+      "assetType": "stock",
+      "rank": 38
+    },
+    {
+      "rwaId": 57,
+      "symbol": "GEV",
+      "name": "GE Vernova Inc.",
+      "assetType": "stock",
+      "rank": 68
+    },
+    {
+      "rwaId": 58,
+      "symbol": "KLAC",
+      "name": "KLA Corp",
+      "assetType": "stock",
+      "rank": 74
+    },
+    {
+      "rwaId": 59,
+      "symbol": "RTX",
+      "name": "Rtx Corp",
+      "assetType": "stock",
+      "rank": 49
+    },
+    {
+      "rwaId": 60,
+      "symbol": "WFC",
+      "name": "Wells Fargo & Co",
+      "assetType": "stock",
+      "rank": 59
+    },
+    {
+      "rwaId": 61,
+      "symbol": "LIN",
+      "name": "Linde PLC",
+      "assetType": "stock",
+      "rank": 61
+    },
+    {
+      "rwaId": 62,
+      "symbol": "C",
+      "name": "Citigroup Inc",
+      "assetType": "stock",
+      "rank": 72
+    },
+    {
+      "rwaId": 63,
+      "symbol": "BABA",
+      "name": "Alibaba Group Holding Ltd",
+      "assetType": "stock",
+      "rank": 65
+    },
+    {
+      "rwaId": 65,
+      "symbol": "NVO",
+      "name": "Novo Nordisk A/S",
+      "assetType": "stock",
+      "rank": 87
+    },
+    {
+      "rwaId": 66,
+      "symbol": "ANET",
+      "name": "Arista Networks",
+      "assetType": "stock",
+      "rank": 57
+    },
+    {
+      "rwaId": 68,
+      "symbol": "MCD",
+      "name": "McDonald's Corp",
+      "assetType": "stock",
+      "rank": 75
+    },
+    {
+      "rwaId": 69,
+      "symbol": "PEP",
+      "name": "PepsiCo Inc",
+      "assetType": "stock",
+      "rank": 73
+    },
+    {
+      "rwaId": 70,
+      "symbol": "MRVL",
+      "name": "Marvell Technology Inc",
+      "assetType": "stock",
+      "rank": 112
+    },
+    {
+      "rwaId": 71,
+      "symbol": "APH",
+      "name": "Amphenol Corporation",
+      "assetType": "stock",
+      "rank": 78
+    },
+    {
+      "rwaId": 72,
+      "symbol": "SAP",
+      "name": "SAP SE",
+      "assetType": "stock",
+      "rank": 58
+    },
+    {
+      "rwaId": 73,
+      "symbol": "STX",
+      "name": "Seagate Technology Holdings Plc",
+      "assetType": "stock",
+      "rank": 131
+    },
+    {
+      "rwaId": 74,
+      "symbol": "ADI",
+      "name": "Analog Devices",
+      "assetType": "stock",
+      "rank": 79
+    },
+    {
+      "rwaId": 75,
+      "symbol": "WDC",
+      "name": "Western Digital Corporation",
+      "assetType": "stock",
+      "rank": 146
+    },
+    {
+      "rwaId": 76,
+      "symbol": "SCHW",
+      "name": "Charles Schwab Corporation",
+      "assetType": "stock",
+      "rank": 93
+    },
+    {
+      "rwaId": 78,
+      "symbol": "GILD",
+      "name": "Gilead Sciences, Inc.",
+      "assetType": "stock",
+      "rank": 66
+    },
+    {
+      "rwaId": 80,
+      "symbol": "WELL",
+      "name": "Welltower Inc.",
+      "assetType": "stock",
+      "rank": 83
+    },
+    {
+      "rwaId": 81,
+      "symbol": "DE",
+      "name": "Deere & Co",
+      "assetType": "stock",
+      "rank": 88
+    },
+    {
+      "rwaId": 82,
+      "symbol": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "assetType": "stock",
+      "rank": 454
+    },
+    {
+      "rwaId": 84,
+      "symbol": "HOOD",
+      "name": "Robinhood Markets Inc",
+      "assetType": "stock",
+      "rank": 263
+    },
+    {
+      "rwaId": 85,
+      "symbol": "DFDV",
+      "name": "Defi Development Corp",
+      "assetType": "stock",
+      "rank": 3808
+    },
+    {
+      "rwaId": 86,
+      "symbol": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "assetType": "etf",
+      "rank": 7811
+    },
+    {
+      "rwaId": 87,
+      "symbol": "GLD",
+      "name": "SPDR Gold Trust",
+      "assetType": "etf",
+      "rank": 7809
+    },
+    {
+      "rwaId": 88,
+      "symbol": "QBTS",
+      "name": "D-Wave Quantum",
+      "assetType": "stock",
+      "rank": 1730
+    },
+    {
+      "rwaId": 89,
+      "symbol": "ITOT",
+      "name": "iShares Core S&P Total US Stock Market ETF",
+      "assetType": "etf",
+      "rank": 7806
+    },
+    {
+      "rwaId": 90,
+      "symbol": "PBR",
+      "name": "Petroleo Brasileiro SA Petrobras Preference Shares",
+      "assetType": "stock",
+      "rank": 147
+    },
+    {
+      "rwaId": 91,
+      "symbol": "RIOT",
+      "name": "Riot Platforms Inc",
+      "assetType": "stock",
+      "rank": 1105
+    },
+    {
+      "rwaId": 92,
+      "symbol": "PFE",
+      "name": "Pfizer Inc",
+      "assetType": "stock",
+      "rank": 94
+    },
+    {
+      "rwaId": 93,
+      "symbol": "PYPL",
+      "name": "PayPal Holdings Inc",
+      "assetType": "stock",
+      "rank": 320
+    },
+    {
+      "rwaId": 94,
+      "symbol": "EFA",
+      "name": "iShares MSCI EAFE ETF",
+      "assetType": "etf",
+      "rank": 7803
+    },
+    {
+      "rwaId": 95,
+      "symbol": "IEFA",
+      "name": "iShares Core MSCI EAFE ETF",
+      "assetType": "etf",
+      "rank": 7802
+    },
+    {
+      "rwaId": 96,
+      "symbol": "AGG",
+      "name": "iShares Core US Aggregate Bond ETF",
+      "assetType": "etf",
+      "rank": 7801
+    },
+    {
+      "rwaId": 97,
+      "symbol": "TM",
+      "name": "Toyota Motor Corp",
+      "assetType": "stock",
+      "rank": 55
+    },
+    {
+      "rwaId": 98,
+      "symbol": "SAN",
+      "name": "Banco Santander S.A.",
+      "assetType": "stock",
+      "rank": 91
+    },
+    {
+      "rwaId": 100,
+      "symbol": "TMUS",
+      "name": "T-Mobile Us Inc",
+      "assetType": "stock",
+      "rank": 90
+    },
+    {
+      "rwaId": 101,
+      "symbol": "AMGN",
+      "name": "Amgen",
+      "assetType": "stock",
+      "rank": 60
+    },
+    {
+      "rwaId": 102,
+      "symbol": "CRWD",
+      "name": "Crowdstrike Holdings Inc",
+      "assetType": "stock",
+      "rank": 53
+    },
+    {
+      "rwaId": 103,
+      "symbol": "QCOM",
+      "name": "Qualcomm Inc",
+      "assetType": "stock",
+      "rank": 89
+    },
+    {
+      "rwaId": 104,
+      "symbol": "TMO",
+      "name": "Thermo Fisher Scientific Inc",
+      "assetType": "stock",
+      "rank": 52
+    },
+    {
+      "rwaId": 105,
+      "symbol": "NEE",
+      "name": "NextEra Energy Inc",
+      "assetType": "stock",
+      "rank": 86
+    },
+    {
+      "rwaId": 106,
+      "symbol": "BA",
+      "name": "Boeing Co",
+      "assetType": "stock",
+      "rank": 116
+    },
+    {
+      "rwaId": 107,
+      "symbol": "VZ",
+      "name": "Verizon Communications Inc",
+      "assetType": "stock",
+      "rank": 77
+    },
+    {
+      "rwaId": 108,
+      "symbol": "APP",
+      "name": "Applovin Corp",
+      "assetType": "stock",
+      "rank": 115
+    },
+    {
+      "rwaId": 109,
+      "symbol": "TJX",
+      "name": "Tjx Companies, Inc.",
+      "assetType": "stock",
+      "rank": 99
+    },
+    {
+      "rwaId": 110,
+      "symbol": "DIS",
+      "name": "Walt Disney Co",
+      "assetType": "stock",
+      "rank": 67
+    },
+    {
+      "rwaId": 111,
+      "symbol": "UNP",
+      "name": "Union Pacific Corp.",
+      "assetType": "stock",
+      "rank": 84
+    },
+    {
+      "rwaId": 112,
+      "symbol": "ABT",
+      "name": "Abbott Laboratories",
+      "assetType": "stock",
+      "rank": 80
+    },
+    {
+      "rwaId": 114,
+      "symbol": "MSTR",
+      "name": "MicroStrategy Inc",
+      "assetType": "stock",
+      "rank": 372
+    },
+    {
+      "rwaId": 115,
+      "symbol": "CRCL",
+      "name": "Circle Internet Group Inc",
+      "assetType": "stock",
+      "rank": 735
+    },
+    {
+      "rwaId": 116,
+      "symbol": "GME",
+      "name": "GameStop Corp",
+      "assetType": "stock",
+      "rank": 757
+    },
+    {
+      "rwaId": 117,
+      "symbol": "AMBR",
+      "name": "Amber International Holding Ltd",
+      "assetType": "stock",
+      "rank": 3636
+    },
+    {
+      "rwaId": 118,
+      "symbol": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "assetType": "etf",
+      "rank": 7810
+    },
+    {
+      "rwaId": 119,
+      "symbol": "IWN",
+      "name": "iShares Russell 2000 Value ETF",
+      "assetType": "etf",
+      "rank": 7808
+    },
+    {
+      "rwaId": 120,
+      "symbol": "TIP",
+      "name": "iShares TIPS Bond ETF",
+      "assetType": "etf",
+      "rank": 7807
+    },
+    {
+      "rwaId": 121,
+      "symbol": "HYG",
+      "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+      "assetType": "etf",
+      "rank": 7805
+    },
+    {
+      "rwaId": 122,
+      "symbol": "EQIX",
+      "name": "Equinix Inc",
+      "assetType": "stock",
+      "rank": 153
+    },
+    {
+      "rwaId": 123,
+      "symbol": "MARA",
+      "name": "MARA Holdings Inc",
+      "assetType": "stock",
+      "rank": 1808
+    },
+    {
+      "rwaId": 124,
+      "symbol": "EEM",
+      "name": "iShares MSCI Emerging Markets ETF",
+      "assetType": "etf",
+      "rank": 7804
+    },
+    {
+      "rwaId": 125,
+      "symbol": "HIMS",
+      "name": "Hims & Hers Health Inc",
+      "assetType": "stock",
+      "rank": 1500
+    },
+    {
+      "rwaId": 126,
+      "symbol": "NKE",
+      "name": "Nike Inc",
+      "assetType": "stock",
+      "rank": 298
+    },
+    {
+      "rwaId": 127,
+      "symbol": "SMCI",
+      "name": "Super Micro Computer Inc",
+      "assetType": "stock",
+      "rank": 666
+    },
+    {
+      "rwaId": 128,
+      "symbol": "UBER",
+      "name": "Uber Technologies Inc",
+      "assetType": "stock",
+      "rank": 105
+    },
+    {
+      "rwaId": 129,
+      "symbol": "SBUX",
+      "name": "Starbucks Corp",
+      "assetType": "stock",
+      "rank": 124
+    },
+    {
+      "rwaId": 130,
+      "symbol": "CMG",
+      "name": "Chipotle Mexican Grill Inc",
+      "assetType": "stock",
+      "rank": 327
+    },
+    {
+      "rwaId": 131,
+      "symbol": "IWF",
+      "name": "iShares Russell 1000 Growth",
+      "assetType": "etf",
+      "rank": 7800
+    },
+    {
+      "rwaId": 132,
+      "symbol": "SHOP",
+      "name": "Shopify Inc",
+      "assetType": "stock",
+      "rank": 81
+    },
+    {
+      "rwaId": 133,
+      "symbol": "APO",
+      "name": "Apollo Global Management Ord Shs",
+      "assetType": "stock",
+      "rank": 249
+    },
+    {
+      "rwaId": 134,
+      "symbol": "SPGI",
+      "name": "S&P Global Inc",
+      "assetType": "stock",
+      "rank": 117
+    },
+    {
+      "rwaId": 135,
+      "symbol": "SNOW",
+      "name": "Snowflake Inc",
+      "assetType": "stock",
+      "rank": 158
+    },
+    {
+      "rwaId": 136,
+      "symbol": "ACN",
+      "name": "Accenture Plc",
+      "assetType": "stock",
+      "rank": 110
+    },
+    {
+      "rwaId": 137,
+      "symbol": "LMT",
+      "name": "Lockheed Martin Corp",
+      "assetType": "stock",
+      "rank": 111
+    },
+    {
+      "rwaId": 138,
+      "symbol": "ADBE",
+      "name": "Adobe Inc",
+      "assetType": "stock",
+      "rank": 186
+    },
+    {
+      "rwaId": 139,
+      "symbol": "BLK",
+      "name": "BlackRock Inc",
+      "assetType": "stock",
+      "rank": 82
+    },
+    {
+      "rwaId": 140,
+      "symbol": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "assetType": "etf",
+      "rank": 7798
+    },
+    {
+      "rwaId": 141,
+      "symbol": "IVV",
+      "name": "iShares Core S&P 500 ETF",
+      "assetType": "etf",
+      "rank": 7796
+    },
+    {
+      "rwaId": 142,
+      "symbol": "MELI",
+      "name": "MercadoLibre Inc",
+      "assetType": "stock",
+      "rank": 237
+    },
+    {
+      "rwaId": 143,
+      "symbol": "GRND",
+      "name": "Grindr Inc",
+      "assetType": "stock",
+      "rank": 1806
+    },
+    {
+      "rwaId": 144,
+      "symbol": "SBET",
+      "name": "Sharplink Gaming Inc",
+      "assetType": "stock",
+      "rank": 2369
+    },
+    {
+      "rwaId": 145,
+      "symbol": "DHR",
+      "name": "Danaher Corp",
+      "assetType": "stock",
+      "rank": 95
+    },
+    {
+      "rwaId": 146,
+      "symbol": "MDT",
+      "name": "Medtronic PLC",
+      "assetType": "stock",
+      "rank": 118
+    },
+    {
+      "rwaId": 147,
+      "symbol": "TBLL",
+      "name": "Invesco Short Term Treasury ETF",
+      "assetType": "etf",
+      "rank": 7793
+    },
+    {
+      "rwaId": 148,
+      "symbol": "VTI",
+      "name": "Vanguard Total Stock Market Index Fund ETF",
+      "assetType": "etf",
+      "rank": 7791
+    },
+    {
+      "rwaId": 149,
+      "symbol": "USFR",
+      "name": "WisdomTree Floating Rate Treasury Fund",
+      "assetType": "etf",
+      "rank": 7790
+    },
+    {
+      "rwaId": 150,
+      "symbol": "HYMB",
+      "name": "SPDR Nuveen ICE High Yield Municipal Bond ETF",
+      "assetType": "etf",
+      "rank": 7789
+    },
+    {
+      "rwaId": 151,
+      "symbol": "IBIT",
+      "name": "iShares Bitcoin Trust ETF",
+      "assetType": "etf",
+      "rank": 7787
+    },
+    {
+      "rwaId": 152,
+      "symbol": "AAL",
+      "name": "American Airlines Group",
+      "assetType": "stock",
+      "rank": 980
+    },
+    {
+      "rwaId": 153,
+      "symbol": "AMC",
+      "name": "AMC Entertainment",
+      "assetType": "stock",
+      "rank": 1777
+    },
+    {
+      "rwaId": 154,
+      "symbol": "BILI",
+      "name": "Bilibili",
+      "assetType": "stock",
+      "rank": 1393
+    },
+    {
+      "rwaId": 155,
+      "symbol": "BLSH",
+      "name": "Bullish",
+      "assetType": "stock",
+      "rank": 1690
+    },
+    {
+      "rwaId": 156,
+      "symbol": "BTG",
+      "name": "B2Gold",
+      "assetType": "stock",
+      "rank": 1202
+    },
+    {
+      "rwaId": 157,
+      "symbol": "CEG",
+      "name": "Constellation Energy",
+      "assetType": "stock",
+      "rank": 176
+    },
+    {
+      "rwaId": 158,
+      "symbol": "CLOA",
+      "name": "iShares AAA CLO Active ETF",
+      "assetType": "etf",
+      "rank": 7784
+    },
+    {
+      "rwaId": 159,
+      "symbol": "COF",
+      "name": "Capital One Financial Corp",
+      "assetType": "stock",
+      "rank": 141
+    },
+    {
+      "rwaId": 160,
+      "symbol": "COPX",
+      "name": "Global X Copper Miners ETF",
+      "assetType": "etf",
+      "rank": 7782
+    },
+    {
+      "rwaId": 161,
+      "symbol": "CVNA",
+      "name": "Carvana Co",
+      "assetType": "stock",
+      "rank": 213
+    },
+    {
+      "rwaId": 162,
+      "symbol": "DGRW",
+      "name": "WisdomTree US Quality Dividend Growth Fund",
+      "assetType": "etf",
+      "rank": 7780
+    },
+    {
+      "rwaId": 163,
+      "symbol": "FIGR",
+      "name": "Figure Technology Solutions Inc",
+      "assetType": "stock",
+      "rank": 1214
+    },
+    {
+      "rwaId": 164,
+      "symbol": "FTGC",
+      "name": "First Trust Global Tactical Commodity Strategy Fund",
+      "assetType": "etf",
+      "rank": 7779
+    },
+    {
+      "rwaId": 165,
+      "symbol": "GRAB",
+      "name": "Grab Holdings Ltd",
+      "assetType": "stock",
+      "rank": 779
+    },
+    {
+      "rwaId": 166,
+      "symbol": "ISRG",
+      "name": "Intuitive Surgical Inc",
+      "assetType": "stock",
+      "rank": 101
+    },
+    {
+      "rwaId": 167,
+      "symbol": "LI",
+      "name": "Li Auto Inc",
+      "assetType": "stock",
+      "rank": 835
+    },
+    {
+      "rwaId": 168,
+      "symbol": "MP",
+      "name": "Mp Materials Corp",
+      "assetType": "stock",
+      "rank": 1137
+    },
+    {
+      "rwaId": 169,
+      "symbol": "MTZ",
+      "name": "MasTec Inc",
+      "assetType": "stock",
+      "rank": 728
+    },
+    {
+      "rwaId": 170,
+      "symbol": "NIO",
+      "name": "Nio Inc",
+      "assetType": "stock",
+      "rank": 1100
+    },
+    {
+      "rwaId": 171,
+      "symbol": "OKLO",
+      "name": "Oklo Inc",
+      "assetType": "stock",
+      "rank": 1447
+    },
+    {
+      "rwaId": 172,
+      "symbol": "ON",
+      "name": "ON Semiconductor Corp",
+      "assetType": "stock",
+      "rank": 498
+    },
+    {
+      "rwaId": 173,
+      "symbol": "OSCR",
+      "name": "Oscar Health Inc",
+      "assetType": "stock",
+      "rank": 979
+    },
+    {
+      "rwaId": 174,
+      "symbol": "PCG",
+      "name": "PG&E Corp",
+      "assetType": "stock",
+      "rank": 446
+    },
+    {
+      "rwaId": 175,
+      "symbol": "PDD",
+      "name": "PDD Holdings Inc",
+      "assetType": "stock",
+      "rank": 143
+    },
+    {
+      "rwaId": 176,
+      "symbol": "PLUG",
+      "name": "Plug Power Inc",
+      "assetType": "stock",
+      "rank": 2156
+    },
+    {
+      "rwaId": 177,
+      "symbol": "REMX",
+      "name": "VanEck Rare Earth and Strategic Metals ETF",
+      "assetType": "etf",
+      "rank": 7774
+    },
+    {
+      "rwaId": 178,
+      "symbol": "RIVN",
+      "name": "Rivian Automotive Inc",
+      "assetType": "stock",
+      "rank": 637
+    },
+    {
+      "rwaId": 179,
+      "symbol": "SNAP",
+      "name": "Snap Inc",
+      "assetType": "stock",
+      "rank": 929
+    },
+    {
+      "rwaId": 180,
+      "symbol": "SO",
+      "name": "Southern Co",
+      "assetType": "stock",
+      "rank": 145
+    },
+    {
+      "rwaId": 181,
+      "symbol": "SQQQ",
+      "name": "ProShares UltraPro Short QQQ",
+      "assetType": "etf",
+      "rank": 7772
+    },
+    {
+      "rwaId": 182,
+      "symbol": "TLN",
+      "name": "Talen Energy Corp",
+      "assetType": "stock",
+      "rank": 677
+    },
+    {
+      "rwaId": 183,
+      "symbol": "USO",
+      "name": "United States Oil Fund LP",
+      "assetType": "etf",
+      "rank": 7771
+    },
+    {
+      "rwaId": 184,
+      "symbol": "VST",
+      "name": "Vistra Corp",
+      "assetType": "stock",
+      "rank": 350
+    },
+    {
+      "rwaId": 185,
+      "symbol": "WULF",
+      "name": "Terawulf Inc",
+      "assetType": "stock",
+      "rank": 1176
+    },
+    {
+      "rwaId": 186,
+      "symbol": "CL",
+      "name": "Crude Oil",
+      "assetType": "commodity",
+      "rank": 4669
+    },
+    {
+      "rwaId": 187,
+      "symbol": "ANTHROPIC",
+      "name": "Anthropic",
+      "assetType": "stock",
+      "rank": 7768
+    },
+    {
+      "rwaId": 188,
+      "symbol": "COHR",
+      "name": "Coherent",
+      "assetType": "stock",
+      "rank": 352
+    },
+    {
+      "rwaId": 189,
+      "symbol": "LITE",
+      "name": "Lumentum Holdings Inc.",
+      "assetType": "stock",
+      "rank": 308
+    },
+    {
+      "rwaId": 190,
+      "symbol": "BE",
+      "name": "Bloom Energy Corporation",
+      "assetType": "stock",
+      "rank": 306
+    },
+    {
+      "rwaId": 191,
+      "symbol": "AAOI",
+      "name": "Applied Optoelectronics, Inc.",
+      "assetType": "stock",
+      "rank": 1543
+    },
+    {
+      "rwaId": 192,
+      "symbol": "ETN",
+      "name": "Eaton Corporation, Plc",
+      "assetType": "stock",
+      "rank": 113
+    },
+    {
+      "rwaId": 193,
+      "symbol": "ABNB",
+      "name": "Airbnb Inc",
+      "assetType": "stock",
+      "rank": 150
+    },
+    {
+      "rwaId": 194,
+      "symbol": "FUTU",
+      "name": "Futu Holdings Ltd",
+      "assetType": "stock",
+      "rank": 807
+    },
+    {
+      "rwaId": 195,
+      "symbol": "JD",
+      "name": "JD.Com Inc",
+      "assetType": "stock",
+      "rank": 413
+    },
+    {
+      "rwaId": 196,
+      "symbol": "RDDT",
+      "name": "Reddit Inc",
+      "assetType": "stock",
+      "rank": 615
+    },
+    {
+      "rwaId": 197,
+      "symbol": "BIDU",
+      "name": "Baidu Inc",
+      "assetType": "stock",
+      "rank": 538
+    },
+    {
+      "rwaId": 198,
+      "symbol": "CRM",
+      "name": "Salesforce Inc",
+      "assetType": "stock",
+      "rank": 97
+    },
+    {
+      "rwaId": 199,
+      "symbol": "DASH",
+      "name": "DoorDash Inc",
+      "assetType": "stock",
+      "rank": 236
+    },
+    {
+      "rwaId": 200,
+      "symbol": "IJH",
+      "name": "iShares Core S&P Mid-Cap ETF",
+      "assetType": "etf",
+      "rank": 7799
+    },
+    {
+      "rwaId": 201,
+      "symbol": "INTU",
+      "name": "Intuit Inc",
+      "assetType": "stock",
+      "rank": 198
+    },
+    {
+      "rwaId": 202,
+      "symbol": "SPOT",
+      "name": "Spotify Technology SA",
+      "assetType": "stock",
+      "rank": 122
+    },
+    {
+      "rwaId": 203,
+      "symbol": "NOW",
+      "name": "ServiceNow Inc",
+      "assetType": "stock",
+      "rank": 170
+    },
+    {
+      "rwaId": 204,
+      "symbol": "TLT",
+      "name": "iShares 20+ Year Treasury Bond ETF",
+      "assetType": "etf",
+      "rank": 7797
+    },
+    {
+      "rwaId": 205,
+      "symbol": "SLV",
+      "name": "iShares Silver Trust",
+      "assetType": "etf",
+      "rank": 7795
+    },
+    {
+      "rwaId": 206,
+      "symbol": "IAU",
+      "name": "iShares Gold Trust",
+      "assetType": "etf",
+      "rank": 7794
+    },
+    {
+      "rwaId": 207,
+      "symbol": "FIG",
+      "name": "Figma Inc",
+      "assetType": "stock",
+      "rank": 935
+    },
+    {
+      "rwaId": 208,
+      "symbol": "CMCSA",
+      "name": "Comcast Corp",
+      "assetType": "stock",
+      "rank": 184
+    },
+    {
+      "rwaId": 210,
+      "symbol": "OPEN",
+      "name": "Opendoor Technologies Inc",
+      "assetType": "stock",
+      "rank": 2322
+    },
+    {
+      "rwaId": 211,
+      "symbol": "TQQQ",
+      "name": "ProShares UltraPro QQQ",
+      "assetType": "etf",
+      "rank": 7792
+    },
+    {
+      "rwaId": 212,
+      "symbol": "GLXY",
+      "name": "Galaxy Digital Inc",
+      "assetType": "stock",
+      "rank": 1803
+    },
+    {
+      "rwaId": 213,
+      "symbol": "PLD",
+      "name": "Prologis Inc",
+      "assetType": "stock",
+      "rank": 132
+    },
+    {
+      "rwaId": 214,
+      "symbol": "PALL",
+      "name": "abrdn Physical Palladium Shares ETF",
+      "assetType": "etf",
+      "rank": 7788
+    },
+    {
+      "rwaId": 215,
+      "symbol": "ETHE",
+      "name": "Grayscale Ethereum Trust ETF",
+      "assetType": "etf",
+      "rank": 7786
+    },
+    {
+      "rwaId": 216,
+      "symbol": "ACHR",
+      "name": "Archer Aviation",
+      "assetType": "stock",
+      "rank": 1811
+    },
+    {
+      "rwaId": 217,
+      "symbol": "BBAI",
+      "name": "BigBear.ai Holdings",
+      "assetType": "stock",
+      "rank": 2522
+    },
+    {
+      "rwaId": 218,
+      "symbol": "BINC",
+      "name": "iShares Flexible Income Active ETF",
+      "assetType": "etf",
+      "rank": 7785
+    },
+    {
+      "rwaId": 219,
+      "symbol": "BMNR",
+      "name": "BitMine Immersion Technologies",
+      "assetType": "stock",
+      "rank": 895
+    },
+    {
+      "rwaId": 220,
+      "symbol": "BZ",
+      "name": "Kanzhun",
+      "assetType": "stock",
+      "rank": 1209
+    },
+    {
+      "rwaId": 221,
+      "symbol": "CIFR",
+      "name": "Cipher Mining",
+      "assetType": "stock",
+      "rank": 1707
+    },
+    {
+      "rwaId": 222,
+      "symbol": "CLOI",
+      "name": "VanEck CLO ETF",
+      "assetType": "etf",
+      "rank": 7783
+    },
+    {
+      "rwaId": 223,
+      "symbol": "COP",
+      "name": "ConocoPhillips",
+      "assetType": "stock",
+      "rank": 96
+    },
+    {
+      "rwaId": 224,
+      "symbol": "CPNG",
+      "name": "Coupang Inc",
+      "assetType": "stock",
+      "rank": 513
+    },
+    {
+      "rwaId": 225,
+      "symbol": "DBC",
+      "name": "Invesco DB Commodity Index Tracking Fund",
+      "assetType": "etf",
+      "rank": 7781
+    },
+    {
+      "rwaId": 226,
+      "symbol": "DNN",
+      "name": "Denison Mines Corp",
+      "assetType": "stock",
+      "rank": 2081
+    },
+    {
+      "rwaId": 227,
+      "symbol": "F",
+      "name": "Ford Motor Co",
+      "assetType": "stock",
+      "rank": 336
+    },
+    {
+      "rwaId": 228,
+      "symbol": "GEMI",
+      "name": "Gemini Space Station Inc",
+      "assetType": "stock",
+      "rank": 3402
+    },
+    {
+      "rwaId": 229,
+      "symbol": "IREN",
+      "name": "IREN Ltd",
+      "assetType": "stock",
+      "rank": 1124
+    },
+    {
+      "rwaId": 230,
+      "symbol": "JAAA",
+      "name": "Janus Henderson AAA CLO ETF",
+      "assetType": "etf",
+      "rank": 7778
+    },
+    {
+      "rwaId": 231,
+      "symbol": "LOW",
+      "name": "Lowe's Companies Inc",
+      "assetType": "stock",
+      "rank": 123
+    },
+    {
+      "rwaId": 232,
+      "symbol": "MRNA",
+      "name": "Moderna Inc",
+      "assetType": "stock",
+      "rank": 214
+    },
+    {
+      "rwaId": 233,
+      "symbol": "NIKL",
+      "name": "Sprott Nickel Miners ETF",
+      "assetType": "etf",
+      "rank": 7777
+    },
+    {
+      "rwaId": 234,
+      "symbol": "NTES",
+      "name": "NetEase Inc",
+      "assetType": "stock",
+      "rank": 231
+    },
+    {
+      "rwaId": 235,
+      "symbol": "ONDS",
+      "name": "Ondas Holdings Inc",
+      "assetType": "stock",
+      "rank": 1797
+    },
+    {
+      "rwaId": 236,
+      "symbol": "OPRA",
+      "name": "Opera Ltd",
+      "assetType": "stock",
+      "rank": 2277
+    },
+    {
+      "rwaId": 237,
+      "symbol": "OXY",
+      "name": "Occidental Petroleum Corp",
+      "assetType": "stock",
+      "rank": 297
+    },
+    {
+      "rwaId": 238,
+      "symbol": "PDBC",
+      "name": "Invesco Optimum Yld Dvsfd Cmd Str No K-1 ETF",
+      "assetType": "etf",
+      "rank": 7776
+    },
+    {
+      "rwaId": 239,
+      "symbol": "PINS",
+      "name": "Pinterest Inc",
+      "assetType": "stock",
+      "rank": 874
+    },
+    {
+      "rwaId": 240,
+      "symbol": "PSQ",
+      "name": "ProShares Short QQQ",
+      "assetType": "etf",
+      "rank": 7775
+    },
+    {
+      "rwaId": 241,
+      "symbol": "RGTI",
+      "name": "Rigetti Computing Inc",
+      "assetType": "stock",
+      "rank": 1742
+    },
+    {
+      "rwaId": 242,
+      "symbol": "SGOV",
+      "name": "iShares 0-3 Month Treasury Bond ETF",
+      "assetType": "etf",
+      "rank": 7773
+    },
+    {
+      "rwaId": 243,
+      "symbol": "SOFI",
+      "name": "SoFi Technologies Inc",
+      "assetType": "stock",
+      "rank": 610
+    },
+    {
+      "rwaId": 244,
+      "symbol": "SOUN",
+      "name": "SoundHound AI Inc",
+      "assetType": "stock",
+      "rank": 2165
+    },
+    {
+      "rwaId": 245,
+      "symbol": "TCOM",
+      "name": "Trip.com Group Ltd",
+      "assetType": "stock",
+      "rank": 486
+    },
+    {
+      "rwaId": 246,
+      "symbol": "T",
+      "name": "AT&T Inc",
+      "assetType": "stock",
+      "rank": 100
+    },
+    {
+      "rwaId": 247,
+      "symbol": "VRT",
+      "name": "Vertiv Holdings Co",
+      "assetType": "stock",
+      "rank": 221
+    },
+    {
+      "rwaId": 249,
+      "symbol": "XYZ",
+      "name": "Block Inc",
+      "assetType": "stock",
+      "rank": 319
+    },
+    {
+      "rwaId": 250,
+      "symbol": "OPENAI",
+      "name": "OpenAI",
+      "assetType": "stock",
+      "rank": 7769
+    },
+    {
+      "rwaId": 251,
+      "symbol": "CBRS",
+      "name": "Cerebras Systems",
+      "assetType": "stock",
+      "rank": 546
+    },
+    {
+      "rwaId": 252,
+      "symbol": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "assetType": "stock",
+      "rank": 539
+    },
+    {
+      "rwaId": 254,
+      "symbol": "NBIS",
+      "name": "Nebius Group N.V.",
+      "assetType": "stock",
+      "rank": 429
+    },
+    {
+      "rwaId": 255,
+      "symbol": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "assetType": "stock",
+      "rank": 374
+    },
+    {
+      "rwaId": 256,
+      "symbol": "GLW",
+      "name": "Corning Incorporated",
+      "assetType": "stock",
+      "rank": 171
+    },
+    {
+      "rwaId": 257,
+      "symbol": "BX",
+      "name": "Blackstone Inc.",
+      "assetType": "stock",
+      "rank": 178
+    },
+    {
+      "rwaId": 259,
+      "symbol": "BKNG",
+      "name": "Booking Holdings Inc.",
+      "assetType": "stock",
+      "rank": 135
+    },
+    {
+      "rwaId": 260,
+      "symbol": "MO",
+      "name": "Altria Group, Inc.",
+      "assetType": "stock",
+      "rank": 119
+    },
+    {
+      "rwaId": 261,
+      "symbol": "SYK",
+      "name": "Stryker Corporation",
+      "assetType": "stock",
+      "rank": 129
+    },
+    {
+      "rwaId": 262,
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "assetType": "stock",
+      "rank": 107
+    },
+    {
+      "rwaId": 263,
+      "symbol": "CDNS",
+      "name": "Cadence Design Systems, Inc.",
+      "assetType": "stock",
+      "rank": 196
+    },
+    {
+      "rwaId": 264,
+      "symbol": "FTNT",
+      "name": "Fortinet, Inc.",
+      "assetType": "stock",
+      "rank": 159
+    },
+    {
+      "rwaId": 266,
+      "symbol": "PWR",
+      "name": "Quanta Services, Inc.",
+      "assetType": "stock",
+      "rank": 181
+    },
+    {
+      "rwaId": 267,
+      "symbol": "CME",
+      "name": "Cme Group Inc.",
+      "assetType": "stock",
+      "rank": 139
+    },
+    {
+      "rwaId": 268,
+      "symbol": "PNC",
+      "name": "Pnc Financial Services Group",
+      "assetType": "stock",
+      "rank": 189
+    },
+    {
+      "rwaId": 269,
+      "symbol": "GD",
+      "name": "General Dynamics Corporation",
+      "assetType": "stock",
+      "rank": 172
+    },
+    {
+      "rwaId": 270,
+      "symbol": "AMT",
+      "name": "American Tower Corporation",
+      "assetType": "stock",
+      "rank": 195
+    },
+    {
+      "rwaId": 271,
+      "symbol": "MNST",
+      "name": "Monster Beverage Corporation",
+      "assetType": "stock",
+      "rank": 188
+    },
+    {
+      "rwaId": 272,
+      "symbol": "WMB",
+      "name": "Williams Companies Inc.",
+      "assetType": "stock",
+      "rank": 201
+    },
+    {
+      "rwaId": 273,
+      "symbol": "ELV",
+      "name": "Elevance Health, Inc.",
+      "assetType": "stock",
+      "rank": 193
+    },
+    {
+      "rwaId": 274,
+      "symbol": "CMI",
+      "name": "Cummins Inc.",
+      "assetType": "stock",
+      "rank": 282
+    },
+    {
+      "rwaId": 275,
+      "symbol": "KKR",
+      "name": "Kkr & Co. Inc.",
+      "assetType": "stock",
+      "rank": 205
+    },
+    {
+      "rwaId": 277,
+      "symbol": "MDLZ",
+      "name": "Mondelez International, Inc.",
+      "assetType": "stock",
+      "rank": 197
+    },
+    {
+      "rwaId": 278,
+      "symbol": "DDOG",
+      "name": "Datadog, Inc.",
+      "assetType": "stock",
+      "rank": 270
+    },
+    {
+      "rwaId": 280,
+      "symbol": "MCO",
+      "name": "Moody'S Corporation",
+      "assetType": "stock",
+      "rank": 206
+    },
+    {
+      "rwaId": 281,
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "assetType": "stock",
+      "rank": 142
+    },
+    {
+      "rwaId": 282,
+      "symbol": "HLT",
+      "name": "Hilton Worldwide Holdings Inc.",
+      "assetType": "stock",
+      "rank": 203
+    },
+    {
+      "rwaId": 283,
+      "symbol": "EMR",
+      "name": "Emerson Electric Co.",
+      "assetType": "stock",
+      "rank": 185
+    },
+    {
+      "rwaId": 284,
+      "symbol": "FDX",
+      "name": "Fedex Corporation",
+      "assetType": "stock",
+      "rank": 229
+    },
+    {
+      "rwaId": 285,
+      "symbol": "SHW",
+      "name": "The Sherwin-Williams Company",
+      "assetType": "stock",
+      "rank": 202
+    },
+    {
+      "rwaId": 286,
+      "symbol": "ROST",
+      "name": "Ross Stores, Inc.",
+      "assetType": "stock",
+      "rank": 234
+    },
+    {
+      "rwaId": 287,
+      "symbol": "BAM",
+      "name": "Brookfield Asset Management Ltd.",
+      "assetType": "stock",
+      "rank": 209
+    },
+    {
+      "rwaId": 288,
+      "symbol": "MPWR",
+      "name": "Monolithic Power Systems, Inc.",
+      "assetType": "stock",
+      "rank": 259
+    },
+    {
+      "rwaId": 289,
+      "symbol": "CTAS",
+      "name": "Cintas Corporation",
+      "assetType": "stock",
+      "rank": 187
+    },
+    {
+      "rwaId": 291,
+      "symbol": "BSX",
+      "name": "Boston Scientific Corp.",
+      "assetType": "stock",
+      "rank": 264
+    },
+    {
+      "rwaId": 292,
+      "symbol": "GM",
+      "name": "General Motors Company",
+      "assetType": "stock",
+      "rank": 246
+    },
+    {
+      "rwaId": 293,
+      "symbol": "AEP",
+      "name": "American Electric Power Company, Inc.",
+      "assetType": "stock",
+      "rank": 247
+    },
+    {
+      "rwaId": 294,
+      "symbol": "SPG",
+      "name": "Simon Property Group, Inc.",
+      "assetType": "stock",
+      "rank": 226
+    },
+    {
+      "rwaId": 295,
+      "symbol": "TDG",
+      "name": "Transdigm Group Incorporated",
+      "assetType": "stock",
+      "rank": 261
+    },
+    {
+      "rwaId": 296,
+      "symbol": "URI",
+      "name": "United Rentals, Inc.",
+      "assetType": "stock",
+      "rank": 253
+    },
+    {
+      "rwaId": 297,
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corporation",
+      "assetType": "stock",
+      "rank": 390
+    },
+    {
+      "rwaId": 298,
+      "symbol": "TRV",
+      "name": "The Travelers Companies, Inc.",
+      "assetType": "stock",
+      "rank": 212
+    },
+    {
+      "rwaId": 299,
+      "symbol": "REGN",
+      "name": "Regeneron Pharmaceuticals, Inc.",
+      "assetType": "stock",
+      "rank": 161
+    },
+    {
+      "rwaId": 300,
+      "symbol": "BKR",
+      "name": "Baker Hughes Company",
+      "assetType": "stock",
+      "rank": 323
+    },
+    {
+      "rwaId": 301,
+      "symbol": "TFC",
+      "name": "Truist Financial Corporation",
+      "assetType": "stock",
+      "rank": 284
+    },
+    {
+      "rwaId": 302,
+      "symbol": "CIEN",
+      "name": "Ciena Corporation",
+      "assetType": "stock",
+      "rank": 375
+    },
+    {
+      "rwaId": 303,
+      "symbol": "HPE",
+      "name": "Hewlett Packard Enterprise Company",
+      "assetType": "stock",
+      "rank": 271
+    },
+    {
+      "rwaId": 304,
+      "symbol": "AFL",
+      "name": "Aflac Inc.",
+      "assetType": "stock",
+      "rank": 267
+    },
+    {
+      "rwaId": 306,
+      "symbol": "TRGP",
+      "name": "Targa Resources Corp.",
+      "assetType": "stock",
+      "rank": 275
+    },
+    {
+      "rwaId": 307,
+      "symbol": "TGT",
+      "name": "Target Corporation",
+      "assetType": "stock",
+      "rank": 224
+    },
+    {
+      "rwaId": 308,
+      "symbol": "ALL",
+      "name": "The Allstate Corporation",
+      "assetType": "stock",
+      "rank": 258
+    },
+    {
+      "rwaId": 309,
+      "symbol": "NUE",
+      "name": "Nucor Corporation",
+      "assetType": "stock",
+      "rank": 287
+    },
+    {
+      "rwaId": 310,
+      "symbol": "AJG",
+      "name": "Arthur J. Gallagher & Co.",
+      "assetType": "stock",
+      "rank": 240
+    },
+    {
+      "rwaId": 311,
+      "symbol": "CARR",
+      "name": "Carrier Global Corporation",
+      "assetType": "stock",
+      "rank": 351
+    },
+    {
+      "rwaId": 312,
+      "symbol": "MET",
+      "name": "Metlife, Inc.",
+      "assetType": "stock",
+      "rank": 266
+    },
+    {
+      "rwaId": 313,
+      "symbol": "FANG",
+      "name": "Diamondback Energy, Inc.",
+      "assetType": "stock",
+      "rank": 314
+    },
+    {
+      "rwaId": 314,
+      "symbol": "TER",
+      "name": "Teradyne, Inc.",
+      "assetType": "stock",
+      "rank": 385
+    },
+    {
+      "rwaId": 315,
+      "symbol": "FAST",
+      "name": "Fastenal Company",
+      "assetType": "stock",
+      "rank": 265
+    },
+    {
+      "rwaId": 316,
+      "symbol": "FLEX",
+      "name": "Flex Ltd.",
+      "assetType": "stock",
+      "rank": 476
+    },
+    {
+      "rwaId": 317,
+      "symbol": "AZO",
+      "name": "Autozone, Inc.",
+      "assetType": "stock",
+      "rank": 300
+    },
+    {
+      "rwaId": 318,
+      "symbol": "LNG",
+      "name": "Cheniere Energy Inc",
+      "assetType": "stock",
+      "rank": 274
+    },
+    {
+      "rwaId": 319,
+      "symbol": "ETR",
+      "name": "Entergy Corporation",
+      "assetType": "stock",
+      "rank": 305
+    },
+    {
+      "rwaId": 320,
+      "symbol": "CTVA",
+      "name": "Corteva, Inc.",
+      "assetType": "stock",
+      "rank": 1232
+    },
+    {
+      "rwaId": 321,
+      "symbol": "ODFL",
+      "name": "Old Dominion Freight Line, Inc.",
+      "assetType": "stock",
+      "rank": 392
+    },
+    {
+      "rwaId": 322,
+      "symbol": "ROK",
+      "name": "Rockwell Automation, Inc.",
+      "assetType": "stock",
+      "rank": 345
+    },
+    {
+      "rwaId": 324,
+      "symbol": "MCHP",
+      "name": "Microchip Technology Incorporated",
+      "assetType": "stock",
+      "rank": 422
+    },
+    {
+      "rwaId": 325,
+      "symbol": "ADSK",
+      "name": "Autodesk, Inc.",
+      "assetType": "stock",
+      "rank": 302
+    },
+    {
+      "rwaId": 326,
+      "symbol": "HEI",
+      "name": "Heico Corporation",
+      "assetType": "stock",
+      "rank": 324
+    },
+    {
+      "rwaId": 328,
+      "symbol": "IDXX",
+      "name": "Idexx Laboratories, Inc.",
+      "assetType": "stock",
+      "rank": 291
+    },
+    {
+      "rwaId": 329,
+      "symbol": "FERG",
+      "name": "Ferguson Enterprises Inc.",
+      "assetType": "stock",
+      "rank": 315
+    },
+    {
+      "rwaId": 330,
+      "symbol": "KDP",
+      "name": "Keurig Dr Pepper Inc.",
+      "assetType": "stock",
+      "rank": 310
+    },
+    {
+      "rwaId": 331,
+      "symbol": "YUM",
+      "name": "Yum! Brands, Inc.",
+      "assetType": "stock",
+      "rank": 346
+    },
+    {
+      "rwaId": 332,
+      "symbol": "VTR",
+      "name": "Ventas, Inc.",
+      "assetType": "stock",
+      "rank": 328
+    },
+    {
+      "rwaId": 333,
+      "symbol": "BDX",
+      "name": "Becton, Dickinson And Co.",
+      "assetType": "stock",
+      "rank": 278
+    },
+    {
+      "rwaId": 335,
+      "symbol": "KR",
+      "name": "The Kroger Co.",
+      "assetType": "stock",
+      "rank": 362
+    },
+    {
+      "rwaId": 336,
+      "symbol": "ED",
+      "name": "Consolidated Edison, Inc.",
+      "assetType": "stock",
+      "rank": 339
+    },
+    {
+      "rwaId": 337,
+      "symbol": "ADM",
+      "name": "Archer Daniels Midland Company",
+      "assetType": "stock",
+      "rank": 423
+    },
+    {
+      "rwaId": 339,
+      "symbol": "LYV",
+      "name": "Live Nation Entertainment Inc.",
+      "assetType": "stock",
+      "rank": 348
+    },
+    {
+      "rwaId": 340,
+      "symbol": "STLD",
+      "name": "Steel Dynamics, Inc.",
+      "assetType": "stock",
+      "rank": 430
+    },
+    {
+      "rwaId": 341,
+      "symbol": "SYY",
+      "name": "Sysco Corporation",
+      "assetType": "stock",
+      "rank": 379
+    },
+    {
+      "rwaId": 342,
+      "symbol": "A",
+      "name": "Agilent Technologies Inc.",
+      "assetType": "stock",
+      "rank": 309
+    },
+    {
+      "rwaId": 343,
+      "symbol": "IRM",
+      "name": "Iron Mountain Inc.",
+      "assetType": "stock",
+      "rank": 418
+    },
+    {
+      "rwaId": 344,
+      "symbol": "PAYX",
+      "name": "Paychex, Inc.",
+      "assetType": "stock",
+      "rank": 364
+    },
+    {
+      "rwaId": 345,
+      "symbol": "CCL",
+      "name": "Carnival Corporation Ltd.",
+      "assetType": "stock",
+      "rank": 371
+    },
+    {
+      "rwaId": 346,
+      "symbol": "WAT",
+      "name": "Waters Corp",
+      "assetType": "stock",
+      "rank": 182
+    },
+    {
+      "rwaId": 347,
+      "symbol": "HIG",
+      "name": "The Hartford Insurance Group, Inc.",
+      "assetType": "stock",
+      "rank": 389
+    },
+    {
+      "rwaId": 348,
+      "symbol": "KVUE",
+      "name": "Kenvue Inc.",
+      "assetType": "stock",
+      "rank": 384
+    },
+    {
+      "rwaId": 349,
+      "symbol": "HBAN",
+      "name": "Huntington Bancshares Incorporated",
+      "assetType": "stock",
+      "rank": 445
+    },
+    {
+      "rwaId": 350,
+      "symbol": "WDAY",
+      "name": "Workday, Inc.",
+      "assetType": "stock",
+      "rank": 354
+    },
+    {
+      "rwaId": 352,
+      "symbol": "ROP",
+      "name": "Roper Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 326
+    },
+    {
+      "rwaId": 353,
+      "symbol": "ECHO",
+      "name": "Echostar Corporation",
+      "assetType": "stock",
+      "rank": 473
+    },
+    {
+      "rwaId": 354,
+      "symbol": "MLM",
+      "name": "Martin Marietta Materials",
+      "assetType": "stock",
+      "rank": 387
+    },
+    {
+      "rwaId": 355,
+      "symbol": "HEI.A",
+      "name": "Heico Corp Cl A",
+      "assetType": "stock",
+      "rank": 405
+    },
+    {
+      "rwaId": 356,
+      "symbol": "EQT",
+      "name": "EQTCorp",
+      "assetType": "stock",
+      "rank": 426
+    },
+    {
+      "rwaId": 357,
+      "symbol": "CNC",
+      "name": "Centene Corporation",
+      "assetType": "stock",
+      "rank": 414
+    },
+    {
+      "rwaId": 359,
+      "symbol": "CBOE",
+      "name": "Cboe Global Markets, Inc.",
+      "assetType": "stock",
+      "rank": 382
+    },
+    {
+      "rwaId": 360,
+      "symbol": "TWLO",
+      "name": "Twilio Inc.",
+      "assetType": "stock",
+      "rank": 449
+    },
+    {
+      "rwaId": 361,
+      "symbol": "NTRA",
+      "name": "Natera, Inc.",
+      "assetType": "stock",
+      "rank": 356
+    },
+    {
+      "rwaId": 362,
+      "symbol": "NTRS",
+      "name": "Northern Trust Corporation",
+      "assetType": "stock",
+      "rank": 436
+    },
+    {
+      "rwaId": 363,
+      "symbol": "VICI",
+      "name": "Vici Properties Inc.",
+      "assetType": "stock",
+      "rank": 489
+    },
+    {
+      "rwaId": 364,
+      "symbol": "DTE",
+      "name": "Dte Energy Company",
+      "assetType": "stock",
+      "rank": 475
+    },
+    {
+      "rwaId": 365,
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "assetType": "stock",
+      "rank": 417
+    },
+    {
+      "rwaId": 366,
+      "symbol": "Q",
+      "name": "Qnity Electronics, Inc.",
+      "assetType": "stock",
+      "rank": 531
+    },
+    {
+      "rwaId": 367,
+      "symbol": "GEHC",
+      "name": "Ge Healthcare Technologies Inc.",
+      "assetType": "stock",
+      "rank": 380
+    },
+    {
+      "rwaId": 368,
+      "symbol": "DXCM",
+      "name": "Dexcom, Inc.",
+      "assetType": "stock",
+      "rank": 437
+    },
+    {
+      "rwaId": 369,
+      "symbol": "BIIB",
+      "name": "Biogen Inc.",
+      "assetType": "stock",
+      "rank": 388
+    },
+    {
+      "rwaId": 370,
+      "symbol": "KHC",
+      "name": "The Kraft Heinz Company",
+      "assetType": "stock",
+      "rank": 447
+    },
+    {
+      "rwaId": 371,
+      "symbol": "FISV",
+      "name": "Fiserv, Inc.",
+      "assetType": "stock",
+      "rank": 425
+    },
+    {
+      "rwaId": 372,
+      "symbol": "ATO",
+      "name": "Atmos Energy Corporation",
+      "assetType": "stock",
+      "rank": 458
+    },
+    {
+      "rwaId": 373,
+      "symbol": "MDB",
+      "name": "Mongodb, Inc.",
+      "assetType": "stock",
+      "rank": 517
+    },
+    {
+      "rwaId": 375,
+      "symbol": "TDY",
+      "name": "Teledyne Technologies Incorporated",
+      "assetType": "stock",
+      "rank": 466
+    },
+    {
+      "rwaId": 376,
+      "symbol": "ZM",
+      "name": "Zoom Communications, Inc.",
+      "assetType": "stock",
+      "rank": 481
+    },
+    {
+      "rwaId": 377,
+      "symbol": "CFG",
+      "name": "Citizens Financial Group, Inc.",
+      "assetType": "stock",
+      "rank": 504
+    },
+    {
+      "rwaId": 378,
+      "symbol": "MTSI",
+      "name": "Macom Technology Solutions Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 647
+    },
+    {
+      "rwaId": 379,
+      "symbol": "FSLR",
+      "name": "First Solar, Inc.",
+      "assetType": "stock",
+      "rank": 663
+    },
+    {
+      "rwaId": 380,
+      "symbol": "OTIS",
+      "name": "Otis Worldwide Corporation",
+      "assetType": "stock",
+      "rank": 455
+    },
+    {
+      "rwaId": 381,
+      "symbol": "CW",
+      "name": "Curtiss-Wright Corp.",
+      "assetType": "stock",
+      "rank": 654
+    },
+    {
+      "rwaId": 382,
+      "symbol": "AVB",
+      "name": "Avalonbay Communities, Inc.",
+      "assetType": "stock",
+      "rank": 497
+    },
+    {
+      "rwaId": 383,
+      "symbol": "VRSN",
+      "name": "Verisign, Inc.",
+      "assetType": "stock",
+      "rank": 479
+    },
+    {
+      "rwaId": 384,
+      "symbol": "ES",
+      "name": "Eversource Energy",
+      "assetType": "stock",
+      "rank": 491
+    },
+    {
+      "rwaId": 385,
+      "symbol": "SCCO",
+      "name": "Southern Copper Corporation",
+      "assetType": "stock",
+      "rank": 121
+    },
+    {
+      "rwaId": 386,
+      "symbol": "CVS",
+      "name": "Cvs Health Corporation",
+      "assetType": "stock",
+      "rank": 152
+    },
+    {
+      "rwaId": 388,
+      "symbol": "PGR",
+      "name": "Progressive Corporation",
+      "assetType": "stock",
+      "rank": 114
+    },
+    {
+      "rwaId": 389,
+      "symbol": "BMY",
+      "name": "Bristol-Myers Squibb Co.",
+      "assetType": "stock",
+      "rank": 128
+    },
+    {
+      "rwaId": 390,
+      "symbol": "PH",
+      "name": "Parker-Hannifin Corporation",
+      "assetType": "stock",
+      "rank": 134
+    },
+    {
+      "rwaId": 391,
+      "symbol": "MAR",
+      "name": "Marriott International",
+      "assetType": "stock",
+      "rank": 144
+    },
+    {
+      "rwaId": 392,
+      "symbol": "HWM",
+      "name": "Howmet Aerospace Inc.",
+      "assetType": "stock",
+      "rank": 191
+    },
+    {
+      "rwaId": 393,
+      "symbol": "NEM",
+      "name": "Newmont Corporation",
+      "assetType": "stock",
+      "rank": 148
+    },
+    {
+      "rwaId": 394,
+      "symbol": "DUK",
+      "name": "Duke Energy Corporation",
+      "assetType": "stock",
+      "rank": 155
+    },
+    {
+      "rwaId": 395,
+      "symbol": "MCK",
+      "name": "Mckesson Corporation",
+      "assetType": "stock",
+      "rank": 127
+    },
+    {
+      "rwaId": 396,
+      "symbol": "ADP",
+      "name": "Automatic Data Processing, Inc.",
+      "assetType": "stock",
+      "rank": 130
+    },
+    {
+      "rwaId": 397,
+      "symbol": "WM",
+      "name": "Waste Management, Inc.",
+      "assetType": "stock",
+      "rank": 165
+    },
+    {
+      "rwaId": 398,
+      "symbol": "FCX",
+      "name": "Freeport-Mcmoran Inc.",
+      "assetType": "stock",
+      "rank": 232
+    },
+    {
+      "rwaId": 399,
+      "symbol": "USB",
+      "name": "U.S. Bancorp",
+      "assetType": "stock",
+      "rank": 180
+    },
+    {
+      "rwaId": 400,
+      "symbol": "SNPS",
+      "name": "Synopsys, Inc.",
+      "assetType": "stock",
+      "rank": 199
+    },
+    {
+      "rwaId": 401,
+      "symbol": "UPS",
+      "name": "United Parcel Service, Inc.",
+      "assetType": "stock",
+      "rank": 173
+    },
+    {
+      "rwaId": 402,
+      "symbol": "CSX",
+      "name": "Csx Corporation",
+      "assetType": "stock",
+      "rank": 174
+    },
+    {
+      "rwaId": 404,
+      "symbol": "HCA",
+      "name": "Hca Healthcare, Inc.",
+      "assetType": "stock",
+      "rank": 157
+    },
+    {
+      "rwaId": 405,
+      "symbol": "MMM",
+      "name": "3M Company",
+      "assetType": "stock",
+      "rank": 177
+    },
+    {
+      "rwaId": 406,
+      "symbol": "MRSH",
+      "name": "Marsh",
+      "assetType": "stock",
+      "rank": 160
+    },
+    {
+      "rwaId": 407,
+      "symbol": "ICE",
+      "name": "Intercontinental Exchange Inc.",
+      "assetType": "stock",
+      "rank": 166
+    },
+    {
+      "rwaId": 408,
+      "symbol": "CI",
+      "name": "The Cigna Group",
+      "assetType": "stock",
+      "rank": 220
+    },
+    {
+      "rwaId": 409,
+      "symbol": "NOC",
+      "name": "Northrop Grumman Corp.",
+      "assetType": "stock",
+      "rank": 219
+    },
+    {
+      "rwaId": 410,
+      "symbol": "MPC",
+      "name": "Marathon Petroleum Corporation",
+      "assetType": "stock",
+      "rank": 154
+    },
+    {
+      "rwaId": 411,
+      "symbol": "VLO",
+      "name": "Valero Energy Corporation",
+      "assetType": "stock",
+      "rank": 164
+    },
+    {
+      "rwaId": 412,
+      "symbol": "ORLY",
+      "name": "O'Reilly Automotive, Inc.",
+      "assetType": "stock",
+      "rank": 225
+    },
+    {
+      "rwaId": 413,
+      "symbol": "EOG",
+      "name": "Eog Resources, Inc.",
+      "assetType": "stock",
+      "rank": 216
+    },
+    {
+      "rwaId": 415,
+      "symbol": "PSX",
+      "name": "Phillips 66",
+      "assetType": "stock",
+      "rank": 167
+    },
+    {
+      "rwaId": 416,
+      "symbol": "ECL",
+      "name": "Ecolab, Inc.",
+      "assetType": "stock",
+      "rank": 200
+    },
+    {
+      "rwaId": 418,
+      "symbol": "ITW",
+      "name": "Illinois Tool Works Inc.",
+      "assetType": "stock",
+      "rank": 210
+    },
+    {
+      "rwaId": 420,
+      "symbol": "KMI",
+      "name": "Kinder Morgan, Inc.",
+      "assetType": "stock",
+      "rank": 245
+    },
+    {
+      "rwaId": 421,
+      "symbol": "NSC",
+      "name": "Norfolk Southern Corp.",
+      "assetType": "stock",
+      "rank": 243
+    },
+    {
+      "rwaId": 422,
+      "symbol": "MSI",
+      "name": "Motorola Solutions, Inc. New",
+      "assetType": "stock",
+      "rank": 192
+    },
+    {
+      "rwaId": 424,
+      "symbol": "WBD",
+      "name": "Warner Bros. Discovery, Inc.",
+      "assetType": "stock",
+      "rank": 217
+    },
+    {
+      "rwaId": 425,
+      "symbol": "RSG",
+      "name": "Republic Services Inc.",
+      "assetType": "stock",
+      "rank": 223
+    },
+    {
+      "rwaId": 426,
+      "symbol": "DLR",
+      "name": "Digital Realty Trust, Inc.",
+      "assetType": "stock",
+      "rank": 254
+    },
+    {
+      "rwaId": 428,
+      "symbol": "GWW",
+      "name": "W.W. Grainger, Inc.",
+      "assetType": "stock",
+      "rank": 248
+    },
+    {
+      "rwaId": 429,
+      "symbol": "APD",
+      "name": "Air Products & Chemicals, Inc.",
+      "assetType": "stock",
+      "rank": 250
+    },
+    {
+      "rwaId": 430,
+      "symbol": "FIX",
+      "name": "Comfort Systems Usa, Inc.",
+      "assetType": "stock",
+      "rank": 365
+    },
+    {
+      "rwaId": 431,
+      "symbol": "PCAR",
+      "name": "Paccar Inc.",
+      "assetType": "stock",
+      "rank": 294
+    },
+    {
+      "rwaId": 432,
+      "symbol": "SRE",
+      "name": "Sempra",
+      "assetType": "stock",
+      "rank": 307
+    },
+    {
+      "rwaId": 433,
+      "symbol": "D",
+      "name": "Dominion Energy, Inc",
+      "assetType": "stock",
+      "rank": 280
+    },
+    {
+      "rwaId": 435,
+      "symbol": "O",
+      "name": "Realty Income Corporation",
+      "assetType": "stock",
+      "rank": 290
+    },
+    {
+      "rwaId": 436,
+      "symbol": "OKE",
+      "name": "Oneok, Inc.",
+      "assetType": "stock",
+      "rank": 289
+    },
+    {
+      "rwaId": 437,
+      "symbol": "PSA",
+      "name": "Public Storage",
+      "assetType": "stock",
+      "rank": 268
+    },
+    {
+      "rwaId": 438,
+      "symbol": "NU",
+      "name": "Nu Holdings Ltd.",
+      "assetType": "stock",
+      "rank": 281
+    },
+    {
+      "rwaId": 439,
+      "symbol": "LHX",
+      "name": "L3Harris Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 322
+    },
+    {
+      "rwaId": 440,
+      "symbol": "KEYS",
+      "name": "Keysight Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 312
+    },
+    {
+      "rwaId": 441,
+      "symbol": "COR",
+      "name": "Cencora, Inc.",
+      "assetType": "stock",
+      "rank": 255
+    },
+    {
+      "rwaId": 442,
+      "symbol": "DVN",
+      "name": "Devon Energy Corporation",
+      "assetType": "stock",
+      "rank": 318
+    },
+    {
+      "rwaId": 443,
+      "symbol": "CRWV",
+      "name": "Coreweave, Inc.",
+      "assetType": "stock",
+      "rank": 492
+    },
+    {
+      "rwaId": 444,
+      "symbol": "EA",
+      "name": "Electronic Arts Inc.",
+      "assetType": "stock",
+      "rank": 301
+    },
+    {
+      "rwaId": 445,
+      "symbol": "AME",
+      "name": "Ametek, Inc.",
+      "assetType": "stock",
+      "rank": 296
+    },
+    {
+      "rwaId": 446,
+      "symbol": "CAH",
+      "name": "Cardinal Health, Inc.",
+      "assetType": "stock",
+      "rank": 262
+    },
+    {
+      "rwaId": 447,
+      "symbol": "DAL",
+      "name": "Delta Air Lines, Inc.",
+      "assetType": "stock",
+      "rank": 288
+    },
+    {
+      "rwaId": 448,
+      "symbol": "EW",
+      "name": "Edwards Lifesciences Corp",
+      "assetType": "stock",
+      "rank": 277
+    },
+    {
+      "rwaId": 449,
+      "symbol": "NDAQ",
+      "name": "Nasdaq, Inc.",
+      "assetType": "stock",
+      "rank": 283
+    },
+    {
+      "rwaId": 450,
+      "symbol": "XEL",
+      "name": "Xcel Energy Inc.",
+      "assetType": "stock",
+      "rank": 304
+    },
+    {
+      "rwaId": 451,
+      "symbol": "FITB",
+      "name": "Fifth Third Bancorp",
+      "assetType": "stock",
+      "rank": 325
+    },
+    {
+      "rwaId": 452,
+      "symbol": "EBAY",
+      "name": "Ebay Inc.",
+      "assetType": "stock",
+      "rank": 299
+    },
+    {
+      "rwaId": 453,
+      "symbol": "EXC",
+      "name": "Exelon Corporation",
+      "assetType": "stock",
+      "rank": 321
+    },
+    {
+      "rwaId": 454,
+      "symbol": "STT",
+      "name": "State Street Corporation",
+      "assetType": "stock",
+      "rank": 337
+    },
+    {
+      "rwaId": 455,
+      "symbol": "MSCI",
+      "name": "Msci, Inc.",
+      "assetType": "stock",
+      "rank": 333
+    },
+    {
+      "rwaId": 456,
+      "symbol": "HUM",
+      "name": "Humana Inc.",
+      "assetType": "stock",
+      "rank": 329
+    },
+    {
+      "rwaId": 457,
+      "symbol": "WAB",
+      "name": "Wabtec Inc.",
+      "assetType": "stock",
+      "rank": 316
+    },
+    {
+      "rwaId": 459,
+      "symbol": "DHI",
+      "name": "D.R. Horton Inc.",
+      "assetType": "stock",
+      "rank": 369
+    },
+    {
+      "rwaId": 460,
+      "symbol": "CCI",
+      "name": "Crown Castle Inc.",
+      "assetType": "stock",
+      "rank": 394
+    },
+    {
+      "rwaId": 461,
+      "symbol": "AMP",
+      "name": "Ameriprise Financial, Inc.",
+      "assetType": "stock",
+      "rank": 344
+    },
+    {
+      "rwaId": 463,
+      "symbol": "AIG",
+      "name": "American International Group, Inc.",
+      "assetType": "stock",
+      "rank": 358
+    },
+    {
+      "rwaId": 464,
+      "symbol": "CBRE",
+      "name": "Cbre Group, Inc.",
+      "assetType": "stock",
+      "rank": 383
+    },
+    {
+      "rwaId": 465,
+      "symbol": "PEG",
+      "name": "Public Service Enterprise Group Incorporated",
+      "assetType": "stock",
+      "rank": 386
+    },
+    {
+      "rwaId": 466,
+      "symbol": "TTWO",
+      "name": "Take-Two Interactive Software, Inc.",
+      "assetType": "stock",
+      "rank": 360
+    },
+    {
+      "rwaId": 467,
+      "symbol": "ALNY",
+      "name": "Alnylam Pharmaceuticals, Inc.",
+      "assetType": "stock",
+      "rank": 588
+    },
+    {
+      "rwaId": 468,
+      "symbol": "IBKR",
+      "name": "Interactive Brokers Group, Inc.",
+      "assetType": "stock",
+      "rank": 404
+    },
+    {
+      "rwaId": 469,
+      "symbol": "JBL",
+      "name": "Jabil Inc.",
+      "assetType": "stock",
+      "rank": 508
+    },
+    {
+      "rwaId": 470,
+      "symbol": "WEC",
+      "name": "Wec Energy Group, Inc.",
+      "assetType": "stock",
+      "rank": 373
+    },
+    {
+      "rwaId": 471,
+      "symbol": "PRU",
+      "name": "Prudential Financial, Inc.",
+      "assetType": "stock",
+      "rank": 359
+    },
+    {
+      "rwaId": 472,
+      "symbol": "AXON",
+      "name": "Axon Enterprise, Inc.",
+      "assetType": "stock",
+      "rank": 519
+    },
+    {
+      "rwaId": 473,
+      "symbol": "HSY",
+      "name": "The Hershey Company",
+      "assetType": "stock",
+      "rank": 401
+    },
+    {
+      "rwaId": 474,
+      "symbol": "RKT",
+      "name": "Rocket Companies, Inc.",
+      "assetType": "stock",
+      "rank": 377
+    },
+    {
+      "rwaId": 475,
+      "symbol": "VMC",
+      "name": "Vulcan Materials Company",
+      "assetType": "stock",
+      "rank": 398
+    },
+    {
+      "rwaId": 476,
+      "symbol": "EME",
+      "name": "Emcor Group, Inc.",
+      "assetType": "stock",
+      "rank": 470
+    },
+    {
+      "rwaId": 477,
+      "symbol": "ZTS",
+      "name": "Zoetis Inc.",
+      "assetType": "stock",
+      "rank": 403
+    },
+    {
+      "rwaId": 478,
+      "symbol": "CASY",
+      "name": "Casey'S General Stores, Inc.",
+      "assetType": "stock",
+      "rank": 511
+    },
+    {
+      "rwaId": 479,
+      "symbol": "KMB",
+      "name": "Kimberly-Clark Corporation",
+      "assetType": "stock",
+      "rank": 257
+    },
+    {
+      "rwaId": 480,
+      "symbol": "LVS",
+      "name": "Las Vegas Sands Corp.",
+      "assetType": "stock",
+      "rank": 522
+    },
+    {
+      "rwaId": 481,
+      "symbol": "UAL",
+      "name": "United Airlines Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 400
+    },
+    {
+      "rwaId": 482,
+      "symbol": "HAL",
+      "name": "Halliburton Company",
+      "assetType": "stock",
+      "rank": 506
+    },
+    {
+      "rwaId": 484,
+      "symbol": "MTB",
+      "name": "M&T Bank Corp.",
+      "assetType": "stock",
+      "rank": 438
+    },
+    {
+      "rwaId": 486,
+      "symbol": "EXR",
+      "name": "Extra Space Storage, Inc.",
+      "assetType": "stock",
+      "rank": 421
+    },
+    {
+      "rwaId": 487,
+      "symbol": "NTAP",
+      "name": "Netapp, Inc.",
+      "assetType": "stock",
+      "rank": 410
+    },
+    {
+      "rwaId": 489,
+      "symbol": "EL",
+      "name": "The Estee Lauder Companies Inc.",
+      "assetType": "stock",
+      "rank": 381
+    },
+    {
+      "rwaId": 490,
+      "symbol": "RVMD",
+      "name": "Revolution Medicines, Inc.",
+      "assetType": "stock",
+      "rank": 406
+    },
+    {
+      "rwaId": 491,
+      "symbol": "IQV",
+      "name": "Iqvia Holdings Inc.",
+      "assetType": "stock",
+      "rank": 353
+    },
+    {
+      "rwaId": 492,
+      "symbol": "AEE",
+      "name": "Ameren Corporation",
+      "assetType": "stock",
+      "rank": 434
+    },
+    {
+      "rwaId": 493,
+      "symbol": "RJF",
+      "name": "Raymond James Financial, Inc.",
+      "assetType": "stock",
+      "rank": 427
+    },
+    {
+      "rwaId": 494,
+      "symbol": "CPRT",
+      "name": "Copart, Inc.",
+      "assetType": "stock",
+      "rank": 457
+    },
+    {
+      "rwaId": 495,
+      "symbol": "ARES",
+      "name": "Ares Management Corporation",
+      "assetType": "stock",
+      "rank": 461
+    },
+    {
+      "rwaId": 496,
+      "symbol": "DOV",
+      "name": "Dover Corporation",
+      "assetType": "stock",
+      "rank": 490
+    },
+    {
+      "rwaId": 498,
+      "symbol": "TPR",
+      "name": "Tapestry, Inc.",
+      "assetType": "stock",
+      "rank": 523
+    },
+    {
+      "rwaId": 499,
+      "symbol": "FICO",
+      "name": "Fair Isaac Corporation",
+      "assetType": "stock",
+      "rank": 715
+    },
+    {
+      "rwaId": 500,
+      "symbol": "RMD",
+      "name": "Resmed Inc.",
+      "assetType": "stock",
+      "rank": 411
+    },
+    {
+      "rwaId": 501,
+      "symbol": "CNP",
+      "name": "Centerpoint Energy, Inc.",
+      "assetType": "stock",
+      "rank": 496
+    },
+    {
+      "rwaId": 503,
+      "symbol": "IR",
+      "name": "Ingersoll Rand Inc.",
+      "assetType": "stock",
+      "rank": 428
+    },
+    {
+      "rwaId": 504,
+      "symbol": "EIX",
+      "name": "Edison International",
+      "assetType": "stock",
+      "rank": 530
+    },
+    {
+      "rwaId": 506,
+      "symbol": "FE",
+      "name": "Firstenergy Corp.",
+      "assetType": "stock",
+      "rank": 478
+    },
+    {
+      "rwaId": 507,
+      "symbol": "PPL",
+      "name": "Ppl Corporation",
+      "assetType": "stock",
+      "rank": 495
+    },
+    {
+      "rwaId": 508,
+      "symbol": "VEEV",
+      "name": "Veeva Systems Inc.",
+      "assetType": "stock",
+      "rank": 338
+    },
+    {
+      "rwaId": 509,
+      "symbol": "JBHT",
+      "name": "J.B. Hunt Transport Services, Inc.",
+      "assetType": "stock",
+      "rank": 569
+    },
+    {
+      "rwaId": 510,
+      "symbol": "EXPE",
+      "name": "Expedia Group, Inc.",
+      "assetType": "stock",
+      "rank": 453
+    },
+    {
+      "rwaId": 511,
+      "symbol": "ASTS",
+      "name": "Ast Spacemobile, Inc.",
+      "assetType": "stock",
+      "rank": 1020
+    },
+    {
+      "rwaId": 512,
+      "symbol": "CRS",
+      "name": "Carpenter Technology Corp",
+      "assetType": "stock",
+      "rank": 752
+    },
+    {
+      "rwaId": 513,
+      "symbol": "TPL",
+      "name": "Texas Pacific Land Corporation",
+      "assetType": "stock",
+      "rank": 589
+    },
+    {
+      "rwaId": 515,
+      "symbol": "NRG",
+      "name": "Nrg Energy, Inc.",
+      "assetType": "stock",
+      "rank": 597
+    },
+    {
+      "rwaId": 516,
+      "symbol": "XPO",
+      "name": "Xpo, Inc.",
+      "assetType": "stock",
+      "rank": 562
+    },
+    {
+      "rwaId": 518,
+      "symbol": "PPG",
+      "name": "PPG Industries, Inc.",
+      "assetType": "stock",
+      "rank": 484
+    },
+    {
+      "rwaId": 520,
+      "symbol": "HUBB",
+      "name": "Hubbell Incorporated",
+      "assetType": "stock",
+      "rank": 551
+    },
+    {
+      "rwaId": 521,
+      "symbol": "DOW",
+      "name": "DOW Inc.",
+      "assetType": "stock",
+      "rank": 560
+    },
+    {
+      "rwaId": 522,
+      "symbol": "CTSH",
+      "name": "Cognizant Technology Solutions Corporation",
+      "assetType": "stock",
+      "rank": 502
+    },
+    {
+      "rwaId": 523,
+      "symbol": "STZ",
+      "name": "Constellation Brands, Inc.",
+      "assetType": "stock",
+      "rank": 527
+    },
+    {
+      "rwaId": 524,
+      "symbol": "WSM",
+      "name": "Williams-Sonoma, Inc.",
+      "assetType": "stock",
+      "rank": 441
+    },
+    {
+      "rwaId": 526,
+      "symbol": "KEY",
+      "name": "Keycorp",
+      "assetType": "stock",
+      "rank": 563
+    },
+    {
+      "rwaId": 527,
+      "symbol": "PFG",
+      "name": "Principal Financial Group Inc",
+      "assetType": "stock",
+      "rank": 540
+    },
+    {
+      "rwaId": 528,
+      "symbol": "WST",
+      "name": "West Pharmaceutical Services, Inc.",
+      "assetType": "stock",
+      "rank": 472
+    },
+    {
+      "rwaId": 529,
+      "symbol": "CHD",
+      "name": "Church & Dwight Co., Inc.",
+      "assetType": "stock",
+      "rank": 499
+    },
+    {
+      "rwaId": 530,
+      "symbol": "FTAI",
+      "name": "Ftai Aviation Ltd.",
+      "assetType": "stock",
+      "rank": 633
+    },
+    {
+      "rwaId": 531,
+      "symbol": "UTHR",
+      "name": "United Therapeutics Corporation",
+      "assetType": "stock",
+      "rank": 520
+    },
+    {
+      "rwaId": 532,
+      "symbol": "MTD",
+      "name": "Mettler-Toledo International",
+      "assetType": "stock",
+      "rank": 409
+    },
+    {
+      "rwaId": 533,
+      "symbol": "TROW",
+      "name": "T. Rowe Price Group, Inc.",
+      "assetType": "stock",
+      "rank": 542
+    },
+    {
+      "rwaId": 534,
+      "symbol": "CMS",
+      "name": "Cms Energy Corporation",
+      "assetType": "stock",
+      "rank": 559
+    },
+    {
+      "rwaId": 536,
+      "symbol": "RL",
+      "name": "Ralph Lauren Corporation",
+      "assetType": "stock",
+      "rank": 556
+    },
+    {
+      "rwaId": 537,
+      "symbol": "L",
+      "name": "Loews Corporation",
+      "assetType": "stock",
+      "rank": 555
+    },
+    {
+      "rwaId": 538,
+      "symbol": "LEN",
+      "name": "Lennar Corporation",
+      "assetType": "stock",
+      "rank": 593
+    },
+    {
+      "rwaId": 539,
+      "symbol": "FFIV",
+      "name": "F5, Inc.",
+      "assetType": "stock",
+      "rank": 612
+    },
+    {
+      "rwaId": 540,
+      "symbol": "SBAC",
+      "name": "Sba Communications Corporation",
+      "assetType": "stock",
+      "rank": 616
+    },
+    {
+      "rwaId": 541,
+      "symbol": "CHRW",
+      "name": "C.H. Robinson Worldwide, Inc.",
+      "assetType": "stock",
+      "rank": 676
+    },
+    {
+      "rwaId": 542,
+      "symbol": "EXPD",
+      "name": "Expeditors International Of Washington, Inc.",
+      "assetType": "stock",
+      "rank": 524
+    },
+    {
+      "rwaId": 543,
+      "symbol": "TW",
+      "name": "Tradeweb Markets Inc.",
+      "assetType": "stock",
+      "rank": 493
+    },
+    {
+      "rwaId": 544,
+      "symbol": "DLTR",
+      "name": "Dollar Tree Inc.",
+      "assetType": "stock",
+      "rank": 494
+    },
+    {
+      "rwaId": 545,
+      "symbol": "IONQ",
+      "name": "Ionq, Inc.",
+      "assetType": "stock",
+      "rank": 841
+    },
+    {
+      "rwaId": 546,
+      "symbol": "INCY",
+      "name": "Incyte Corp.",
+      "assetType": "stock",
+      "rank": 537
+    },
+    {
+      "rwaId": 548,
+      "symbol": "BURL",
+      "name": "Burlington Stores, Inc.",
+      "assetType": "stock",
+      "rank": 679
+    },
+    {
+      "rwaId": 551,
+      "symbol": "ULTA",
+      "name": "Ulta Beauty, Inc.",
+      "assetType": "stock",
+      "rank": 477
+    },
+    {
+      "rwaId": 552,
+      "symbol": "ZS",
+      "name": "Zscaler, Inc.",
+      "assetType": "stock",
+      "rank": 419
+    },
+    {
+      "rwaId": 553,
+      "symbol": "RS",
+      "name": "Reliance, Inc.",
+      "assetType": "stock",
+      "rank": 570
+    },
+    {
+      "rwaId": 554,
+      "symbol": "INSM",
+      "name": "Insmed Incorporated",
+      "assetType": "stock",
+      "rank": 500
+    },
+    {
+      "rwaId": 555,
+      "symbol": "EFX",
+      "name": "Equifax, Incorporated",
+      "assetType": "stock",
+      "rank": 575
+    },
+    {
+      "rwaId": 556,
+      "symbol": "RBA",
+      "name": "Rb Global, Inc.",
+      "assetType": "stock",
+      "rank": 646
+    },
+    {
+      "rwaId": 559,
+      "symbol": "DKS",
+      "name": "Dick'S Sporting Goods, Inc.",
+      "assetType": "stock",
+      "rank": 718
+    },
+    {
+      "rwaId": 561,
+      "symbol": "AKAM",
+      "name": "Akamai Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 753
+    },
+    {
+      "rwaId": 563,
+      "symbol": "FTV",
+      "name": "Fortive Corporation",
+      "assetType": "stock",
+      "rank": 591
+    },
+    {
+      "rwaId": 565,
+      "symbol": "LSCC",
+      "name": "Lattice Semiconductor Corporation",
+      "assetType": "stock",
+      "rank": 662
+    },
+    {
+      "rwaId": 567,
+      "symbol": "DOCN",
+      "name": "Digitalocean Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 906
+    },
+    {
+      "rwaId": 568,
+      "symbol": "INVH",
+      "name": "Invitation Homes Inc.",
+      "assetType": "stock",
+      "rank": 692
+    },
+    {
+      "rwaId": 569,
+      "symbol": "LII",
+      "name": "Lennox International Inc.",
+      "assetType": "stock",
+      "rank": 816
+    },
+    {
+      "rwaId": 571,
+      "symbol": "WY",
+      "name": "Weyerhaeuser Company",
+      "assetType": "stock",
+      "rank": 711
+    },
+    {
+      "rwaId": 573,
+      "symbol": "ROKU",
+      "name": "Roku, Inc.",
+      "assetType": "stock",
+      "rank": 535
+    },
+    {
+      "rwaId": 574,
+      "symbol": "KIM",
+      "name": "Kimco Realty Corp.",
+      "assetType": "stock",
+      "rank": 644
+    },
+    {
+      "rwaId": 575,
+      "symbol": "ZBH",
+      "name": "Zimmer Biomet Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 596
+    },
+    {
+      "rwaId": 576,
+      "symbol": "CHTR",
+      "name": "Charter Communications, Inc.",
+      "assetType": "stock",
+      "rank": 669
+    },
+    {
+      "rwaId": 577,
+      "symbol": "WPC",
+      "name": "W.P. Carey Inc.",
+      "assetType": "stock",
+      "rank": 697
+    },
+    {
+      "rwaId": 579,
+      "symbol": "CF",
+      "name": "CF Industries Holding, Inc.",
+      "assetType": "stock",
+      "rank": 652
+    },
+    {
+      "rwaId": 580,
+      "symbol": "RGLD",
+      "name": "Royal Gold, Inc.",
+      "assetType": "stock",
+      "rank": 583
+    },
+    {
+      "rwaId": 581,
+      "symbol": "CDW",
+      "name": "CDW Corporation",
+      "assetType": "stock",
+      "rank": 572
+    },
+    {
+      "rwaId": 582,
+      "symbol": "SSNC",
+      "name": "SS&C Technologies Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 627
+    },
+    {
+      "rwaId": 583,
+      "symbol": "OVV",
+      "name": "Ovintiv Inc.",
+      "assetType": "stock",
+      "rank": 656
+    },
+    {
+      "rwaId": 584,
+      "symbol": "MAA",
+      "name": "Mid-America Apartment Communities, Inc.",
+      "assetType": "stock",
+      "rank": 754
+    },
+    {
+      "rwaId": 585,
+      "symbol": "NBIX",
+      "name": "Neurocrine Biosciences, Inc.",
+      "assetType": "stock",
+      "rank": 659
+    },
+    {
+      "rwaId": 586,
+      "symbol": "TSCO",
+      "name": "Tractor Supply Company",
+      "assetType": "stock",
+      "rank": 586
+    },
+    {
+      "rwaId": 587,
+      "symbol": "TXT",
+      "name": "Textron, Inc.",
+      "assetType": "stock",
+      "rank": 726
+    },
+    {
+      "rwaId": 588,
+      "symbol": "CG",
+      "name": "The Carlyle Group Inc.",
+      "assetType": "stock",
+      "rank": 747
+    },
+    {
+      "rwaId": 589,
+      "symbol": "PFGC",
+      "name": "Performance Food Group Company",
+      "assetType": "stock",
+      "rank": 640
+    },
+    {
+      "rwaId": 591,
+      "symbol": "PTC",
+      "name": "PTC Inc.",
+      "assetType": "stock",
+      "rank": 571
+    },
+    {
+      "rwaId": 592,
+      "symbol": "TKO",
+      "name": "Tko Group Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 745
+    },
+    {
+      "rwaId": 593,
+      "symbol": "DECK",
+      "name": "Deckers Outdoor Corp",
+      "assetType": "stock",
+      "rank": 840
+    },
+    {
+      "rwaId": 594,
+      "symbol": "LAMR",
+      "name": "Lamar Advertising Company",
+      "assetType": "stock",
+      "rank": 668
+    },
+    {
+      "rwaId": 598,
+      "symbol": "REG",
+      "name": "Regency Centers Corporation",
+      "assetType": "stock",
+      "rank": 744
+    },
+    {
+      "rwaId": 599,
+      "symbol": "BWA",
+      "name": "Borgwarner Inc.",
+      "assetType": "stock",
+      "rank": 886
+    },
+    {
+      "rwaId": 600,
+      "symbol": "UNM",
+      "name": "Unum Group",
+      "assetType": "stock",
+      "rank": 804
+    },
+    {
+      "rwaId": 601,
+      "symbol": "SGI",
+      "name": "Somnigroup International Inc.",
+      "assetType": "stock",
+      "rank": 723
+    },
+    {
+      "rwaId": 603,
+      "symbol": "MAS",
+      "name": "Masco Corporation",
+      "assetType": "stock",
+      "rank": 664
+    },
+    {
+      "rwaId": 604,
+      "symbol": "THC",
+      "name": "Tenet Healthcare Corporation New",
+      "assetType": "stock",
+      "rank": 574
+    },
+    {
+      "rwaId": 607,
+      "symbol": "CSGP",
+      "name": "Costar Group, Inc.",
+      "assetType": "stock",
+      "rank": 799
+    },
+    {
+      "rwaId": 613,
+      "symbol": "RGA",
+      "name": "Reinsurance Group Of America, Incorporated",
+      "assetType": "stock",
+      "rank": 638
+    },
+    {
+      "rwaId": 614,
+      "symbol": "NTNX",
+      "name": "Nutanix, Inc.",
+      "assetType": "stock",
+      "rank": 680
+    },
+    {
+      "rwaId": 616,
+      "symbol": "MKC",
+      "name": "Mccormick & Company, Incorporated Non-Vtg Cs",
+      "assetType": "stock",
+      "rank": 790
+    },
+    {
+      "rwaId": 617,
+      "symbol": "EG",
+      "name": "Everest Group, Ltd.",
+      "assetType": "stock",
+      "rank": 684
+    },
+    {
+      "rwaId": 619,
+      "symbol": "EXEL",
+      "name": "Exelixis, Inc.",
+      "assetType": "stock",
+      "rank": 667
+    },
+    {
+      "rwaId": 621,
+      "symbol": "EVR",
+      "name": "Evercore Inc.",
+      "assetType": "stock",
+      "rank": 846
+    },
+    {
+      "rwaId": 623,
+      "symbol": "KNX",
+      "name": "Knight-Swift Transportation Holdings Inc.",
+      "assetType": "stock",
+      "rank": 877
+    },
+    {
+      "rwaId": 624,
+      "symbol": "FNF",
+      "name": "Fidelity National Financial, Inc.",
+      "assetType": "stock",
+      "rank": 809
+    },
+    {
+      "rwaId": 626,
+      "symbol": "AIZ",
+      "name": "Assurant, Inc.",
+      "assetType": "stock",
+      "rank": 678
+    },
+    {
+      "rwaId": 629,
+      "symbol": "RNR",
+      "name": "Renaissancere Holdings Ltd.",
+      "assetType": "stock",
+      "rank": 727
+    },
+    {
+      "rwaId": 630,
+      "symbol": "VICR",
+      "name": "Vicor Corporation",
+      "assetType": "stock",
+      "rank": 1112
+    },
+    {
+      "rwaId": 631,
+      "symbol": "SJM",
+      "name": "The J.M. Smucker Company",
+      "assetType": "stock",
+      "rank": 720
+    },
+    {
+      "rwaId": 632,
+      "symbol": "TYL",
+      "name": "Tyler Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 661
+    },
+    {
+      "rwaId": 634,
+      "symbol": "SAIA",
+      "name": "Saia, Inc.",
+      "assetType": "stock",
+      "rank": 957
+    },
+    {
+      "rwaId": 636,
+      "symbol": "ALGN",
+      "name": "Align Technology, Inc.",
+      "assetType": "stock",
+      "rank": 821
+    },
+    {
+      "rwaId": 640,
+      "symbol": "SWK",
+      "name": "Stanley Black & Decker, Inc.",
+      "assetType": "stock",
+      "rank": 657
+    },
+    {
+      "rwaId": 642,
+      "symbol": "AVY",
+      "name": "Avery Dennison Corp.",
+      "assetType": "stock",
+      "rank": 722
+    },
+    {
+      "rwaId": 645,
+      "symbol": "NYT",
+      "name": "New York Times Co.",
+      "assetType": "stock",
+      "rank": 832
+    },
+    {
+      "rwaId": 646,
+      "symbol": "EQH",
+      "name": "Equitable Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 721
+    },
+    {
+      "rwaId": 647,
+      "symbol": "FHN",
+      "name": "First Horizon Corporation",
+      "assetType": "stock",
+      "rank": 862
+    },
+    {
+      "rwaId": 649,
+      "symbol": "WBS",
+      "name": "Webster Financial Corporation Waterbury",
+      "assetType": "stock",
+      "rank": 783
+    },
+    {
+      "rwaId": 653,
+      "symbol": "ELAN",
+      "name": "Elanco Animal Health Incorporated",
+      "assetType": "stock",
+      "rank": 755
+    },
+    {
+      "rwaId": 661,
+      "symbol": "PL",
+      "name": "Planet Labs Pbc",
+      "assetType": "stock",
+      "rank": 1417
+    },
+    {
+      "rwaId": 662,
+      "symbol": "QXO",
+      "name": "Qxo, Inc.",
+      "assetType": "stock",
+      "rank": 808
+    },
+    {
+      "rwaId": 663,
+      "symbol": "BMRN",
+      "name": "Biomarin Pharmaceutical Inc.",
+      "assetType": "stock",
+      "rank": 805
+    },
+    {
+      "rwaId": 675,
+      "symbol": "ZBRA",
+      "name": "Zebra Technologies Corporation",
+      "assetType": "stock",
+      "rank": 699
+    },
+    {
+      "rwaId": 685,
+      "symbol": "CGNX",
+      "name": "Cognex Corporation",
+      "assetType": "stock",
+      "rank": 993
+    },
+    {
+      "rwaId": 700,
+      "symbol": "TKR",
+      "name": "The Timken Company",
+      "assetType": "stock",
+      "rank": 1072
+    },
+    {
+      "rwaId": 712,
+      "symbol": "JOBY",
+      "name": "Joby Aviation, Inc.",
+      "assetType": "stock",
+      "rank": 1451
+    },
+    {
+      "rwaId": 724,
+      "symbol": "CHWY",
+      "name": "Chewy, Inc.",
+      "assetType": "stock",
+      "rank": 1000
+    },
+    {
+      "rwaId": 749,
+      "symbol": "IBRX",
+      "name": "Immunitybio, Inc.",
+      "assetType": "stock",
+      "rank": 1087
+    },
+    {
+      "rwaId": 751,
+      "symbol": "CELH",
+      "name": "Celsius Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 1003
+    },
+    {
+      "rwaId": 769,
+      "symbol": "CINF",
+      "name": "Cincinnati Financial Corporation",
+      "assetType": "stock",
+      "rank": 465
+    },
+    {
+      "rwaId": 770,
+      "symbol": "XYL",
+      "name": "Xylem Inc",
+      "assetType": "stock",
+      "rank": 558
+    },
+    {
+      "rwaId": 771,
+      "symbol": "QSR",
+      "name": "Restaurant Brands International Inc.",
+      "assetType": "stock",
+      "rank": 512
+    },
+    {
+      "rwaId": 772,
+      "symbol": "WRB",
+      "name": "W.R. Berkley Corporation",
+      "assetType": "stock",
+      "rank": 468
+    },
+    {
+      "rwaId": 773,
+      "symbol": "EQR",
+      "name": "Equity Residential",
+      "assetType": "stock",
+      "rank": 534
+    },
+    {
+      "rwaId": 774,
+      "symbol": "ATI",
+      "name": "ATI Inc.",
+      "assetType": "stock",
+      "rank": 521
+    },
+    {
+      "rwaId": 776,
+      "symbol": "AWK",
+      "name": "American Water Works Company, Inc",
+      "assetType": "stock",
+      "rank": 450
+    },
+    {
+      "rwaId": 777,
+      "symbol": "ILMN",
+      "name": "Illumina, Inc.",
+      "assetType": "stock",
+      "rank": 431
+    },
+    {
+      "rwaId": 778,
+      "symbol": "FCNCA",
+      "name": "First Citizens Bancshares, Inc.",
+      "assetType": "stock",
+      "rank": 518
+    },
+    {
+      "rwaId": 779,
+      "symbol": "RF",
+      "name": "Regions Financial Corp.",
+      "assetType": "stock",
+      "rank": 536
+    },
+    {
+      "rwaId": 780,
+      "symbol": "DG",
+      "name": "Dollar General Corp.",
+      "assetType": "stock",
+      "rank": 456
+    },
+    {
+      "rwaId": 781,
+      "symbol": "VRSK",
+      "name": "Verisk Analytics, Inc.",
+      "assetType": "stock",
+      "rank": 507
+    },
+    {
+      "rwaId": 783,
+      "symbol": "SYF",
+      "name": "Synchrony Financial",
+      "assetType": "stock",
+      "rank": 561
+    },
+    {
+      "rwaId": 784,
+      "symbol": "DRI",
+      "name": "Darden Restaurants, Inc.",
+      "assetType": "stock",
+      "rank": 485
+    },
+    {
+      "rwaId": 785,
+      "symbol": "TEAM",
+      "name": "Atlassian Corporation",
+      "assetType": "stock",
+      "rank": 412
+    },
+    {
+      "rwaId": 786,
+      "symbol": "LPLA",
+      "name": "Lpl Financial Holdings Inc.",
+      "assetType": "stock",
+      "rank": 566
+    },
+    {
+      "rwaId": 787,
+      "symbol": "ROL",
+      "name": "Rollins, Inc.",
+      "assetType": "stock",
+      "rank": 618
+    },
+    {
+      "rwaId": 788,
+      "symbol": "CPAY",
+      "name": "Corpay, Inc.",
+      "assetType": "stock",
+      "rank": 462
+    },
+    {
+      "rwaId": 789,
+      "symbol": "MKL",
+      "name": "Markel Group Inc.",
+      "assetType": "stock",
+      "rank": 532
+    },
+    {
+      "rwaId": 790,
+      "symbol": "HPQ",
+      "name": "HP Inc.",
+      "assetType": "stock",
+      "rank": 505
+    },
+    {
+      "rwaId": 791,
+      "symbol": "DGX",
+      "name": "Quest Diagnostics Inc.",
+      "assetType": "stock",
+      "rank": 469
+    },
+    {
+      "rwaId": 792,
+      "symbol": "NI",
+      "name": "Nisource Inc.",
+      "assetType": "stock",
+      "rank": 567
+    },
+    {
+      "rwaId": 793,
+      "symbol": "FWONK",
+      "name": "Liberty Media Corporation",
+      "assetType": "stock",
+      "rank": 482
+    },
+    {
+      "rwaId": 794,
+      "symbol": "P",
+      "name": "Everpure, Inc.",
+      "assetType": "stock",
+      "rank": 402
+    },
+    {
+      "rwaId": 796,
+      "symbol": "WWD",
+      "name": "Woodward, Inc.",
+      "assetType": "stock",
+      "rank": 603
+    },
+    {
+      "rwaId": 798,
+      "symbol": "SNX",
+      "name": "Td Synnex Corporation",
+      "assetType": "stock",
+      "rank": 608
+    },
+    {
+      "rwaId": 799,
+      "symbol": "MKSI",
+      "name": "Mks Inc.",
+      "assetType": "stock",
+      "rank": 709
+    },
+    {
+      "rwaId": 800,
+      "symbol": "EXE",
+      "name": "Expand Energy Corporation",
+      "assetType": "stock",
+      "rank": 594
+    },
+    {
+      "rwaId": 801,
+      "symbol": "OMC",
+      "name": "Omnicom Group Inc.",
+      "assetType": "stock",
+      "rank": 533
+    },
+    {
+      "rwaId": 804,
+      "symbol": "ROIV",
+      "name": "Roivant Sciences Ltd.",
+      "assetType": "stock",
+      "rank": 480
+    },
+    {
+      "rwaId": 805,
+      "symbol": "BRO",
+      "name": "Brown & Brown, Inc.",
+      "assetType": "stock",
+      "rank": 529
+    },
+    {
+      "rwaId": 806,
+      "symbol": "VLTO",
+      "name": "Veralto Corporation",
+      "assetType": "stock",
+      "rank": 467
+    },
+    {
+      "rwaId": 807,
+      "symbol": "LUV",
+      "name": "Southwest Airlines Co.",
+      "assetType": "stock",
+      "rank": 547
+    },
+    {
+      "rwaId": 808,
+      "symbol": "FIS",
+      "name": "Fidelity National Information Services, Inc.",
+      "assetType": "stock",
+      "rank": 738
+    },
+    {
+      "rwaId": 809,
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "assetType": "stock",
+      "rank": 397
+    },
+    {
+      "rwaId": 810,
+      "symbol": "USFD",
+      "name": "Us Foods Holding Corp.",
+      "assetType": "stock",
+      "rank": 545
+    },
+    {
+      "rwaId": 811,
+      "symbol": "TSN",
+      "name": "Tyson Foods, Inc.",
+      "assetType": "stock",
+      "rank": 557
+    },
+    {
+      "rwaId": 812,
+      "symbol": "ENTG",
+      "name": "Entegris, Inc.",
+      "assetType": "stock",
+      "rank": 554
+    },
+    {
+      "rwaId": 813,
+      "symbol": "SNA",
+      "name": "Snap-On Incorporated",
+      "assetType": "stock",
+      "rank": 605
+    },
+    {
+      "rwaId": 814,
+      "symbol": "PKG",
+      "name": "Packaging Corp Of America",
+      "assetType": "stock",
+      "rank": 565
+    },
+    {
+      "rwaId": 815,
+      "symbol": "EVRG",
+      "name": "Evergy, Inc.",
+      "assetType": "stock",
+      "rank": 580
+    },
+    {
+      "rwaId": 816,
+      "symbol": "IFF",
+      "name": "International Flavors & Fragrances Inc.",
+      "assetType": "stock",
+      "rank": 587
+    },
+    {
+      "rwaId": 817,
+      "symbol": "LNT",
+      "name": "Alliant Energy Corporation",
+      "assetType": "stock",
+      "rank": 604
+    },
+    {
+      "rwaId": 818,
+      "symbol": "VTRS",
+      "name": "Viatris Inc.",
+      "assetType": "stock",
+      "rank": 543
+    },
+    {
+      "rwaId": 819,
+      "symbol": "ESS",
+      "name": "Essex Property Trust, Inc",
+      "assetType": "stock",
+      "rank": 635
+    },
+    {
+      "rwaId": 821,
+      "symbol": "GIS",
+      "name": "General Mills, Inc.",
+      "assetType": "stock",
+      "rank": 609
+    },
+    {
+      "rwaId": 822,
+      "symbol": "APG",
+      "name": "Api Group Corporation",
+      "assetType": "stock",
+      "rank": 628
+    },
+    {
+      "rwaId": 823,
+      "symbol": "TTMI",
+      "name": "Ttm Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 1057
+    },
+    {
+      "rwaId": 825,
+      "symbol": "EWBC",
+      "name": "East West Bancorp, Inc.",
+      "assetType": "stock",
+      "rank": 639
+    },
+    {
+      "rwaId": 827,
+      "symbol": "ALB",
+      "name": "Albemarle Corporation",
+      "assetType": "stock",
+      "rank": 876
+    },
+    {
+      "rwaId": 828,
+      "symbol": "AA",
+      "name": "Alcoa Corporation",
+      "assetType": "stock",
+      "rank": 924
+    },
+    {
+      "rwaId": 829,
+      "symbol": "AMKR",
+      "name": "Amkor Technology, Inc.",
+      "assetType": "stock",
+      "rank": 974
+    },
+    {
+      "rwaId": 830,
+      "symbol": "GPN",
+      "name": "Global Payments, Inc.",
+      "assetType": "stock",
+      "rank": 550
+    },
+    {
+      "rwaId": 832,
+      "symbol": "BR",
+      "name": "Broadridge Financial Solutions Inc",
+      "assetType": "stock",
+      "rank": 576
+    },
+    {
+      "rwaId": 833,
+      "symbol": "IP",
+      "name": "International Paper Co.",
+      "assetType": "stock",
+      "rank": 634
+    },
+    {
+      "rwaId": 835,
+      "symbol": "BWXT",
+      "name": "Bwx Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 848
+    },
+    {
+      "rwaId": 836,
+      "symbol": "PR",
+      "name": "Permian Resources Corporation",
+      "assetType": "stock",
+      "rank": 625
+    },
+    {
+      "rwaId": 837,
+      "symbol": "ITT",
+      "name": "ITT Inc.",
+      "assetType": "stock",
+      "rank": 606
+    },
+    {
+      "rwaId": 838,
+      "symbol": "HST",
+      "name": "Host Hotels & Resorts, Inc.",
+      "assetType": "stock",
+      "rank": 632
+    },
+    {
+      "rwaId": 839,
+      "symbol": "WCC",
+      "name": "Wesco International Inc.",
+      "assetType": "stock",
+      "rank": 691
+    },
+    {
+      "rwaId": 842,
+      "symbol": "BBY",
+      "name": "Best Buy Company, Inc.",
+      "assetType": "stock",
+      "rank": 577
+    },
+    {
+      "rwaId": 844,
+      "symbol": "IEX",
+      "name": "Idex Corporation",
+      "assetType": "stock",
+      "rank": 643
+    },
+    {
+      "rwaId": 845,
+      "symbol": "NLY",
+      "name": "Annaly Capital Management. Inc.",
+      "assetType": "stock",
+      "rank": 758
+    },
+    {
+      "rwaId": 846,
+      "symbol": "SUI",
+      "name": "Sun Communities, Inc",
+      "assetType": "stock",
+      "rank": 733
+    },
+    {
+      "rwaId": 847,
+      "symbol": "NDSN",
+      "name": "Nordson Corporation",
+      "assetType": "stock",
+      "rank": 624
+    },
+    {
+      "rwaId": 848,
+      "symbol": "WSO",
+      "name": "Watsco, Inc.",
+      "assetType": "stock",
+      "rank": 794
+    },
+    {
+      "rwaId": 849,
+      "symbol": "LDOS",
+      "name": "Leidos Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 687
+    },
+    {
+      "rwaId": 850,
+      "symbol": "CLH",
+      "name": "Clean Harbors, Inc",
+      "assetType": "stock",
+      "rank": 686
+    },
+    {
+      "rwaId": 852,
+      "symbol": "GEN",
+      "name": "Gen Digital Inc.",
+      "assetType": "stock",
+      "rank": 622
+    },
+    {
+      "rwaId": 854,
+      "symbol": "MLI",
+      "name": "Mueller Industries, Inc.",
+      "assetType": "stock",
+      "rank": 813
+    },
+    {
+      "rwaId": 855,
+      "symbol": "BALL",
+      "name": "Ball Corporation",
+      "assetType": "stock",
+      "rank": 648
+    },
+    {
+      "rwaId": 857,
+      "symbol": "J",
+      "name": "Jacobs Solutions Inc.",
+      "assetType": "stock",
+      "rank": 611
+    },
+    {
+      "rwaId": 859,
+      "symbol": "DKNG",
+      "name": "Draftkings Inc.",
+      "assetType": "stock",
+      "rank": 960
+    },
+    {
+      "rwaId": 860,
+      "symbol": "DOC",
+      "name": "Healthpeak Properties, Inc.",
+      "assetType": "stock",
+      "rank": 756
+    },
+    {
+      "rwaId": 861,
+      "symbol": "GNRC",
+      "name": "Generac Holdings Inc",
+      "assetType": "stock",
+      "rank": 796
+    },
+    {
+      "rwaId": 862,
+      "symbol": "ARMK",
+      "name": "Aramark",
+      "assetType": "stock",
+      "rank": 703
+    },
+    {
+      "rwaId": 863,
+      "symbol": "LECO",
+      "name": "Lincoln Electric Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 713
+    },
+    {
+      "rwaId": 864,
+      "symbol": "JLL",
+      "name": "Jones Lang Lasalle, Inc.",
+      "assetType": "stock",
+      "rank": 653
+    },
+    {
+      "rwaId": 865,
+      "symbol": "GLPI",
+      "name": "Gaming And Leisure Properties, Inc.",
+      "assetType": "stock",
+      "rank": 838
+    },
+    {
+      "rwaId": 866,
+      "symbol": "OHI",
+      "name": "Omega Healthcare Investors Inc.",
+      "assetType": "stock",
+      "rank": 717
+    },
+    {
+      "rwaId": 867,
+      "symbol": "GPC",
+      "name": "Genuine Parts Company",
+      "assetType": "stock",
+      "rank": 649
+    },
+    {
+      "rwaId": 868,
+      "symbol": "LULU",
+      "name": "Lululemon Athletica Inc.",
+      "assetType": "stock",
+      "rank": 775
+    },
+    {
+      "rwaId": 869,
+      "symbol": "APA",
+      "name": "Apa Corporation",
+      "assetType": "stock",
+      "rank": 685
+    },
+    {
+      "rwaId": 870,
+      "symbol": "ONTO",
+      "name": "Onto Innovation Inc.",
+      "assetType": "stock",
+      "rank": 896
+    },
+    {
+      "rwaId": 872,
+      "symbol": "RRX",
+      "name": "Regal Rexnord Corporation",
+      "assetType": "stock",
+      "rank": 823
+    },
+    {
+      "rwaId": 873,
+      "symbol": "RPM",
+      "name": "Rpm International, Inc.",
+      "assetType": "stock",
+      "rank": 782
+    },
+    {
+      "rwaId": 874,
+      "symbol": "CSL",
+      "name": "Carlisle Companies, Inc.",
+      "assetType": "stock",
+      "rank": 693
+    },
+    {
+      "rwaId": 876,
+      "symbol": "COO",
+      "name": "The Cooper Companies, Inc.",
+      "assetType": "stock",
+      "rank": 817
+    },
+    {
+      "rwaId": 877,
+      "symbol": "TRU",
+      "name": "Transunion",
+      "assetType": "stock",
+      "rank": 702
+    },
+    {
+      "rwaId": 878,
+      "symbol": "TOL",
+      "name": "Toll Brothers, Inc.",
+      "assetType": "stock",
+      "rank": 759
+    },
+    {
+      "rwaId": 879,
+      "symbol": "ALLY",
+      "name": "Ally Financial Inc.",
+      "assetType": "stock",
+      "rank": 833
+    },
+    {
+      "rwaId": 880,
+      "symbol": "UDR",
+      "name": "Udr, Inc.",
+      "assetType": "stock",
+      "rank": 826
+    },
+    {
+      "rwaId": 884,
+      "symbol": "GL",
+      "name": "Globe Life Inc.",
+      "assetType": "stock",
+      "rank": 810
+    },
+    {
+      "rwaId": 885,
+      "symbol": "PEN",
+      "name": "Penumbra, Inc.",
+      "assetType": "stock",
+      "rank": 781
+    },
+    {
+      "rwaId": 886,
+      "symbol": "PNW",
+      "name": "Pinnacle West Capital Corporation",
+      "assetType": "stock",
+      "rank": 795
+    },
+    {
+      "rwaId": 887,
+      "symbol": "ELS",
+      "name": "Equity Lifestyle Properties, Inc.",
+      "assetType": "stock",
+      "rank": 800
+    },
+    {
+      "rwaId": 889,
+      "symbol": "SOLS",
+      "name": "Solstice Advanced Materials Inc.",
+      "assetType": "stock",
+      "rank": 881
+    },
+    {
+      "rwaId": 892,
+      "symbol": "GGG",
+      "name": "Graco Inc",
+      "assetType": "stock",
+      "rank": 824
+    },
+    {
+      "rwaId": 896,
+      "symbol": "CLX",
+      "name": "Clorox Company",
+      "assetType": "stock",
+      "rank": 765
+    },
+    {
+      "rwaId": 898,
+      "symbol": "HUT",
+      "name": "Hut 8 Corp.",
+      "assetType": "stock",
+      "rank": 1096
+    },
+    {
+      "rwaId": 899,
+      "symbol": "AUR",
+      "name": "Aurora Innovation, Inc.",
+      "assetType": "stock",
+      "rank": 1019
+    },
+    {
+      "rwaId": 900,
+      "symbol": "DT",
+      "name": "Dynatrace, Inc.",
+      "assetType": "stock",
+      "rank": 774
+    },
+    {
+      "rwaId": 901,
+      "symbol": "BJ",
+      "name": "Bjs Wholesale Club Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 739
+    },
+    {
+      "rwaId": 902,
+      "symbol": "TRMB",
+      "name": "Trimble Inc.",
+      "assetType": "stock",
+      "rank": 791
+    },
+    {
+      "rwaId": 904,
+      "symbol": "HAS",
+      "name": "Hasbro, Inc.",
+      "assetType": "stock",
+      "rank": 651
+    },
+    {
+      "rwaId": 905,
+      "symbol": "U",
+      "name": "Unity Software Inc.",
+      "assetType": "stock",
+      "rank": 564
+    },
+    {
+      "rwaId": 906,
+      "symbol": "AIT",
+      "name": "Applied Industrial Technologies, Inc.",
+      "assetType": "stock",
+      "rank": 864
+    },
+    {
+      "rwaId": 908,
+      "symbol": "CPT",
+      "name": "Camden Property Trust",
+      "assetType": "stock",
+      "rank": 908
+    },
+    {
+      "rwaId": 912,
+      "symbol": "APLD",
+      "name": "Applied Digital Corporation",
+      "assetType": "stock",
+      "rank": 1424
+    },
+    {
+      "rwaId": 915,
+      "symbol": "ARW",
+      "name": "Arrow Electronics, Inc.",
+      "assetType": "stock",
+      "rank": 927
+    },
+    {
+      "rwaId": 929,
+      "symbol": "IT",
+      "name": "Gartner, Inc.",
+      "assetType": "stock",
+      "rank": 834
+    },
+    {
+      "rwaId": 946,
+      "symbol": "CAVA",
+      "name": "Cava Group, Inc.",
+      "assetType": "stock",
+      "rank": 1173
+    },
+    {
+      "rwaId": 959,
+      "symbol": "TTD",
+      "name": "The Trade Desk, Inc.",
+      "assetType": "stock",
+      "rank": 1074
+    },
+    {
+      "rwaId": 960,
+      "symbol": "W",
+      "name": "Wayfair Inc.",
+      "assetType": "stock",
+      "rank": 696
+    },
+    {
+      "rwaId": 963,
+      "symbol": "TEM",
+      "name": "Tempus Ai, Inc.",
+      "assetType": "stock",
+      "rank": 806
+    },
+    {
+      "rwaId": 971,
+      "symbol": "FRHC",
+      "name": "Freedom Holding Corp.",
+      "assetType": "stock",
+      "rank": 911
+    },
+    {
+      "rwaId": 977,
+      "symbol": "BROS",
+      "name": "Dutch Bros Inc.",
+      "assetType": "stock",
+      "rank": 1346
+    },
+    {
+      "rwaId": 980,
+      "symbol": "CORZ",
+      "name": "Core Scientific, Inc.",
+      "assetType": "stock",
+      "rank": 1400
+    },
+    {
+      "rwaId": 1010,
+      "symbol": "TGTX",
+      "name": "Tg Therapeutics, Inc.",
+      "assetType": "stock",
+      "rank": 884
+    },
+    {
+      "rwaId": 1023,
+      "symbol": "PTGX",
+      "name": "Protagonist Therapeutics, Inc.",
+      "assetType": "stock",
+      "rank": 996
+    },
+    {
+      "rwaId": 1062,
+      "symbol": "EWY",
+      "name": "iShares MSCI South Korea ETF",
+      "assetType": "etf",
+      "rank": 7766
+    },
+    {
+      "rwaId": 1063,
+      "symbol": "BUD",
+      "name": "Anheuser-Busch INBEV SA/NV",
+      "assetType": "stock",
+      "rank": 92
+    },
+    {
+      "rwaId": 1065,
+      "symbol": "UL",
+      "name": "Unilever plc",
+      "assetType": "stock",
+      "rank": 106
+    },
+    {
+      "rwaId": 1081,
+      "symbol": "RACE",
+      "name": "Ferrari N.V.",
+      "assetType": "stock",
+      "rank": 242
+    },
+    {
+      "rwaId": 1083,
+      "symbol": "UMC",
+      "name": "United Microelectronic Corp.",
+      "assetType": "stock",
+      "rank": 399
+    },
+    {
+      "rwaId": 1086,
+      "symbol": "INFY",
+      "name": "Infosys Limited",
+      "assetType": "stock",
+      "rank": 317
+    },
+    {
+      "rwaId": 1087,
+      "symbol": "CCJ",
+      "name": "Cameco Corporation",
+      "assetType": "stock",
+      "rank": 483
+    },
+    {
+      "rwaId": 1102,
+      "symbol": "TSEM",
+      "name": "Tower Semiconductor Ltd.",
+      "assetType": "stock",
+      "rank": 689
+    },
+    {
+      "rwaId": 1107,
+      "symbol": "BNTX",
+      "name": "BioNTech SE",
+      "assetType": "stock",
+      "rank": 578
+    },
+    {
+      "rwaId": 1123,
+      "symbol": "PNFP",
+      "name": "Pinnacle Financial Partners, Inc.",
+      "assetType": "stock",
+      "rank": 705
+    },
+    {
+      "rwaId": 1135,
+      "symbol": "SIMO",
+      "name": "Silicon Motion Technology Corporation",
+      "assetType": "stock",
+      "rank": 1316
+    },
+    {
+      "rwaId": 1164,
+      "symbol": "AXTI",
+      "name": "AXT Inc",
+      "assetType": "stock",
+      "rank": 1858
+    },
+    {
+      "rwaId": 1171,
+      "symbol": "DUOL",
+      "name": "Duolingo, Inc.",
+      "assetType": "stock",
+      "rank": 1046
+    },
+    {
+      "rwaId": 1198,
+      "symbol": "PATH",
+      "name": "UiPath, Inc.",
+      "assetType": "stock",
+      "rank": 1180
+    },
+    {
+      "rwaId": 1208,
+      "symbol": "BB",
+      "name": "BlackBerry Limited",
+      "assetType": "stock",
+      "rank": 1323
+    },
+    {
+      "rwaId": 1209,
+      "symbol": "TWST",
+      "name": "Twist Bioscience Corporation",
+      "assetType": "stock",
+      "rank": 1012
+    },
+    {
+      "rwaId": 1213,
+      "symbol": "SYM",
+      "name": "Symbotic Inc.",
+      "assetType": "stock",
+      "rank": 1427
+    },
+    {
+      "rwaId": 1218,
+      "symbol": "CAI",
+      "name": "Caris Life Sciences, Inc.",
+      "assetType": "stock",
+      "rank": 1247
+    },
+    {
+      "rwaId": 1263,
+      "symbol": "GTLB",
+      "name": "GitLab Inc.",
+      "assetType": "stock",
+      "rank": 1062
+    },
+    {
+      "rwaId": 1274,
+      "symbol": "ERAS",
+      "name": "Erasca, Inc.",
+      "assetType": "stock",
+      "rank": 1366
+    },
+    {
+      "rwaId": 1296,
+      "symbol": "WING",
+      "name": "Wingstop Inc.",
+      "assetType": "stock",
+      "rank": 1464
+    },
+    {
+      "rwaId": 1304,
+      "symbol": "XNDU",
+      "name": "Xanadu Quantum Technologies Limited",
+      "assetType": "stock",
+      "rank": 2732
+    },
+    {
+      "rwaId": 1305,
+      "symbol": "PLNT",
+      "name": "Planet Fitness, Inc.",
+      "assetType": "stock",
+      "rank": 1386
+    },
+    {
+      "rwaId": 1307,
+      "symbol": "ANF",
+      "name": "Abercrombie & Fitch Co.",
+      "assetType": "stock",
+      "rank": 1163
+    },
+    {
+      "rwaId": 1327,
+      "symbol": "CAKE",
+      "name": "Cheesecake Factory Incorporated",
+      "assetType": "stock",
+      "rank": 1194
+    },
+    {
+      "rwaId": 1345,
+      "symbol": "YETI",
+      "name": "YETI Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 1745
+    },
+    {
+      "rwaId": 1373,
+      "symbol": "INOD",
+      "name": "Innodata Inc.",
+      "assetType": "stock",
+      "rank": 2341
+    },
+    {
+      "rwaId": 1400,
+      "symbol": "FLNC",
+      "name": "Fluence Energy, Inc.",
+      "assetType": "stock",
+      "rank": 2756
+    },
+    {
+      "rwaId": 1408,
+      "symbol": "QURE",
+      "name": "uniQure N.V.",
+      "assetType": "stock",
+      "rank": 2189
+    },
+    {
+      "rwaId": 1410,
+      "symbol": "PENG",
+      "name": "Penguin Solutions, Inc.",
+      "assetType": "stock",
+      "rank": 1786
+    },
+    {
+      "rwaId": 1455,
+      "symbol": "HOG",
+      "name": "Harley-Davidson, Inc.",
+      "assetType": "stock",
+      "rank": 1629
+    },
+    {
+      "rwaId": 1465,
+      "symbol": "OUST",
+      "name": "Ouster, Inc.",
+      "assetType": "stock",
+      "rank": 1906
+    },
+    {
+      "rwaId": 1476,
+      "symbol": "WOLF",
+      "name": "Wolfspeed, Inc.",
+      "assetType": "stock",
+      "rank": 2289
+    },
+    {
+      "rwaId": 1477,
+      "symbol": "CLOV",
+      "name": "Clover Health Investments, Corp.",
+      "assetType": "stock",
+      "rank": 1888
+    },
+    {
+      "rwaId": 1488,
+      "symbol": "UAA",
+      "name": "Under Armour, Inc.",
+      "assetType": "stock",
+      "rank": 1932
+    },
+    {
+      "rwaId": 1491,
+      "symbol": "TE",
+      "name": "T1 Energy Inc.",
+      "assetType": "stock",
+      "rank": 2990
+    },
+    {
+      "rwaId": 1533,
+      "symbol": "WRD",
+      "name": "WeRide Inc.",
+      "assetType": "stock",
+      "rank": 2306
+    },
+    {
+      "rwaId": 1539,
+      "symbol": "ENPH",
+      "name": "Enphase Energy, Inc.",
+      "assetType": "stock",
+      "rank": 1717
+    },
+    {
+      "rwaId": 1551,
+      "symbol": "MXL",
+      "name": "Maxlinear, Inc.",
+      "assetType": "stock",
+      "rank": 1390
+    },
+    {
+      "rwaId": 1558,
+      "symbol": "EAT",
+      "name": "Brinker International, Inc.",
+      "assetType": "stock",
+      "rank": 1005
+    },
+    {
+      "rwaId": 1570,
+      "symbol": "CROX",
+      "name": "Crocs, Inc.",
+      "assetType": "stock",
+      "rank": 1073
+    },
+    {
+      "rwaId": 1577,
+      "symbol": "SONY",
+      "name": "Sony Group Corporation",
+      "assetType": "stock",
+      "rank": 98
+    },
+    {
+      "rwaId": 1582,
+      "symbol": "BNY",
+      "name": "Bank of New York Mellon Corporation",
+      "assetType": "stock",
+      "rank": 156
+    },
+    {
+      "rwaId": 1588,
+      "symbol": "NOK",
+      "name": "Nokia Corporation",
+      "assetType": "stock",
+      "rank": 347
+    },
+    {
+      "rwaId": 1591,
+      "symbol": "VALE",
+      "name": "VALE S.A.",
+      "assetType": "stock",
+      "rank": 349
+    },
+    {
+      "rwaId": 1595,
+      "symbol": "SE",
+      "name": "Sea Limited",
+      "assetType": "stock",
+      "rank": 355
+    },
+    {
+      "rwaId": 1602,
+      "symbol": "VIK",
+      "name": "Viking Holdings Ltd",
+      "assetType": "stock",
+      "rank": 340
+    },
+    {
+      "rwaId": 1613,
+      "symbol": "MDLN",
+      "name": "Medline Inc.",
+      "assetType": "stock",
+      "rank": 408
+    },
+    {
+      "rwaId": 1682,
+      "symbol": "USAR",
+      "name": "USA Rare Earth, Inc.",
+      "assetType": "stock",
+      "rank": 1826
+    },
+    {
+      "rwaId": 1701,
+      "symbol": "NVTS",
+      "name": "Navitas Semiconductor Corporation",
+      "assetType": "stock",
+      "rank": 1956
+    },
+    {
+      "rwaId": 1706,
+      "symbol": "LYFT",
+      "name": "Lyft, Inc.",
+      "assetType": "stock",
+      "rank": 1117
+    },
+    {
+      "rwaId": 1726,
+      "symbol": "FLY",
+      "name": "Firefly Aerospace Inc.",
+      "assetType": "stock",
+      "rank": 1583
+    },
+    {
+      "rwaId": 1732,
+      "symbol": "BOOT",
+      "name": "Boot Barn Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 1462
+    },
+    {
+      "rwaId": 1738,
+      "symbol": "SEZL",
+      "name": "Sezzle Inc.",
+      "assetType": "stock",
+      "rank": 1276
+    },
+    {
+      "rwaId": 1747,
+      "symbol": "VVV",
+      "name": "Valvoline Inc.",
+      "assetType": "stock",
+      "rank": 1452
+    },
+    {
+      "rwaId": 1791,
+      "symbol": "CLSK",
+      "name": "CleanSpark, Inc.",
+      "assetType": "stock",
+      "rank": 2105
+    },
+    {
+      "rwaId": 1832,
+      "symbol": "UUUU",
+      "name": "Energy Fuels Inc.",
+      "assetType": "stock",
+      "rank": 2157
+    },
+    {
+      "rwaId": 1843,
+      "symbol": "ELF",
+      "name": "e.l.f. Beauty, Inc.",
+      "assetType": "stock",
+      "rank": 1115
+    },
+    {
+      "rwaId": 1847,
+      "symbol": "LUNR",
+      "name": "Intuitive Machines, Inc.",
+      "assetType": "stock",
+      "rank": 2022
+    },
+    {
+      "rwaId": 1857,
+      "symbol": "SMR",
+      "name": "NuScale Power Corporation",
+      "assetType": "stock",
+      "rank": 2094
+    },
+    {
+      "rwaId": 1861,
+      "symbol": "AEHR",
+      "name": "Aehr Test Systems",
+      "assetType": "stock",
+      "rank": 2087
+    },
+    {
+      "rwaId": 1865,
+      "symbol": "VKTX",
+      "name": "Viking Therapeutics, Inc.",
+      "assetType": "stock",
+      "rank": 1632
+    },
+    {
+      "rwaId": 1884,
+      "symbol": "LEU",
+      "name": "Centrus Energy Corp.",
+      "assetType": "stock",
+      "rank": 1992
+    },
+    {
+      "rwaId": 1943,
+      "symbol": "AEO",
+      "name": "American Eagle Outfitters",
+      "assetType": "stock",
+      "rank": 1561
+    },
+    {
+      "rwaId": 1945,
+      "symbol": "RDW",
+      "name": "Redwire Corporation",
+      "assetType": "stock",
+      "rank": 2056
+    },
+    {
+      "rwaId": 1963,
+      "symbol": "HSAI",
+      "name": "Hesai Group",
+      "assetType": "stock",
+      "rank": 1943
+    },
+    {
+      "rwaId": 1994,
+      "symbol": "FUN",
+      "name": "Six Flags Entertainment Corporation",
+      "assetType": "stock",
+      "rank": 2287
+    },
+    {
+      "rwaId": 2004,
+      "symbol": "PTON",
+      "name": "Peloton Interactive, Inc.",
+      "assetType": "stock",
+      "rank": 1854
+    },
+    {
+      "rwaId": 2023,
+      "symbol": "DJT",
+      "name": "Trump Media & Technology Group Corp.",
+      "assetType": "stock",
+      "rank": 2337
+    },
+    {
+      "rwaId": 2028,
+      "symbol": "QUBT",
+      "name": "Quantum Computing Inc.",
+      "assetType": "stock",
+      "rank": 2317
+    },
+    {
+      "rwaId": 2032,
+      "symbol": "POET",
+      "name": "POET Technologies Inc.",
+      "assetType": "stock",
+      "rank": 2601
+    },
+    {
+      "rwaId": 2078,
+      "symbol": "KSS",
+      "name": "Kohls Corporation",
+      "assetType": "stock",
+      "rank": 1772
+    },
+    {
+      "rwaId": 2096,
+      "symbol": "VPG",
+      "name": "Vishay Precision Group, Inc.",
+      "assetType": "stock",
+      "rank": 2678
+    },
+    {
+      "rwaId": 2126,
+      "symbol": "RXRX",
+      "name": "Recursion Pharmaceuticals, Inc.",
+      "assetType": "stock",
+      "rank": 2038
+    },
+    {
+      "rwaId": 2132,
+      "symbol": "ALNT",
+      "name": "Allient Inc.",
+      "assetType": "stock",
+      "rank": 2253
+    },
+    {
+      "rwaId": 2143,
+      "symbol": "RUM",
+      "name": "Rumble Inc.",
+      "assetType": "stock",
+      "rank": 1967
+    },
+    {
+      "rwaId": 2147,
+      "symbol": "NVAX",
+      "name": "Novavax, Inc.",
+      "assetType": "stock",
+      "rank": 2243
+    },
+    {
+      "rwaId": 2164,
+      "symbol": "AI",
+      "name": "C3.ai, Inc.",
+      "assetType": "stock",
+      "rank": 2106
+    },
+    {
+      "rwaId": 2175,
+      "symbol": "PURR",
+      "name": "Hyperliquid Strategies Inc",
+      "assetType": "stock",
+      "rank": 2123
+    },
+    {
+      "rwaId": 2220,
+      "symbol": "SHAZ",
+      "name": "SharonAI Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 2504
+    },
+    {
+      "rwaId": 2226,
+      "symbol": "ASST",
+      "name": "Strive, Inc.",
+      "assetType": "stock",
+      "rank": 1883
+    },
+    {
+      "rwaId": 2265,
+      "symbol": "ABSI",
+      "name": "Absci Corporation",
+      "assetType": "stock",
+      "rank": 2184
+    },
+    {
+      "rwaId": 2272,
+      "symbol": "SMPL",
+      "name": "The Simply Good Foods Company",
+      "assetType": "stock",
+      "rank": 2357
+    },
+    {
+      "rwaId": 2301,
+      "symbol": "PSNL",
+      "name": "Personalis, Inc.",
+      "assetType": "stock",
+      "rank": 2097
+    },
+    {
+      "rwaId": 2304,
+      "symbol": "SG",
+      "name": "Sweetgreen, Inc.",
+      "assetType": "stock",
+      "rank": 2146
+    },
+    {
+      "rwaId": 2336,
+      "symbol": "KODK",
+      "name": "EASTMAN KODAK COMPANY",
+      "assetType": "stock",
+      "rank": 2543
+    },
+    {
+      "rwaId": 2393,
+      "symbol": "TRON",
+      "name": "Tron Inc.",
+      "assetType": "stock",
+      "rank": 2645
+    },
+    {
+      "rwaId": 2458,
+      "symbol": "DNUT",
+      "name": "Krispy Kreme, Inc.",
+      "assetType": "stock",
+      "rank": 2740
+    },
+    {
+      "rwaId": 2469,
+      "symbol": "BTGO",
+      "name": "BitGo Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 2963
+    },
+    {
+      "rwaId": 2481,
+      "symbol": "SWBI",
+      "name": "Smith & Wesson Brands, Inc.",
+      "assetType": "stock",
+      "rank": 2496
+    },
+    {
+      "rwaId": 2507,
+      "symbol": "SERV",
+      "name": "Serve Robotics Inc.",
+      "assetType": "stock",
+      "rank": 3496
+    },
+    {
+      "rwaId": 2577,
+      "symbol": "RR",
+      "name": "Richtech Robotics Inc.",
+      "assetType": "stock",
+      "rank": 3673
+    },
+    {
+      "rwaId": 2690,
+      "symbol": "MLP",
+      "name": "Maui Land & Pineapple Co.",
+      "assetType": "stock",
+      "rank": 3318
+    },
+    {
+      "rwaId": 2703,
+      "symbol": "FWDI",
+      "name": "Forward Industries, Inc.",
+      "assetType": "stock",
+      "rank": 3160
+    },
+    {
+      "rwaId": 2769,
+      "symbol": "FUFU",
+      "name": "BitFuFu Inc.",
+      "assetType": "stock",
+      "rank": 3715
+    },
+    {
+      "rwaId": 2914,
+      "symbol": "WW",
+      "name": "WW International, Inc.",
+      "assetType": "stock",
+      "rank": 3870
+    },
+    {
+      "rwaId": 2928,
+      "symbol": "TONX",
+      "name": "TON Strategy Company",
+      "assetType": "stock",
+      "rank": 3656
+    },
+    {
+      "rwaId": 3066,
+      "symbol": "BNC",
+      "name": "CEA Industries Inc.",
+      "assetType": "stock",
+      "rank": 3579
+    },
+    {
+      "rwaId": 3080,
+      "symbol": "LCID",
+      "name": "Lucid Group, Inc.",
+      "assetType": "stock",
+      "rank": 2323
+    },
+    {
+      "rwaId": 3089,
+      "symbol": "AIP",
+      "name": "Arteris, Inc.",
+      "assetType": "stock",
+      "rank": 2435
+    },
+    {
+      "rwaId": 3133,
+      "symbol": "RCAT",
+      "name": "Red Cat Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 3144
+    },
+    {
+      "rwaId": 3178,
+      "symbol": "SLS",
+      "name": "SELLAS Life Sciences Group, Inc.",
+      "assetType": "stock",
+      "rank": 1557
+    },
+    {
+      "rwaId": 3179,
+      "symbol": "HTZ",
+      "name": "Hertz Global Holdings, Inc",
+      "assetType": "stock",
+      "rank": 2917
+    },
+    {
+      "rwaId": 3206,
+      "symbol": "ENRD",
+      "name": "Legato Merger Corp. III",
+      "assetType": "stock",
+      "rank": 3296
+    },
+    {
+      "rwaId": 3211,
+      "symbol": "CRML",
+      "name": "Critical Metals Corp.",
+      "assetType": "stock",
+      "rank": 2624
+    },
+    {
+      "rwaId": 3231,
+      "symbol": "WEN",
+      "name": "Wendy's Company",
+      "assetType": "stock",
+      "rank": 2062
+    },
+    {
+      "rwaId": 3233,
+      "symbol": "NNE",
+      "name": "Nano Nuclear Energy Inc.",
+      "assetType": "stock",
+      "rank": 2779
+    },
+    {
+      "rwaId": 3240,
+      "symbol": "WYFI",
+      "name": "WhiteFiber, Inc.",
+      "assetType": "stock",
+      "rank": 3039
+    },
+    {
+      "rwaId": 3270,
+      "symbol": "PZZA",
+      "name": "Papa John's International, Inc.",
+      "assetType": "stock",
+      "rank": 2716
+    },
+    {
+      "rwaId": 3277,
+      "symbol": "UMAC",
+      "name": "Unusual Machines, Inc.",
+      "assetType": "stock",
+      "rank": 2862
+    },
+    {
+      "rwaId": 3425,
+      "symbol": "ROOT",
+      "name": "Root, Inc.",
+      "assetType": "stock",
+      "rank": 2675
+    },
+    {
+      "rwaId": 3447,
+      "symbol": "MTA",
+      "name": "Metalla Royalty & Streaming Ltd.",
+      "assetType": "stock",
+      "rank": 2721
+    },
+    {
+      "rwaId": 3450,
+      "symbol": "BTBT",
+      "name": "Bit Digital, Inc.",
+      "assetType": "stock",
+      "rank": 3429
+    },
+    {
+      "rwaId": 3458,
+      "symbol": "OMER",
+      "name": "Omeros Corporation",
+      "assetType": "stock",
+      "rank": 2367
+    },
+    {
+      "rwaId": 3627,
+      "symbol": "KRAQ",
+      "name": "KRAKacquisition Corp",
+      "assetType": "stock",
+      "rank": 2975
+    },
+    {
+      "rwaId": 3673,
+      "symbol": "PLAY",
+      "name": "Dave & Buster's Entertainment, Inc.",
+      "assetType": "stock",
+      "rank": 3367
+    },
+    {
+      "rwaId": 3674,
+      "symbol": "SPCE",
+      "name": "Virgin Galactic Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 3582
+    },
+    {
+      "rwaId": 3761,
+      "symbol": "SIDU",
+      "name": "Sidus Space, Inc.",
+      "assetType": "stock",
+      "rank": 3873
+    },
+    {
+      "rwaId": 3831,
+      "symbol": "CLW",
+      "name": "Clearwater Paper Corporation",
+      "assetType": "stock",
+      "rank": 3356
+    },
+    {
+      "rwaId": 3848,
+      "symbol": "RELL",
+      "name": "Richardson Electronics, Ltd.",
+      "assetType": "stock",
+      "rank": 3361
+    },
+    {
+      "rwaId": 3855,
+      "symbol": "SITC",
+      "name": "SITE Centers Corp.",
+      "assetType": "stock",
+      "rank": 4154
+    },
+    {
+      "rwaId": 3927,
+      "symbol": "CHPT",
+      "name": "ChargePoint Holdings, Inc.",
+      "assetType": "stock",
+      "rank": 3351
+    },
+    {
+      "rwaId": 4016,
+      "symbol": "GPRO",
+      "name": "GoPro, Inc.",
+      "assetType": "stock",
+      "rank": 3733
+    },
+    {
+      "rwaId": 4060,
+      "symbol": "SUIG",
+      "name": "Sui Group Holdings Limited",
+      "assetType": "stock",
+      "rank": 4019
+    },
+    {
+      "rwaId": 4090,
+      "symbol": "HSDT",
+      "name": "Solana Company",
+      "assetType": "stock",
+      "rank": 3827
+    },
+    {
+      "rwaId": 4215,
+      "symbol": "BIRD",
+      "name": "Allbirds, Inc.",
+      "assetType": "stock",
+      "rank": 4338
+    },
+    {
+      "rwaId": 4472,
+      "symbol": "ABFL",
+      "name": "Abacus FCF Leaders ETF",
+      "assetType": "etf",
+      "rank": 7739
+    },
+    {
+      "rwaId": 4524,
+      "symbol": "ARTY",
+      "name": "iShares Future AI & Tech ETF",
+      "assetType": "etf",
+      "rank": 7637
+    },
+    {
+      "rwaId": 4538,
+      "symbol": "AVL",
+      "name": "Direxion Shares ETF Trust Direxion Daily AVGO Bull 2X ETF",
+      "assetType": "etf",
+      "rank": 7609
+    },
+    {
+      "rwaId": 4586,
+      "symbol": "BITX",
+      "name": "2x Bitcoin Strategy ETF",
+      "assetType": "etf",
+      "rank": 7515
+    },
+    {
+      "rwaId": 4789,
+      "symbol": "DRAM",
+      "name": "Roundhill Memory ETF",
+      "assetType": "etf",
+      "rank": 7111
+    },
+    {
+      "rwaId": 4872,
+      "symbol": "EWJ",
+      "name": "iShares MSCI Japan ETF",
+      "assetType": "etf",
+      "rank": 6946
+    },
+    {
+      "rwaId": 4876,
+      "symbol": "EWQ",
+      "name": "iShares MSCI France ETF",
+      "assetType": "etf",
+      "rank": 6938
+    },
+    {
+      "rwaId": 4877,
+      "symbol": "EWT",
+      "name": "iShares MSCI Taiwan ETF",
+      "assetType": "etf",
+      "rank": 6936
+    },
+    {
+      "rwaId": 4880,
+      "symbol": "EWZS",
+      "name": "iShares MSCI Brazil Small-Cap ETF",
+      "assetType": "etf",
+      "rank": 6930
+    },
+    {
+      "rwaId": 4918,
+      "symbol": "FEZ",
+      "name": "State Street SPDR EURO STOXX 50 ETF",
+      "assetType": "etf",
+      "rank": 6854
+    },
+    {
+      "rwaId": 4936,
+      "symbol": "FLBL",
+      "name": "Franklin Senior Loan ETF",
+      "assetType": "etf",
+      "rank": 6818
+    },
+    {
+      "rwaId": 4949,
+      "symbol": "FLQM",
+      "name": "Franklin U.S. Mid Cap Multifactor Index ETF",
+      "assetType": "etf",
+      "rank": 6792
+    },
+    {
+      "rwaId": 5000,
+      "symbol": "FXI",
+      "name": "iShares China Large-Cap ETF",
+      "assetType": "etf",
+      "rank": 6690
+    },
+    {
+      "rwaId": 5100,
+      "symbol": "HYDB",
+      "name": "iShares High Yield Systematic Bond ETF",
+      "assetType": "etf",
+      "rank": 6490
+    },
+    {
+      "rwaId": 5103,
+      "symbol": "HYGW",
+      "name": "iShares High Yield Corporate Bond BuyWrite Strategy ETF",
+      "assetType": "etf",
+      "rank": 6484
+    },
+    {
+      "rwaId": 5164,
+      "symbol": "IGV",
+      "name": "iShares Expanded Tech-Software Sector ETF",
+      "assetType": "etf",
+      "rank": 6362
+    },
+    {
+      "rwaId": 5186,
+      "symbol": "INTW",
+      "name": "GraniteShares ETF Trust GraniteShares 2x Long INTC Daily ETF",
+      "assetType": "etf",
+      "rank": 6318
+    },
+    {
+      "rwaId": 5201,
+      "symbol": "ITA",
+      "name": "iShares U.S. Aerospace & Defense ETF",
+      "assetType": "etf",
+      "rank": 6288
+    },
+    {
+      "rwaId": 5263,
+      "symbol": "JPST",
+      "name": "JPMorgan Ultra-Short Income ETF",
+      "assetType": "etf",
+      "rank": 6166
+    },
+    {
+      "rwaId": 5289,
+      "symbol": "KORU",
+      "name": "Direxion Daily MSCI South Korea Bull 3X ETF",
+      "assetType": "etf",
+      "rank": 6114
+    },
+    {
+      "rwaId": 5293,
+      "symbol": "KSTR",
+      "name": "KraneShares SSE STAR Market 50 Index ETF",
+      "assetType": "etf",
+      "rank": 6106
+    },
+    {
+      "rwaId": 5375,
+      "symbol": "MSTU",
+      "name": "T-Rex 2X Long MSTR Daily Target ETF",
+      "assetType": "etf",
+      "rank": 5943
+    },
+    {
+      "rwaId": 5382,
+      "symbol": "MUU",
+      "name": "Direxion Shares ETF Trust Direxion Daily MU Bull 2X ETF",
+      "assetType": "etf",
+      "rank": 5929
+    },
+    {
+      "rwaId": 5383,
+      "symbol": "MVLL",
+      "name": "GraniteShares ETF Trust GraniteShares 2x Long MRVL Daily ETF",
+      "assetType": "etf",
+      "rank": 5927
+    },
+    {
+      "rwaId": 5397,
+      "symbol": "NEAR",
+      "name": "iShares Short Duration Bond Active ETF",
+      "assetType": "etf",
+      "rank": 5899
+    },
+    {
+      "rwaId": 5407,
+      "symbol": "NLR",
+      "name": "VanEck Uranium and Nuclear ETF",
+      "assetType": "etf",
+      "rank": 5879
+    },
+    {
+      "rwaId": 5630,
+      "symbol": "SCHF",
+      "name": "Schwab International Equity ETF",
+      "assetType": "etf",
+      "rank": 5435
+    },
+    {
+      "rwaId": 5667,
+      "symbol": "SHV",
+      "name": "iShares Trust iShares 0-1 Year Treasury Bond ETF",
+      "assetType": "etf",
+      "rank": 5361
+    },
+    {
+      "rwaId": 5699,
+      "symbol": "SNXX",
+      "name": "Tradr 2X Long SNDK Daily ETF",
+      "assetType": "etf",
+      "rank": 5299
+    },
+    {
+      "rwaId": 5704,
+      "symbol": "SOXX",
+      "name": "iShares Semiconductor ETF",
+      "assetType": "etf",
+      "rank": 5289
+    },
+    {
+      "rwaId": 5727,
+      "symbol": "SPXL",
+      "name": "Direxion Daily S&P 500 Bull 3x ETF",
+      "assetType": "etf",
+      "rank": 5243
+    },
+    {
+      "rwaId": 5790,
+      "symbol": "TMF",
+      "name": "Direxion Daily 20+ Year Treasury Bull 3X ETF",
+      "assetType": "etf",
+      "rank": 5118
+    },
+    {
+      "rwaId": 5826,
+      "symbol": "TZA",
+      "name": "Direxion Daily Small Cap Bear 3x ETF",
+      "assetType": "etf",
+      "rank": 5046
+    },
+    {
+      "rwaId": 5846,
+      "symbol": "URA",
+      "name": "Global X Uranium ETF",
+      "assetType": "etf",
+      "rank": 5007
+    },
+    {
+      "rwaId": 5853,
+      "symbol": "USHY",
+      "name": "iShares Broad USD High Yield Corporate Bond ETF",
+      "assetType": "etf",
+      "rank": 4993
+    },
+    {
+      "rwaId": 5856,
+      "symbol": "USPX",
+      "name": "Franklin U.S. Equity Index ETF",
+      "assetType": "etf",
+      "rank": 4987
+    },
+    {
+      "rwaId": 5877,
+      "symbol": "VCX",
+      "name": "Fundrise Innovation Fund, LLC",
+      "assetType": "stock",
+      "rank": 2569
+    },
+    {
+      "rwaId": 5913,
+      "symbol": "VT",
+      "name": "Vanguard Total World Stock ETF",
+      "assetType": "etf",
+      "rank": 4875
+    },
+    {
+      "rwaId": 5920,
+      "symbol": "VUG",
+      "name": "Vanguard Growth ETF",
+      "assetType": "etf",
+      "rank": 4861
+    },
+    {
+      "rwaId": 5952,
+      "symbol": "XBI",
+      "name": "State Street SPDR S&P Biotech ETF",
+      "assetType": "etf",
+      "rank": 4798
+    },
+    {
+      "rwaId": 5967,
+      "symbol": "XLK",
+      "name": "State Street Technology Select Sector SPDR ETF",
+      "assetType": "etf",
+      "rank": 4768
+    },
+    {
+      "rwaId": 5970,
+      "symbol": "XLV",
+      "name": "State Street Health Care Select Sector SPDR ETF",
+      "assetType": "etf",
+      "rank": 4762
+    },
+    {
+      "rwaId": 6009,
+      "symbol": "ZAUG",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr August",
+      "assetType": "etf",
+      "rank": 4684
+    },
+    {
+      "rwaId": 6011,
+      "symbol": "ZJAN",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr January",
+      "assetType": "etf",
+      "rank": 4680
+    },
+    {
+      "rwaId": 6012,
+      "symbol": "ZMAR",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr March",
+      "assetType": "etf",
+      "rank": 4678
+    },
+    {
+      "rwaId": 6013,
+      "symbol": "ZOCT",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr October",
+      "assetType": "etf",
+      "rank": 4676
+    },
+    {
+      "rwaId": 6014,
+      "symbol": "ZSEP",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr September",
+      "assetType": "etf",
+      "rank": 4674
+    },
+    {
+      "rwaId": 6206,
+      "symbol": "AGPU",
+      "name": "Axe Compute Inc.",
+      "assetType": "stock",
+      "rank": 3909
+    },
+    {
+      "rwaId": 6776,
+      "symbol": "DAX",
+      "name": "Global X Funds Global X DAX Germany ETF",
+      "assetType": "etf",
+      "rank": 7232
+    },
+    {
+      "rwaId": 6918,
+      "symbol": "EWG",
+      "name": "iShares MSCI Germany ETF",
+      "assetType": "etf",
+      "rank": 6949
+    },
+    {
+      "rwaId": 6925,
+      "symbol": "EWU",
+      "name": "iShares MSCI United Kingdom ETF",
+      "assetType": "etf",
+      "rank": 6935
+    },
+    {
+      "rwaId": 6927,
+      "symbol": "EWZ",
+      "name": "iShares MSCI Brazil ETF",
+      "assetType": "etf",
+      "rank": 6931
+    },
+    {
+      "rwaId": 6932,
+      "symbol": "FAAA",
+      "name": "Fidelity Merrimack Street Trust Fidelity AAA CLO ETF",
+      "assetType": "etf",
+      "rank": 6921
+    },
+    {
+      "rwaId": 6985,
+      "symbol": "FLCB",
+      "name": "Franklin U.S. Core Bond ETF",
+      "assetType": "etf",
+      "rank": 6815
+    },
+    {
+      "rwaId": 6989,
+      "symbol": "FLGV",
+      "name": "Franklin U.S. Treasury Bond ETF",
+      "assetType": "etf",
+      "rank": 6807
+    },
+    {
+      "rwaId": 7062,
+      "symbol": "GDX",
+      "name": "VanEck Gold Miners ETF",
+      "assetType": "etf",
+      "rank": 6661
+    },
+    {
+      "rwaId": 7198,
+      "symbol": "IEMG",
+      "name": "iShares Core MSCI Emerging Markets ETF",
+      "assetType": "etf",
+      "rank": 6389
+    },
+    {
+      "rwaId": 7216,
+      "symbol": "IJR",
+      "name": "iShares Core S&P Small-Cap ETF",
+      "assetType": "etf",
+      "rank": 6353
+    },
+    {
+      "rwaId": 7230,
+      "symbol": "INFL",
+      "name": "Horizon Kinetics Inflation Beneficiaries ETF",
+      "assetType": "etf",
+      "rank": 6325
+    },
+    {
+      "rwaId": 7410,
+      "symbol": "MOO",
+      "name": "VanEck Agribusiness ETF",
+      "assetType": "etf",
+      "rank": 5968
+    },
+    {
+      "rwaId": 7436,
+      "symbol": "NASA",
+      "name": "Tema Space Innovators ETF",
+      "assetType": "etf",
+      "rank": 5916
+    },
+    {
+      "rwaId": 7470,
+      "symbol": "NVDL",
+      "name": "GraniteShares ETF Trust GraniteShares 2x Long NVDA Daily ETF",
+      "assetType": "etf",
+      "rank": 5849
+    },
+    {
+      "rwaId": 7640,
+      "symbol": "RKTL",
+      "name": "Defiance Daily Target 2X Long RKT ETF",
+      "assetType": "etf",
+      "rank": 5510
+    },
+    {
+      "rwaId": 7697,
+      "symbol": "SECU",
+      "name": "iShares Securitized Income Active ETF",
+      "assetType": "etf",
+      "rank": 5396
+    },
+    {
+      "rwaId": 7712,
+      "symbol": "SHLD",
+      "name": "Global X Defense Tech ETF",
+      "assetType": "etf",
+      "rank": 5366
+    },
+    {
+      "rwaId": 7733,
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "assetType": "etf",
+      "rank": 5325
+    },
+    {
+      "rwaId": 7750,
+      "symbol": "SOXL",
+      "name": "Direxion Daily Semiconductor Bull 3X ETF",
+      "assetType": "etf",
+      "rank": 5292
+    },
+    {
+      "rwaId": 7751,
+      "symbol": "SOXS",
+      "name": "Direxion Daily Semiconductor Bear 3X ETF",
+      "assetType": "etf",
+      "rank": 5290
+    },
+    {
+      "rwaId": 7766,
+      "symbol": "SPMO",
+      "name": "Invesco S&P 500 Momentum ETF",
+      "assetType": "etf",
+      "rank": 5260
+    },
+    {
+      "rwaId": 7801,
+      "symbol": "SYSB",
+      "name": "iShares Systematic Bond ETF",
+      "assetType": "etf",
+      "rank": 5191
+    },
+    {
+      "rwaId": 7856,
+      "symbol": "TSLL",
+      "name": "Direxion Shares ETF Trust Direxion Daily TSLA Bull 2X ETF",
+      "assetType": "etf",
+      "rank": 5081
+    },
+    {
+      "rwaId": 7911,
+      "symbol": "UVXY",
+      "name": "ProShares Ultra VIX Short-Term Futures ETF",
+      "assetType": "etf",
+      "rank": 4972
+    },
+    {
+      "rwaId": 7934,
+      "symbol": "VGK",
+      "name": "Vanguard FTSE Europe ETF",
+      "assetType": "etf",
+      "rank": 4928
+    },
+    {
+      "rwaId": 7950,
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "assetType": "etf",
+      "rank": 4896
+    },
+    {
+      "rwaId": 7971,
+      "symbol": "VXUS",
+      "name": "Vanguard STAR Funds Vanguard Total International Stock ETF",
+      "assetType": "etf",
+      "rank": 4854
+    },
+    {
+      "rwaId": 8012,
+      "symbol": "XLE",
+      "name": "State Street Energy Select Sector SPDR ETF",
+      "assetType": "etf",
+      "rank": 4773
+    },
+    {
+      "rwaId": 8025,
+      "symbol": "XOP",
+      "name": "State Street SPDR S&P Oil & Gas Exploration & Production ETF",
+      "assetType": "etf",
+      "rank": 4747
+    },
+    {
+      "rwaId": 8050,
+      "symbol": "YLDE",
+      "name": "Legg Mason ETF Investment Trust Franklin ClearBridge Enhanced Income ETF",
+      "assetType": "etf",
+      "rank": 4697
+    },
+    {
+      "rwaId": 8056,
+      "symbol": "ZAPR",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr April",
+      "assetType": "etf",
+      "rank": 4685
+    },
+    {
+      "rwaId": 8057,
+      "symbol": "ZDEK",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr December",
+      "assetType": "etf",
+      "rank": 4683
+    },
+    {
+      "rwaId": 8058,
+      "symbol": "ZFEB",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr February",
+      "assetType": "etf",
+      "rank": 4681
+    },
+    {
+      "rwaId": 8059,
+      "symbol": "ZJUL",
+      "name": "Innovtor Equity Defined Protection ETF - 1 Yr July",
+      "assetType": "etf",
+      "rank": 4679
+    },
+    {
+      "rwaId": 8060,
+      "symbol": "ZNOV",
+      "name": "Innovator Equity Defined Protection ETF - 1 Yr November",
+      "assetType": "etf",
+      "rank": 4677
+    },
+    {
+      "rwaId": 8065,
+      "symbol": "SKHY",
+      "name": "SK Hynix",
+      "assetType": "stock",
+      "rank": 17
+    },
+    {
+      "rwaId": 16385,
+      "symbol": "CXMT",
+      "name": "ChangXin Memory Technologies",
+      "assetType": "stock",
+      "rank": 4670
+    },
+    {
+      "rwaId": 16386,
+      "symbol": "QNT",
+      "name": "Quantinuum Inc",
+      "assetType": "stock",
+      "rank": 2166
+    },
+    {
+      "rwaId": 16388,
+      "symbol": "XPD",
+      "name": "Palladium",
+      "assetType": "commodity",
+      "rank": 4668
+    }
+  ],
+  "popular": [
+    {
+      "rwaId": 1,
+      "symbol": "GOLD",
+      "name": "Gold",
+      "assetType": "commodity",
+      "rank": 1,
+      "tokenizedMarketCap": 4569427474.493298
+    },
+    {
+      "rwaId": 2,
+      "symbol": "NVDA",
+      "name": "Nvidia Corp",
+      "assetType": "stock",
+      "rank": 4,
+      "tokenizedMarketCap": 391666524.8523863
+    },
+    {
+      "rwaId": 9,
+      "symbol": "SPCX",
+      "name": "SpaceX",
+      "assetType": "stock",
+      "rank": 8,
+      "tokenizedMarketCap": 329958073.5655481
+    },
+    {
+      "rwaId": 4,
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc Class A",
+      "assetType": "stock",
+      "rank": 5,
+      "tokenizedMarketCap": 215189144.76425236
+    },
+    {
+      "rwaId": 12,
+      "symbol": "MU",
+      "name": "Micron Technology Inc",
+      "assetType": "stock",
+      "rank": 19,
+      "tokenizedMarketCap": 146559763.3194011
+    },
+    {
+      "rwaId": 14,
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "assetType": "stock",
+      "rank": 12,
+      "tokenizedMarketCap": 123403764.30602933
+    },
+    {
+      "rwaId": 20,
+      "symbol": "INTC",
+      "name": "Intel Corp",
+      "assetType": "stock",
+      "rank": 40,
+      "tokenizedMarketCap": 91882839.505705
+    },
+    {
+      "rwaId": 8065,
+      "symbol": "SKHY",
+      "name": "SK Hynix",
+      "assetType": "stock",
+      "rank": 17,
+      "tokenizedMarketCap": 41150634.21161703
+    },
+    {
+      "rwaId": 10,
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "assetType": "stock",
+      "rank": 11,
+      "tokenizedMarketCap": 37884446.37232735
+    },
+    {
+      "rwaId": 3,
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "assetType": "stock",
+      "rank": 2,
+      "tokenizedMarketCap": 31785653.988071635
+    },
+    {
+      "rwaId": 6,
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc",
+      "assetType": "stock",
+      "rank": 6,
+      "tokenizedMarketCap": 30279490.06293904
+    },
+    {
+      "rwaId": 13,
+      "symbol": "AVGO",
+      "name": "Broadcom Inc",
+      "assetType": "stock",
+      "rank": 10,
+      "tokenizedMarketCap": 24652103.914955158
+    },
+    {
+      "rwaId": 7,
+      "symbol": "MSFT",
+      "name": "Microsoft Corp",
+      "assetType": "stock",
+      "rank": 3,
+      "tokenizedMarketCap": 23050211.949910007
+    },
+    {
+      "rwaId": 8,
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+      "assetType": "stock",
+      "rank": 9,
+      "tokenizedMarketCap": 20047021.924410768
+    },
+    {
+      "rwaId": 24,
+      "symbol": "ORCL",
+      "name": "Oracle Corp",
+      "assetType": "stock",
+      "rank": 32,
+      "tokenizedMarketCap": 16746210.689260306
+    },
+    {
+      "rwaId": 25,
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "assetType": "stock",
+      "rank": 16,
+      "tokenizedMarketCap": 14121026.002125956
+    },
+    {
+      "rwaId": 53,
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc",
+      "assetType": "stock",
+      "rank": 31,
+      "tokenizedMarketCap": 10799551.48304031
+    },
+    {
+      "rwaId": 11,
+      "symbol": "LLY",
+      "name": "Eli Lilly And Co",
+      "assetType": "stock",
+      "rank": 13,
+      "tokenizedMarketCap": 6351741.803820841
+    },
+    {
+      "rwaId": 26,
+      "symbol": "ASML",
+      "name": "ASML Holding NV",
+      "assetType": "stock",
+      "rank": 24,
+      "tokenizedMarketCap": 6164437.379569917
+    },
+    {
+      "rwaId": 34,
+      "symbol": "KO",
+      "name": "Coca-Cola Co",
+      "assetType": "stock",
+      "rank": 27,
+      "tokenizedMarketCap": 4968089.975019177
+    },
+    {
+      "rwaId": 16,
+      "symbol": "JPM",
+      "name": "JPmorgan Chase & Co",
+      "assetType": "stock",
+      "rank": 18,
+      "tokenizedMarketCap": 3658043.861371323
+    },
+    {
+      "rwaId": 51,
+      "symbol": "CVX",
+      "name": "Chevron Corp",
+      "assetType": "stock",
+      "rank": 28,
+      "tokenizedMarketCap": 3548066.95937395
+    },
+    {
+      "rwaId": 50,
+      "symbol": "PG",
+      "name": "Procter & Gamble Co",
+      "assetType": "stock",
+      "rank": 29,
+      "tokenizedMarketCap": 3401788.157692209
+    },
+    {
+      "rwaId": 29,
+      "symbol": "CSCO",
+      "name": "Cisco Systems Inc",
+      "assetType": "stock",
+      "rank": 30,
+      "tokenizedMarketCap": 3042050.749877275
+    },
+    {
+      "rwaId": 22,
+      "symbol": "AMAT",
+      "name": "Applied Materials",
+      "assetType": "stock",
+      "rank": 44,
+      "tokenizedMarketCap": 2964920.2833711
+    },
+    {
+      "rwaId": 17,
+      "symbol": "WMT",
+      "name": "Walmart Inc",
+      "assetType": "stock",
+      "rank": 15,
+      "tokenizedMarketCap": 2774131.8320596004
+    },
+    {
+      "rwaId": 18,
+      "symbol": "V",
+      "name": "Visa Inc",
+      "assetType": "stock",
+      "rank": 20,
+      "tokenizedMarketCap": 2693305.8061192576
+    },
+    {
+      "rwaId": 43,
+      "symbol": "PANW",
+      "name": "Palo Alto Networks Inc",
+      "assetType": "stock",
+      "rank": 39,
+      "tokenizedMarketCap": 2589636.1232052343
+    },
+    {
+      "rwaId": 15,
+      "symbol": "BRK.B",
+      "name": "Berkshire Hathaway Inc Class B",
+      "assetType": "stock",
+      "rank": 14,
+      "tokenizedMarketCap": 2283760.3911737995
+    },
+    {
+      "rwaId": 31,
+      "symbol": "COST",
+      "name": "Costco Wholesale Corp",
+      "assetType": "stock",
+      "rank": 26,
+      "tokenizedMarketCap": 1885552.2315253315
+    },
+    {
+      "rwaId": 33,
+      "symbol": "UNH",
+      "name": "UnitedHealth Group Inc",
+      "assetType": "stock",
+      "rank": 37,
+      "tokenizedMarketCap": 1645840.0155276407
+    },
+    {
+      "rwaId": 49,
+      "symbol": "GE",
+      "name": "General Electric Co",
+      "assetType": "stock",
+      "rank": 33,
+      "tokenizedMarketCap": 1614251.6940321422
+    },
+    {
+      "rwaId": 28,
+      "symbol": "MA",
+      "name": "Mastercard Inc",
+      "assetType": "stock",
+      "rank": 23,
+      "tokenizedMarketCap": 1541447.8070800323
+    },
+    {
+      "rwaId": 32,
+      "symbol": "LRCX",
+      "name": "Lam Research Corp",
+      "assetType": "stock",
+      "rank": 47,
+      "tokenizedMarketCap": 1216781.4295040704
+    },
+    {
+      "rwaId": 27,
+      "symbol": "XOM",
+      "name": "Exxon Mobil Corp",
+      "assetType": "stock",
+      "rank": 22,
+      "tokenizedMarketCap": 809681.8676782623
+    },
+    {
+      "rwaId": 19,
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "assetType": "stock",
+      "rank": 21,
+      "tokenizedMarketCap": 645865.452266984
+    },
+    {
+      "rwaId": 45,
+      "symbol": "TXN",
+      "name": "Texas Instruments Inc",
+      "assetType": "stock",
+      "rank": 46,
+      "tokenizedMarketCap": 474891.1322040278
+    },
+    {
+      "rwaId": 21,
+      "symbol": "ABBV",
+      "name": "AbbVie Inc",
+      "assetType": "stock",
+      "rank": 25,
+      "tokenizedMarketCap": 352724.2231832036
+    },
+    {
+      "rwaId": 23,
+      "symbol": "BAC",
+      "name": "Bank of America Corp",
+      "assetType": "stock",
+      "rank": 35,
+      "tokenizedMarketCap": 265529.00314060866
+    },
+    {
+      "rwaId": 38,
+      "symbol": "MRK",
+      "name": "Merck & Co Inc",
+      "assetType": "stock",
+      "rank": 34,
+      "tokenizedMarketCap": 207788.70670669773
+    },
+    {
+      "rwaId": 56,
+      "symbol": "PM",
+      "name": "Philip Morris International Inc",
+      "assetType": "stock",
+      "rank": 38,
+      "tokenizedMarketCap": 119546.45155655638
+    },
+    {
+      "rwaId": 40,
+      "symbol": "AZN",
+      "name": "AstraZeneca PLC",
+      "assetType": "stock",
+      "rank": 45,
+      "tokenizedMarketCap": 119010.58789718382
+    },
+    {
+      "rwaId": 36,
+      "symbol": "HD",
+      "name": "Home Depot Inc",
+      "assetType": "stock",
+      "rank": 36,
+      "tokenizedMarketCap": 101516.59491570042
+    },
+    {
+      "rwaId": 5,
+      "symbol": "SILVER",
+      "name": "Silver",
+      "assetType": "commodity",
+      "rank": 7,
+      "tokenizedMarketCap": 0
+    },
+    {
+      "rwaId": 35,
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "assetType": "stock",
+      "rank": 43,
+      "tokenizedMarketCap": 0
+    }
+  ]
+}

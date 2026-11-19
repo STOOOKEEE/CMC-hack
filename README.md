@@ -4,7 +4,7 @@
 
 A stock, an ETF or an ounce of gold now exists in several tokenized versions: xStocks, Ondo, Robinhood,
 bStocks, Dinari, Paxos, Tether… on different chains, with very different liquidity. Some have no market at
-all, some trade $43 a day, some quote a different unit. WrapScout takes one asset, ranks every tokenized
+all, some are derivatives price feeds rather than tokens, some quote a different unit. WrapScout takes one asset, ranks every tokenized
 version of it with a transparent score built on CoinMarketCap data, and answers three questions: **which one,
 why, and where to buy it.**
 
@@ -13,13 +13,13 @@ Built for the [Build with CMC: API Hackathon](https://coinmarketcap.com/api/hack
 > **Live demo:** _coming soon_ · **Video:** _coming soon_ · **60-second judge guide:** [JUDGE.md](JUDGE.md)
 
 ![WrapScout asset page for NVDA (demo data)](docs/screenshots/asset-nvda.png)
-<sub>Screenshot taken in demo mode (synthetic values). The live site uses real CoinMarketCap data.</sub>
+<sub>Real CoinMarketCap data, 18 Nov 2026: 9 versions of Nvidia; bStocks' NVDAB is the most liquid ($198M in 24h).</sub>
 
 ## What it does
 
 - **Search** any tokenized stock, ETF, commodity or fund by ticker or name.
 - **Best pick** for that asset, with plain-language reasons ("Most liquid version: $4.2M traded in 24h,
-  8× the next one", "Price in line with the consensus", "Listed on 12 markets").
+  2× the next one", "Price in line with the other versions", "Listed on 108 markets").
 - **Where to buy:** exchanges CoinMarketCap tracks for it, its chain, contract address and explorer link, and a
   short note on who the issuer serves (for example, not offered to US persons).
 - **Every other version**, with what is wrong with it: *No market*, *Too thin*, *Different unit*, or simply a
@@ -62,7 +62,7 @@ score is deterministic, uses no AI, and has no opinion about the underlying asse
 |---|---|
 | `GET /v5/real-world-assets/map` | Search index: every underlying, its type and `has_tokens` |
 | `GET /v5/real-world-assets/assets/list` | Popular assets by tokenized market cap |
-| `GET /v5/real-world-assets/quotes/latest` | Consensus tokenized price + every wrapper (`tokens[]`: issuer, price, volume) |
+| `GET /v5/real-world-assets/quotes/latest` | Consensus tokenized price + every wrapper (`tokens[]`: issuer, price, volume) + `tradfi_markets` |
 | `GET /v5/real-world-assets/info` | Registrant metadata (industry, SEC CIK) |
 | `GET /v2/cryptocurrency/info` | Each wrapper's chain, contract and explorer |
 | `GET /v2/cryptocurrency/quotes/latest` | Each wrapper's `num_market_pairs` and 24h volume |
@@ -84,10 +84,13 @@ With a CoinMarketCap API key:
 
 ```bash
 cp .env.example .env.local      # then set CMC_API_KEY
-npm run explore -- NVDA TSLA XAU SPY MS   # records raw responses to fixtures/live/ and prints a status table
+npm run explore -- NVDA TSLA GOLD SPY MS  # records raw responses to fixtures/live/ and prints a status table
 npm run snapshot                # writes data/snapshot/ (every searchable asset), commit it
 npm run dev
 ```
+
+> Behind a corporate/agent HTTPS proxy, Node's built-in `fetch` ignores `HTTPS_PROXY`: run the scripts with
+> `NODE_USE_ENV_PROXY=1` (Node ≥ 22.21). Not needed on Vercel or a normal machine.
 
 ### Data modes
 

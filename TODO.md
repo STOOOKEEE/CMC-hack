@@ -9,17 +9,17 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 > une vraie clé CMC, un hébergement ou une action humaine — les lignes **[VOUS]** ci-dessous.
 
 ## Phase 0 — Setup & vérité terrain API (mer 18 – jeu 19 nov)
-- [ ] **[VOUS]** S'inscrire sur DoraHacks **avec l'email du compte CoinMarketCap** (pour le plan Startup gratuit)
-- [ ] Récupérer la clé API, vérifier le plan, le quota et la limite/minute (`GET /v1/key/info`)
+- [x] **[VOUS]** S'inscrire sur DoraHacks **avec l'email du compte CoinMarketCap** (pour le plan Startup gratuit)
+- [x] Récupérer la clé API, vérifier le plan, le quota et la limite/minute (`GET /v1/key/info`) — 15 000 crédits/mois, 50 appels/min (plan Startup pas encore visible sur la clé)
 - [ ] Vérifier la durée du plan gratuit (doit couvrir le jugement jusqu'au 25 déc.)
 - [ ] Lire les règles officielles DoraHacks : top 30 global ou par track ? exigences exactes (feedback API, vidéo, durée)
 - [x] Init du repo : Next.js + TypeScript + Tailwind, Vitest, ESLint, `.env.example`, `.gitignore` (`.env*`)
 - [x] Script d'exploration `scripts/explore.ts` qui appelle chaque endpoint et sauve la réponse brute
-- [ ] **Lancer** `npm run explore -- NVDA TSLA XAU SPY MS` avec la clé → enregistre les vraies réponses dans `fixtures/live/`
-- [ ] Comparer `fixtures/live/` aux fixtures synthétiques `fixtures/cmc/` ; corriger `src/lib/normalize.ts` si des noms de champs diffèrent
-- [ ] Vérifier les formes de réponse (v5 `quotes` = tableau, `about` = objet, champs de `tokens[]`)
-- [ ] Lire le tableau « où acheter » affiché par `explore` (RWA market-pairs → crypto market-pairs → DEX) et **acter la décision** dans la spec §6.4
-- [x] Ouvrir `FEEDBACK.md` (section A prête) — [ ] remplir la section B avec nos propres constats
+- [x] **Lancer** `npm run explore -- NVDA TSLA XAU SPY MS` avec la clé → enregistre les vraies réponses dans `fixtures/live/`
+- [x] Comparer `fixtures/live/` aux fixtures synthétiques `fixtures/cmc/` ; corriger `src/lib/normalize.ts` si des noms de champs diffèrent
+- [x] Vérifier les formes de réponse (v5 `quotes` = tableau, `about` = objet, champs de `tokens[]`, enveloppe `rwa_assets`, param `rwa_id`)
+- [x] Lire le tableau « où acheter » affiché par `explore` (RWA market-pairs → crypto market-pairs → DEX) et **acter la décision** dans la spec §6.4
+- [x] Ouvrir `FEEDBACK.md` — sections A (revérifiée) et B (12 constats réels) remplies
 
 ## Phase 1 — Données + score (ven 20 – mar 24 nov)
 - [x] `lib/cmc/client.ts` : clé en header serveur, retry/backoff sur 429/5xx, distinction 403/404/405, comptage crédits
@@ -30,7 +30,7 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 - [x] `lib/score/` : éligibilité (null, plancher volume, unité > 25 %), score L/F/B, labels, raisons
 - [x] Cas limites : 0 éligible, 1 éligible, égalités
 - [x] Tests Vitest sur fixtures synthétiques (or avec unités mélangées, actif sans marché, wrapper à 43 $ de volume…)
-- [ ] Rejouer les tests avec les vraies réponses une fois la Phase 0 faite
+- [x] Rejouer les tests avec les vraies réponses une fois la Phase 0 faite
 - [x] CI GitHub Actions : lint + typecheck + tests + build + e2e
 
 ## Phase 2 — UI MVP + 1er déploiement (mer 25 – lun 30 nov)
@@ -46,8 +46,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 ## Phase 3 — Où acheter + robustesse + finitions (mar 1 – ven 4 déc)
 - [x] Section « Where to buy » : exchanges (si le plan le permet) + chaîne + contrat + explorer + note émetteur
 - [x] `npm run snapshot` écrit tout l'univers cherchable ; servi si CMC échoue, avec bandeau daté
-- [ ] **Générer le vrai snapshot** (`npm run snapshot`, ≈ 35 min, ≈ 1 000 crédits) et le commiter avant le déploiement, puis avant la soumission ; vérifier la ligne « degraded » en fin de script
-- [ ] Phase 0 : vérifier si `/v5/real-world-assets/info` accepte plusieurs ids (diviserait le coût du snapshot par ~6) et ce que vaut le consensus de l'or (XAU)
+- [x] **Générer le vrai snapshot** (`npm run snapshot`, ≈ 35 min, ≈ 1 000 crédits) et le commiter avant le déploiement, puis avant la soumission ; vérifier la ligne « degraded » en fin de script
+- [x] Phase 0 : vérifier si `/v5/real-world-assets/info` accepte plusieurs ids (diviserait le coût du snapshot par ~6) et ce que vaut le consensus de l'or (XAU)
 - [x] `data/issuers.json` : note d'accès par émetteur (US, KYC) + lien, affichée sur la carte (spec §6.6)
 - [ ] Relire `data/issuers.json` contre les conditions actuelles de chaque émetteur
 - [x] Timeout serveur 8 s → snapshot ; squelettes de chargement ; ticker inconnu → suggestions
@@ -62,8 +62,8 @@ Deadline : **mer 9 déc 23:59 UTC** · Objectif de soumission : **lun 7 déc** �
 ## Phase 4 — Soumission (sam 5 – lun 7 déc)
 - [x] README (lien live et vidéo à compléter)
 - [x] JUDGE.md (lien live à compléter)
-- [ ] FEEDBACK.md finalisé (section B)
-- [ ] Remplacer les captures `docs/screenshots/` (données démo) par des captures en données réelles
+- [x] FEEDBACK.md finalisé (section B)
+- [x] Remplacer les captures `docs/screenshots/` (données démo) par des captures en données réelles
 - [x] Script d'enregistrement de la vidéo sous-titrée (`npm run record-demo`, WebM + MP4)
 - [ ] Enregistrer la vidéo **sur le site en ligne** : `BASE_URL=<url> npm run record-demo`, puis l'uploader
 - [x] Licence MIT

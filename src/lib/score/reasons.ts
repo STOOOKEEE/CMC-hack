@@ -31,7 +31,7 @@ export function reasonsFor(
     reasons.push(`${formatCompactUsd(volume)} traded in 24h`);
   }
   if (deviation !== null && Math.abs(deviation) <= SCORE_CONFIG.inLineTolerance) {
-    reasons.push(`Price in line with the consensus (${formatPct(deviation)})`);
+    reasons.push(`Price in line with the other versions (${formatPct(deviation)})`);
   }
   const pairs = wrapper.numMarketPairs ?? 0;
   if (pairs > 0) reasons.push(`Listed on ${pairs} ${plural(pairs, "market", "markets")}`);
@@ -64,7 +64,7 @@ export function warningsFor(
         : ["No volume reported in 24h — price may be stale"];
     default:
       if (deviation !== null && Math.abs(deviation) > SCORE_CONFIG.inLineTolerance) {
-        return [`Trades ${formatPct(deviation)} vs the consensus price`];
+        return [`Trades ${formatPct(deviation)} vs the reference price`];
       }
       return [];
   }

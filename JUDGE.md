@@ -1,15 +1,16 @@
 # Judging WrapScout in 60 seconds
 
-**The question:** "I want to own Nvidia through a token. Which of its 8 tokenized versions should I buy?"
+**The question:** "I want to own Nvidia through a token. Which of its 9 tokenized versions should I buy?"
 
 Open the live site (_link coming soon_) and click through:
 
 1. **`/a/nvda`** — the Best pick card answers *which one, why, where*. Below it, every other version with what is
-   wrong with it (no market, $43 of daily volume…). Try the **"How do you buy?"** chain filter.
+   wrong with it (Dinari's version has no market; one row is a derivatives price feed, not a token). Try the
+   **"How do you buy?"** chain filter: most tokens live on several chains.
 2. **`/a/gold`** (gold) — per-gram tokens are flagged **Different unit** instead of being compared with per-ounce ones.
    A naive price sort would call this a 3,000% spread.
-3. **An asset with no market** (for example `/a/ms` in demo mode) — no fake "best": the page says
-   *No tradable version right now* and shows why.
+3. **`/a/tsla`** — a Hyperliquid token stuck at $201 (−47%) is flagged instead of looking like a bargain.
+   **`/a/ms`** — the only Morgan Stanley token trades $3.5k a day: no fake "best", the page says so.
 4. **`/method`** — the full, deterministic formula and every CoinMarketCap endpoint used.
 5. **`/api/asset/nvda`** — the same answer as JSON.
 6. **MCP server** — `claude mcp add wrapscout -- npx tsx <repo>/mcp/server.ts`, then ask your assistant

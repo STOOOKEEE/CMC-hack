@@ -85,7 +85,7 @@ best pick, why, and where to buy.
 > Which token should I buy to own $NVDA? 🔎
 >
 > WrapScout ranks every tokenized version of a stock, ETF or commodity: best pick, why, where to buy — and the traps
-> (no market, $43/day volume, gold per gram vs per ounce).
+> (no market, derivatives feeds posing as tokens, gold per gram vs per ounce).
 >
 > Built on the CoinMarketCap API #BuildwithCMC
 > <DORAHACKS_URL>

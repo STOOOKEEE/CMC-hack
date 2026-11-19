@@ -2,10 +2,10 @@
 
 Feedback for the CMC API team, collected while building WrapScout.
 
-## A. Friction we designed around before having a key
+## A. Friction reported by round-1 builders — re-verified with our key (2026-11-18)
 
-These were reported publicly by round-1 builders. We built defences for each one and will **re-verify them with
-our own key** (`npm run explore`), keeping only those that still reproduce.
+We built defences for each one before having a key, then re-checked them with `npm run explore`
+(raw responses in `fixtures/live/`). **All seven still reproduce.**
 
 1. **RWA endpoints live under `/v5/`, while sibling families are v1–v3.** Guessing `/v1/real-world-assets/*`
    returns 404. → We hard-code the `/v5/real-world-assets/` prefix.
@@ -24,7 +24,8 @@ our own key** (`npm run explore`), keeping only those that still reproduce.
 
 ## B. Our own findings
 
-Observed on 2026-11-18 against `pro-api.coinmarketcap.com` (keyless `/public-api` surface; keyed findings to follow).
+Observed on 2026-11-18 against `pro-api.coinmarketcap.com`, first on the keyless `/public-api` surface (1–5), then
+with our key (6–12). Raw responses are committed in `fixtures/live/`.
 
 1. **`status.error_code` changes type between endpoints.** `/public-api/v2/cryptocurrency/quotes/latest` without a
    key answered `"error_code": 1005` (number); `/public-api/v5/real-world-assets/map` answered `"error_code": "1005"`
@@ -43,3 +44,20 @@ Observed on 2026-11-18 against `pro-api.coinmarketcap.com` (keyless `/public-api
    call per wrapper. A `chains` field on `tokens[]` would let RWA apps answer "can I buy it on my chain?" in one call.
 5. **Missing key: 401 on the Pro path, 403 on `/public-api`.** Same condition, two status codes (`1002` vs `1005`).
    Minor, but worth documenting next to the error-code table.
+6. **The RWA family takes `rwa_id`, not `id`.** `/v5/real-world-assets/quotes/latest?id=2` answers `4002 Missing required
+   parameter.` without naming the parameter it wants. `rwa_id=2` works, and so does a comma list (`rwa_id=2,1,14,86,35`:
+   5 assets, 1 credit) — which is what made a full snapshot of all 905 tokenized assets cost only **140 credits**.
+7. **v5 lists are wrapped and paginated.** `map`, `assets/list`, `quotes/latest` and `info` answer
+   `{ rwa_assets: [...], total_size, has_more }`. The map holds 7,811 assets (905 with tokens), 100 per page by default;
+   `limit=200` works but `limit=500` / `1000` / `5000` answer `4001 Invalid parameter.` without stating the maximum.
+8. **Success envelopes differ too:** v5 returns `"error_code": "0", "error_message": ""`; v2 returns `0` / `null`.
+9. **An id from `tokens[]` is rejected by `/v2/cryptocurrency/info`** (`Invalid value for 'id': '39318'`, single-quoted —
+   older write-ups quoted it with double quotes), failing the whole batch. We drop the id and retry.
+10. **`tokens[]` mixes holdable tokens with derivatives price feeds.** Rows with `issuer_name: "NA (Derivatives)"`
+    (e.g. "NVIDIA (Derivatives)", `crypto_id` 38153) have a price, 0 volume and no contract. A `token_type` field
+    would stop RWA apps from recommending something nobody can hold. → labelled *Derivative* and never ranked.
+11. **`num_market_pairs` is ~100+ for every NVDA wrapper, derivatives feed included (112 with $0 volume).** It does not
+    seem to count the wrapper's own markets, which makes it a weak signal. → it only weighs 20% of our score.
+12. **Market pairs are refused on our plan** (`1006` on both `/v2/cryptocurrency/market-pairs/latest` and
+    `/v5/real-world-assets/market-pairs/list`). → "where to buy" relies on chains, contracts, `tradfi_markets` and
+    issuer links. `tradfi_markets` (e.g. Binance Stocks for NVDA) is a great field — more venues there would help.
