@@ -110,3 +110,13 @@ test("derivatives price feeds are labelled and the stock venue is linked", async
     "https://www.binance.com/en/stocks/EQ_NVDA",
   );
 });
+
+test("the disclaimer lives on a terms page, not in a big footer", async ({ page }) => {
+  await page.goto("/");
+  const footer = page.locator("footer");
+  await expect(footer).not.toContainText("it does not tell you to buy anything");
+  await footer.getByRole("link", { name: "Terms of use" }).click();
+  await expect(page).toHaveURL(/\/terms$/);
+  await expect(page.getByRole("heading", { name: "Terms of use" })).toBeVisible();
+  await expect(page.getByText("not financial advice", { exact: false }).first()).toBeVisible();
+});

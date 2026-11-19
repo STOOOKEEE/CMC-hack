@@ -106,7 +106,7 @@ export default async function AssetPage(props: PageProps<"/a/[symbol]">) {
       </div>
 
       <p className="text-xs text-muted">
-        <Freshness dataMode={view.dataMode} asOf={view.asOf} /> · Not financial advice ·{" "}
+        <Freshness dataMode={view.dataMode} asOf={view.asOf} /> ·{" "}
         <Link href="/method" className="text-accent hover:underline">
           How the score works
         </Link>

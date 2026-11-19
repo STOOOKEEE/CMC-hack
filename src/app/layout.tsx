@@ -29,14 +29,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </nav>
         </header>
         <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">{children}</main>
-        <footer className="border-t border-border bg-surface">
-          <div className="mx-auto max-w-5xl px-4 py-5 text-xs leading-relaxed text-muted">
-            <p>
-              <strong className="text-fg">Not financial advice.</strong> WrapScout compares tokenized versions of
-              real-world assets; it does not tell you to buy anything. Check each issuer&apos;s terms and your local
-              rules before trading.
-            </p>
-            <p className="mt-1">Market data: CoinMarketCap API. Built for the Build with CMC API Hackathon.</p>
+        <footer className="border-t border-border">
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-3 text-xs text-muted">
+            <span>Market data: CoinMarketCap</span>
+            <Link href="/terms" className="hover:text-fg">
+              Terms of use
+            </Link>
           </div>
         </footer>
       </body>
