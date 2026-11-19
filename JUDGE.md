@@ -2,7 +2,7 @@
 
 **The question:** "I want to own Nvidia through a token. Which of its 9 tokenized versions should I buy?"
 
-Open the live site (_link coming soon_) and click through:
+Open the live site — **https://wrapscout-ten.vercel.app** — and click through:
 
 1. **`/a/nvda`** — the Best pick card answers *which one, why, where*. Below it, every other version with what is
    wrong with it (Dinari's version has no market; one row is a derivatives price feed, not a token). Try the

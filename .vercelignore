@@ -1,0 +1,10 @@
+# Never upload secrets or local artefacts
+.env*
+!.env.example
+node_modules
+.next
+demo
+test-results
+playwright-report
+fixtures/live
+.superpowers

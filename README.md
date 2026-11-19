@@ -10,7 +10,7 @@ why, and where to buy it.**
 
 Built for the [Build with CMC: API Hackathon](https://coinmarketcap.com/api/hackathon/) — track **Real World Assets**.
 
-> **Live demo:** _coming soon_ · **Video:** _coming soon_ · **60-second judge guide:** [JUDGE.md](JUDGE.md)
+> **Live:** [wrapscout-ten.vercel.app](https://wrapscout-ten.vercel.app) · **Try:** [/a/nvda](https://wrapscout-ten.vercel.app/a/nvda) · [/a/gold](https://wrapscout-ten.vercel.app/a/gold) · **Video:** _coming soon_ · **60-second judge guide:** [JUDGE.md](JUDGE.md)
 
 ![WrapScout asset page for NVDA (demo data)](docs/screenshots/asset-nvda.png)
 <sub>Real CoinMarketCap data, 18 Nov 2026: 9 versions of Nvidia; bStocks' NVDAB is the most liquid ($198M in 24h).</sub>

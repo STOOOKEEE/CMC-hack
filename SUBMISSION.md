@@ -1,9 +1,20 @@
 # Kit de soumission — WrapScout
 
 Tout ce qu'il faut coller dans DoraHacks et sur X. Les textes à copier sont en anglais (juges internationaux).
-Remplacer `<LIVE_URL>`, `<VIDEO_URL>`, `<DORAHACKS_URL>`, `<REPO_URL>` avant de publier.
+Il reste à remplacer `<VIDEO_URL>` et `<DORAHACKS_URL>` avant de publier.
 
-## Déployer (Vercel, gratuit — ~5 min)
+## Redéployer (déjà en ligne)
+
+Le projet Vercel `wrapscout` existe (compte stoookeee) et `CMC_API_KEY` y est configurée en variable « sensitive ».
+L'app GitHub de Vercel n'a pas accès au dépôt, donc pas de déploiement automatique au push : redéployer avec
+
+```bash
+VERCEL_ORG_ID=team_syyUoceNOPZEDWq6gXE25vgv VERCEL_PROJECT_ID=prj_TxBvsTRtI17PWw9YF0ijoNsNQMdo npx vercel deploy --prod --yes
+```
+
+(ou connecter le dépôt dans Vercel → Project → Settings → Git pour déployer à chaque push).
+
+## Déployer (Vercel, gratuit — ~5 min) — pour mémoire
 
 Railway n'est pas utilisable : l'essai du compte a expiré et il faudrait un plan payant. Vercel gratuit suffit :
 
@@ -18,14 +29,14 @@ Sans clé, le site se déploie quand même, en mode démo (bandeau visible).
 
 ## Checklist avant de soumettre
 
-- [ ] Site en ligne avec une vraie clé CMC (`CMC_API_KEY`) et `SITE_URL` configurés
-- [ ] `data/snapshot/` régénéré avec la vraie clé et commité (`npm run snapshot`)
+- [x] Site en ligne avec la vraie clé CMC : https://wrapscout-ten.vercel.app (Vercel, données live vérifiées le 19/11)
+- [x] `data/snapshot/` généré avec la vraie clé et commité (905 actifs, 18/11) — à régénérer juste avant de soumettre
 - [ ] `npm test` et `npm run e2e` verts sur la branche soumise
-- [ ] Vidéo enregistrée **sur le site en ligne** : `BASE_URL=<LIVE_URL> npm run record-demo` → `demo/wrapscout-demo.mp4`
+- [x] Vidéo enregistrée en données réelles (`demo/wrapscout-demo.mp4`, 19/11). Pour la refaire : `BASE_URL=https://wrapscout-ten.vercel.app npm run record-demo` (ou un serveur local avec la clé)
 - [ ] Vidéo uploadée (YouTube non répertorié ou directement sur X)
-- [ ] Captures `docs/screenshots/` refaites en données réelles
-- [ ] README / JUDGE.md : liens live + vidéo remplis
-- [ ] FEEDBACK.md section B remplie
+- [x] Captures `docs/screenshots/` refaites en données réelles
+- [x] README / JUDGE.md : lien live rempli — [ ] lien vidéo
+- [x] FEEDBACK.md section B remplie (12 constats réels)
 - [ ] Repo public
 - [ ] Formulaire DoraHacks rempli (ci-dessous), track **Real World Assets**
 - [ ] Post X publié (ci-dessous) avec `#BuildwithCMC`, lien DoraHacks, vidéo, endpoints
@@ -74,7 +85,7 @@ best pick, why, and where to buy.
 > - `GET /v2/cryptocurrency/quotes/latest` — `num_market_pairs` and 24h volume per wrapper
 > - `GET /v2/cryptocurrency/market-pairs/latest` — exchanges for the top wrappers
 
-**Links:** Live `<LIVE_URL>` · Video `<VIDEO_URL>` · Code `<REPO_URL>` · Judge guide `<REPO_URL>/blob/main/JUDGE.md`
+**Links:** Live `https://wrapscout-ten.vercel.app` · Video `<VIDEO_URL>` · Code `https://github.com/STOOOKEEE/CMC-hack` · Judge guide `https://github.com/STOOOKEEE/CMC-hack/blob/HEAD/JUDGE.md`
 
 **API feedback:** see `FEEDBACK.md` in the repo.
 
@@ -102,7 +113,7 @@ best pick, why, and where to buy.
 > /v2/cryptocurrency/quotes/latest
 > /v2/cryptocurrency/market-pairs/latest
 >
-> Live: <LIVE_URL> · Code: <REPO_URL>
+> Live: https://wrapscout-ten.vercel.app · Code: https://github.com/STOOOKEEE/CMC-hack
 
 (Si le règlement exige les endpoints **dans** le post principal, mettre la liste dans une image jointe — par exemple une
 capture de la page `/method`, section « CoinMarketCap endpoints used ».)
