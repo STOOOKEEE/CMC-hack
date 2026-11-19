@@ -1,6 +1,6 @@
 # Kit de soumission — WrapScout
 
-Tout ce qu'il faut coller dans DoraHacks et sur X. Les textes à copier sont en anglais (juges internationaux).
+Tout ce qu'il faut coller dans DoraHacks et sur X. **Brief complet pour un agent de soumission : [`docs/SUBMIT_BRIEF.md`](docs/SUBMIT_BRIEF.md).** Les textes à copier sont en anglais (juges internationaux).
 Il reste à remplacer `<VIDEO_URL>` et `<DORAHACKS_URL>` avant de publier.
 
 ## Redéployer (déjà en ligne)
